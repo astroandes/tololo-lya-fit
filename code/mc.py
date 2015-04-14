@@ -1,9 +1,8 @@
 from matplotlib import *
 from numpy import *
 import emcee
-import triangle
+#import triangle
 import os
-
 
 #Constants
 
@@ -169,10 +168,12 @@ print("Mean acceptance fraction: {0:.3f}".format(mean(sampler.acceptance_fractio
 samples = sampler.flatchain
 print(shape(samples))
 
-fig = triangle.corner(samples, labels=[r"$\log{\tau}$", "$v_{max}$", r"$\theta$", "$\log{T}$", "$\Delta v_{off}$"],
-                      truths=[logtau_0, vmax_0, theta_0, logT_0, voff_0])
+print(samples[-1,:])
 
-savefig('./parameters.png')
+#fig = triangle.corner(samples, labels=[r"$\log{\tau}$", "$v_{max}$", r"$\theta$", "$\log{T}$", "$\Delta v_{off}$"],
+#                      truths=[logtau_0, vmax_0, theta_0, logT_0, voff_0])
+
+#savefig('./parameters.png')
 
 
 #Links:
