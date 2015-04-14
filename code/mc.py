@@ -1,6 +1,7 @@
 from numpy import *
-from matplotlib.pyplot import *
+import matplotlib
 matplotlib.use('Agg') 
+from matplotlib.pyplot import *
 from scipy.interpolate import interp1d
 import emcee
 import triangle
