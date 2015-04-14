@@ -1,5 +1,6 @@
-from matplotlib import *
 from numpy import *
+from matplotlib import *
+from scipy.interpolate import interp1d
 import emcee
 #import triangle
 import os
