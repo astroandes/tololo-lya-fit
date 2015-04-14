@@ -1,8 +1,8 @@
 from numpy import *
-from matplotlib import *
+from matplotlib.pyplot import *
 from scipy.interpolate import interp1d
 import emcee
-#import triangle
+import triangle
 import os
 
 #Constants
@@ -171,10 +171,10 @@ print(shape(samples))
 
 print(samples[-1,:])
 
-#fig = triangle.corner(samples, labels=[r"$\log{\tau}$", "$v_{max}$", r"$\theta$", "$\log{T}$", "$\Delta v_{off}$"],
-#                      truths=[logtau_0, vmax_0, theta_0, logT_0, voff_0])
+fig = triangle.corner(samples, labels=[r"$\log{\tau}$", "$v_{max}$", r"$\theta$", "$\log{T}$", "$\Delta v_{off}$"],
+                      truths=[logtau_0, vmax_0, theta_0, logT_0, voff_0])
 
-#savefig('./parameters.png')
+savefig('./parameters.png')
 
 
 #Links:
