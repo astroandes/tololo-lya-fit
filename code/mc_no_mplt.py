@@ -1,10 +1,6 @@
 from numpy import *
-import matplotlib
-matplotlib.use('Agg') 
-from matplotlib.pyplot import *
 from scipy.interpolate import interp1d
 import emcee
-import triangle
 import os
 
 #Constants
@@ -66,20 +62,6 @@ voff_0 = -11
 
 x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, voff_0, x_data, y_data)
 
-#Plot data and first guess
-
-fig = figure(figsize=(12,6))
-
-scatter(x_data, y_data, c='c', alpha=0.6, label='$\mathrm{LARS 02}$')
-plot(x_data, y_data, c='c', alpha=0.6)
-plot(x_0, y_0, c='b', alpha=0.6, label='$\mathrm{Rotation\ model}$', lw=2)
-
-xlabel('$\mathrm{Velocity (km/s)}$', fontsize=20)
-ylabel('$\mathrm{Intensity (Arbitrary Units)}$', fontsize=20)
-legend(loc='best', fontsize=20)
-
-savefig('./first_guess.png')
-
 #emcee functions
 
 def lnprior(param):
@@ -128,55 +110,13 @@ sampler.run_mcmc(pos, nsteps, rstate0=random.get_state())
 print("Done!")
 
 
-# Walkers plot
+# Saving results
 
-clf()
+samples_fc = sampler.flatchain
 
-fig, axes = subplots(5, 1, sharex=True, figsize=(12, 13))
-
-axes[0].plot(sampler.chain[:, :, 0].T, color="k", alpha=0.4)
-axes[0].yaxis.set_major_locator(MaxNLocator(5))
-axes[0].axhline(logtau_0, color="#888888", lw=2)
-axes[0].set_ylabel(r"$\log{\tau}$")
-
-axes[1].plot(sampler.chain[:, :, 1].T, color="k", alpha=0.4)
-axes[1].yaxis.set_major_locator(MaxNLocator(5))
-axes[1].axhline(vmax_0, color="#888888", lw=2)
-axes[1].set_ylabel("$v_{max}$")
-
-axes[2].plot(exp(sampler.chain[:, :, 2]).T, color="k", alpha=0.4)
-axes[2].yaxis.set_major_locator(MaxNLocator(5))
-axes[2].axhline(theta_0, color="#888888", lw=2)
-axes[2].set_ylabel(r"$\theta$")
-
-axes[3].plot(exp(sampler.chain[:, :, 3]).T, color="k", alpha=0.4)
-axes[3].yaxis.set_major_locator(MaxNLocator(5))
-axes[3].axhline(logT_0, color="#888888", lw=2)
-axes[3].set_ylabel("$\log{T}$")
-
-axes[4].plot(exp(sampler.chain[:, :, 3]).T, color="k", alpha=0.4)
-axes[4].yaxis.set_major_locator(MaxNLocator(5))
-axes[4].axhline(voff_0, color="#888888", lw=2)
-axes[4].set_ylabel("$\Delta v_{off}$")
-axes[4].set_xlabel("step number")
-
-fig.tight_layout(h_pad=0.0)
-
-savefig('./walkers.png')
+savetxt('sampler_flatchain.dat', samples_fc, delimiter=',')
 
 print("Mean acceptance fraction: {0:.3f}".format(mean(sampler.acceptance_fraction)))
-
-# Triangle plot
-
-samples = sampler.flatchain
-print(shape(samples))
-
-print(samples[-1,:])
-
-fig = triangle.corner(samples, labels=[r"$\log{\tau}$", "$v_{max}$", r"$\theta$", "$\log{T}$", "$\Delta v_{off}$"],
-                      truths=[logtau_0, vmax_0, theta_0, logT_0, voff_0])
-
-savefig('./parameters.png')
 
 
 #Links:
