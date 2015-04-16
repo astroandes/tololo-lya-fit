@@ -97,7 +97,7 @@ def lnprob(param, x_d, y_d):
 
 ndim = 5
 nwalkers = 10
-nsteps = 100
+nsteps = 10
 
 first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0]
 
