@@ -96,14 +96,14 @@ def lnprob(param, x_d, y_d):
 #Running emcee
 
 ndim = 5
-nwalkers = 20
+nwalkers = 10
 nsteps = 100
 
 first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0]
 
 pos = [first_guess+ 1e-3*random.randn(ndim) for i in range(nwalkers)]
 
-sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x_data, y_data))
+sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x_data, y_data), threads=8)
 
 print("Running MCMC...")
 sampler.run_mcmc(pos, nsteps, rstate0=random.get_state())
