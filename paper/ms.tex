@@ -1,37 +1,60 @@
-%Document Class
-\documentclass{latex/emulateapj}
+\documentclass{emulateapj}
+\submitted{{\it Submitted for publication in ApJ Letters}}
 \usepackage{multirow,color,wrapfig,ulem}
-
-%Packages and Commands
-\include{latex/packages_commands}
-
+\usepackage {graphicx}
+\usepackage{graphics}
+\usepackage[dvips]{epsfig}
+\newcommand{\avg}[1]{\langle{#1}\rangle}  
+\newcommand{\nscatt}{\langle N_{\rm  scatt}\rangle}
+\newcommand{\ly}{{\ifmmode{{\rm Ly}\alpha~}\else{Ly$\alpha$~}\fi}}
+\newcommand{\hMpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}   
+\newcommand{\hGpc}{{\ifmmode{h^{-1}{\rm Gpc}}\else{$h^{-1}$Gpc }\fi}}   
+\newcommand{\hmpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc }\fi}}  
+\newcommand{\hkpc}{{\ifmmode{h^{-1}{\rm kpc}}\else{$h^{-1}$kpc }\fi}}  
+\newcommand{\hMsun}{{\ifmmode{h^{-1}{\rm
+        {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}   
+\newcommand{\hmsun}{{\ifmmode{h^{-1}{\rm
+        {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}   
+\newcommand{\Msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}  
+\newcommand{\msun}{{\ifmmode{{\rm {M_{\odot}}}}\else{${\rm{M_{\odot}}}$}\fi}}  
+\newcommand{\lya}{{Lyman $\alpha$~}}
+\newcommand{\clara}{{\texttt{CLARA}}~}
+\newcommand{\rand}{{\ifmmode{{\mathcal{R}}}\else{${\mathcal{R}}$ }\fi}}  
+\newcommand{\hs}{{\hspace{1mm}}}  
+\newcommand{\kms}{{\ifmmode{{\mathrm{\,km\ s}^{-1}}}\else{\,km~s$^{-1}$}\fi}}
+% definition to produce a "less than or similar to" symbol
+\def\lsim{~\rlap{$<$}{\lower 1.0ex\hbox{$\sim$}}}
+% definition to produce a "greater than or similar to" symbol
+\def\gsim{~\rlap{$>$}{\lower 1.0ex\hbox{$\sim$}}}
+%@arxiver{fig3.pdf,fig11a.pdf, fig11b.pdf} 
 \begin{document}
 
-\title{Titulo}
-\shorttitle{shorttitle}
+\title{First estimate of a galaxy rotational velocity from
+  its observed Lyman-$\alpha$ line} 
+\shorttitle{Rotational velocity from the Lyman $\alpha$ line}
 
-\shortauthors{shortauthors}
+\shortauthors{Remolina-Gutierrez, Garavito-Camargo, Forero-Romero}
 
-\author{author1, author2 \& author3} 
+\author{ Maria C. Remolina-Gutierrez, Juan N. Garavito-Camargo, Jaime
+  E. Forero-Romero}  
 \affil{Departamento de F\'{i}sica, Universidad de los Andes, Cra. 1
 No. 18A-10, Edificio Ip, Bogot\'a, Colombia}
+\email{mc.remolina197@uniandes.edu.co}
+\email{jn.garavito57@uniandes.edu.co}
+\email{je.forero@uniandes.edu.co}
 
-\email{email1}
-\email{email2}
-\email{email3}
-
-\keywords{keywords....}  
-
+\keywords{galaxies: high-redshift --- line: formation --- methods:
+  numerical ---  radiative transfer} 
 \begin{abstract}
-
-Abstract...
-
+First.
 \end{abstract}
+
 
 \section{Introduction}
 \label{sec:intro}
 
 Introduction... \\ 
+\cite{Garavito14}
 
 
 \section{Theoretical Background}
@@ -42,6 +65,23 @@ Theoretical background...\\
 
 \section{Results}
 \label{sec:results}
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{mcmc.png}
+\end{center}
+\caption{
+    \label{fig:mcmc_result}}  
+\end{figure}
+
+\begin{figure*}
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{parameters.png}
+\end{center}
+\caption{
+    \label{fig:mcmc_triangle}}  
+\end{figure*}
 
 Results...\\
 
@@ -64,7 +104,7 @@ Acknowledgments...\\
 
 
 
-\bibliographystyle{latex/apj}
+\bibliographystyle{apj}
 \bibliography{references}
 
-\newpage
+\end{document}
