@@ -1,4 +1,7 @@
-first_guess.png: analytic_solution.x mc.py 
+parameters.png: sampler_flatchain.dat plots.py
+	python plots.py
+
+sampler_flatchain.dat: analytic_solution.x mc.py
 	time python mc.py
 	rm model.dat
 
