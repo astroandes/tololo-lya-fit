@@ -52,16 +52,6 @@ lars = loadtxt('./LARS02.txt')
 x_data = lars[:-17,0] - c*z
 y_data = lars[:-17,1]
 
-#First guess
-
-logtau_0 = 5
-vmax_0 = 50
-theta_0 = 45
-logT_0 = 4
-voff_0 = -11
-
-x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, voff_0, x_data, y_data)
-
 #emcee functions
 
 def lnprior(param):
@@ -93,13 +83,27 @@ def lnprob(param, x_d, y_d):
 
     return lp + lnlike(param, x_d, y_d)
 
+
+#First guess
+
+logtau_0 = 5
+vmax_0 = 50
+theta_0 = 45
+logT_0 = 4
+voff_0 = -11
+
+x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, voff_0, x_data, y_data)
+
+lnlikelihood_0 = lnlike([logtau_0, vmax_0, theta_0, logT_0, voff_0], x_0, y_0)
+
+first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0, lnlikelihood_0]
+
+
 #Running emcee
 
-ndim = 5
-nwalkers = 10
-nsteps = 10
-
-first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0]
+ndim = 6
+nwalkers = 12
+nsteps = 2
 
 pos = [first_guess+ 1e-3*random.randn(ndim) for i in range(nwalkers)]
 
