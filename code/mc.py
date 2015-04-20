@@ -87,8 +87,6 @@ def lnprior(param):
 
 def lnlike(param, x_d, y_d):
 
-    print(param)
-
     logtau, vmax, theta, logT, voff = param
 
     x_m, y_m = model(logtau, vmax, theta, logT, voff, x_d, y_d)
@@ -117,16 +115,14 @@ voff_0 = -11
 
 x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, voff_0, x_data, y_data)
 
-lnlikelihood_0 = lnlike(array([logtau_0, vmax_0, theta_0, logT_0, voff_0]), x_0, y_0)
-
-first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0, lnlikelihood_0]
+first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0]
 
 
 #Running emcee
 
-ndim = 6
-nwalkers = 12
-nsteps = 2
+ndim = 5
+nwalkers = 10
+nsteps = 2000
 
 pos = [first_guess+ 1e-3*random.randn(ndim) for i in range(nwalkers)]
 
