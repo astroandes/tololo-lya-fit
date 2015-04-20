@@ -51,7 +51,11 @@ def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
     os.system( ('./analytic_solution.x %f %f %f > "./model.dat"')%(10.0**logtau, vmax, theta) )
 
-    mod = genfromtxt('./model.dat', skip_footer=1)
+    try:    
+	mod = genfromtxt('./model.dat')
+
+    except ValueError:
+	mod = genfromtxt('./model.dat', skip_footer=3)
 
     x_m_i = mod[:,0]
     y_m_i = mod[:,1]
