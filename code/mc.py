@@ -13,10 +13,31 @@ c = 299792.458
 def model_to_data_interp(x_m, y_m, x_d):
 
     f = interp1d(x_m, y_m, kind="linear")
-    x_m_new = x_d
-    y_m_new = f(x_d)
 
-    return x_m_new, y_m_new
+    try:
+        x_m_new = x_d
+        y_m_new = f(x_d)
+
+        return x_m_new, y_m_new
+
+    except ValueError:
+
+        n = len(x_d)
+
+        x_m_new = x_d
+        y_m_new = zeros(n)
+
+        for i in range(n):
+
+            x_d_i = x_d[i]
+
+            if(x_d_i >= x_m[0] and x_d_i <= x_m[-1]):
+                y_m_new[i] = f(x_d_i)
+            else:
+                y_m_new[i] = 0.0
+
+        return x_m_new, y_m_new
+
 
 def normalization(y_d, y_m):
 
@@ -66,6 +87,8 @@ def lnprior(param):
 
 def lnlike(param, x_d, y_d):
 
+    print(param)
+
     logtau, vmax, theta, logT, voff = param
 
     x_m, y_m = model(logtau, vmax, theta, logT, voff, x_d, y_d)
@@ -94,7 +117,7 @@ voff_0 = -11
 
 x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, voff_0, x_data, y_data)
 
-lnlikelihood_0 = lnlike([logtau_0, vmax_0, theta_0, logT_0, voff_0], x_0, y_0)
+lnlikelihood_0 = lnlike(array([logtau_0, vmax_0, theta_0, logT_0, voff_0]), x_0, y_0)
 
 first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0, lnlikelihood_0]
 
