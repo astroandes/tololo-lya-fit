@@ -49,13 +49,13 @@ def normalization(y_d, y_m):
 
 def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
-    os.system( ('./analytic_solution.x %f %f %f > "./model.dat"')%(10.0**logtau, vmax, theta) )
+    os.system( ('./analytic_solution.x %f %f %f > "./model_lt%f_vm%f_th%f.dat"')%(10.0**logtau, vmax, theta, logtau, vmax, theta) )
 
-    try:    
-	mod = genfromtxt('./model.dat')
+    try:
+	       mod = genfromtxt( ('./model_lt%f_vm%f_th%f.dat')%(logtau, vmax, theta) )
 
     except ValueError:
-	mod = genfromtxt('./model.dat', skip_footer=3)
+	       mod = genfromtxt( ('./model_lt%f_vm%f_th%f.dat')%(logtau, vmax, theta), skip_footer=3)
 
     x_m_i = mod[:,0]
     y_m_i = mod[:,1]
@@ -66,6 +66,8 @@ def model(logtau, vmax, theta, logT, voff, x_d, y_d):
     x_m, y_m = model_to_data_interp(x_m_i, y_m_i, x_d)
 
     y_m = normalization(y_d, y_m)
+
+    os.system( ('rm model_lt%f_vm%f_th%f.dat"')%(logtau, vmax, theta) )
 
     return x_m, y_m
 
