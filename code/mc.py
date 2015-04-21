@@ -67,7 +67,7 @@ def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
     y_m = normalization(y_d, y_m)
 
-    os.system( ('rm model_lt%f_vm%f_th%f.dat"')%(logtau, vmax, theta) )
+    os.system( ('rm model_lt%f_vm%f_th%f.dat')%(logtau, vmax, theta) )
 
     return x_m, y_m
 
