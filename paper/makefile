@@ -33,6 +33,9 @@ clean:
 edit:
 		$(TEXEDIT) $(FILE_TEX) &
 
+
+view:
+	open $(FILE_PDF)
 help:
 		@echo -e 'Makefile Help:'
 		@echo -e '\tpdflatex:\t compile the pdf file'
