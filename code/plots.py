@@ -6,18 +6,30 @@ import os
 
 #Info
 nwalkers = 10
-nsteps = 100
+nsteps = 2000
 nparameters = 5
 
 z = 0.029836
 c = 299792.458
 
+#Data
+lars = loadtxt('./LARS02.txt')
+samples = loadtxt('./sampler_flatchain.dat', delimiter=',')
+
+x_data = lars[:-17,0] - c*z
+y_data = lars[:-17,1]
+
 #Best parameters
-logtau_b = 5
-vmax_b = 50
-theta_b = 45
-logT_b = 4
-voff_b = -11
+
+f_best = open('./best_parameters.dat')
+best = f_best.readline().split(',')
+f_best.close()
+
+logtau_b = float(best[0])
+vmax_b = float(best[1])
+theta_b = float(best[2])
+logT_b = float(best[3])
+voff_b = float(best[4].split(r'\n')[0])
 
 #Functions
 def model_to_data_interp(x_m, y_m, x_d):
@@ -54,17 +66,11 @@ def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
     return x_m, y_m
 
-#Data
-lars = loadtxt('./LARS02.txt')
-samples = loadtxt('./sampler_flatchain.dat', delimiter=',')
-
-x_data = lars[:-17,0] - c*z
-y_data = lars[:-17,1]
-
-x_model, y_model = model(logtau_b, vmax_b, theta_b, logT_b, voff_b, x_data, y_data)
 
 #Plot fit and original
 fig = figure(figsize=(12,6))
+
+x_model, y_model = model(logtau_b, vmax_b, theta_b, logT_b, voff_b, x_data, y_data)
 
 scatter(x_data, y_data, c='c', alpha=0.6, label='$\mathrm{LARS 02}$')
 plot(x_data, y_data, c='c', alpha=0.6)
@@ -75,6 +81,7 @@ ylabel('$\mathrm{Intensity (Arbitrary Units)}$', fontsize=20)
 legend(loc='best', fontsize=20)
 
 savefig('./mcmc.png')
+
 
 # Walkers plot
 clf()
