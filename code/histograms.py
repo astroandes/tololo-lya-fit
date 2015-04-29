@@ -9,7 +9,7 @@ nwalkers = 10
 nsteps = 2000
 nparameters = 5
 
-z = 0.029836
+z = 0
 c = 299792.458
 
 #Data

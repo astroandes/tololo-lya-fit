@@ -9,15 +9,15 @@ nwalkers = 10
 nsteps = 2000
 nparameters = 5
 
-z = 0.029836
+z = 0
 c = 299792.458
 
 #Data
-lars = loadtxt('./LARS02.txt')
+tol = loadtxt('./tol.txt')
 samples = loadtxt('./sampler_flatchain.dat', delimiter=',')
 
-x_data = lars[:-17,0] - c*z
-y_data = lars[:-17,1]
+x_data = tol[:-17,0]
+y_data = tol[:-17,1]
 
 #Best parameters
 
@@ -50,9 +50,9 @@ def normalization(y_d, y_m):
 
 def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
-    os.system( ('./analytic_solution.x %f %f %f > "./model.dat"')%(10.0**logtau, vmax, theta) )
+    os.system( ('./analytic_solution.x %f %f %f > "./model_lt%f_vm%f_th%f.dat"')%(10.0**logtau, vmax, theta, logtau, vmax, theta) )
 
-    mod = genfromtxt('./model.dat', skip_footer=1)
+    mod = genfromtxt( ('./model_lt%f_vm%f_th%f.dat')%(logtau, vmax, theta) )
 
     x_m_i = mod[:,0]
     y_m_i = mod[:,1]
@@ -72,7 +72,7 @@ fig = figure(figsize=(12,6))
 
 x_model, y_model = model(logtau_b, vmax_b, theta_b, logT_b, voff_b, x_data, y_data)
 
-scatter(x_data, y_data, c='c', alpha=0.6, label='$\mathrm{LARS 02}$')
+scatter(x_data, y_data, c='c', alpha=0.6, label='$\mathrm{TOL 1214-277}$')
 plot(x_data, y_data, c='c', alpha=0.6)
 plot(x_model, y_model, c='b', alpha=0.6, label='$\mathrm{Rotation\ model}$', lw=2)
 

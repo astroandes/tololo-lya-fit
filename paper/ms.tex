@@ -4,6 +4,7 @@
 \usepackage {graphicx}
 \usepackage{graphics}
 \usepackage[dvips]{epsfig}
+\usepackage{float}
 \newcommand{\avg}[1]{\langle{#1}\rangle}  
 \newcommand{\nscatt}{\langle N_{\rm  scatt}\rangle}
 \newcommand{\ly}{{\ifmmode{{\rm Ly}\alpha~}\else{Ly$\alpha$~}\fi}}
@@ -57,7 +58,7 @@ Introduction... \\
 \cite{Garavito14}
 
 
-\section{Theoretical Background}
+\subsection{Theoretical Background}
 \label{sec:theo}
 
 
@@ -80,7 +81,39 @@ dependence of the line shape with viewing angle.
 Second, for increasing rotational velocities and viewing angles off
 the rotational axis, the intensity at the line's centers increases;
 for sufficiently high rotational velocities the line becomes single peaked. 
- 
+
+An approximated analytic solution was derived for a spherical galaxy with 
+central \lya sources. 
+
+\begin{equation}
+J(x,b,\phi,i)=\frac{\sqrt{\pi}}{\sqrt{24}a\tau_0}\Bigg{(}\frac{(x-x_{\rm
+    b})^2}{1+{\rm cosh}\Big{[}\sqrt{\frac{2\pi^3}{27}}\frac{|(x
+      -x_{\rm b})^3|}{a\tau_0}\Big{]}}\Bigg{)},
+\end{equation}
+
+
+\begin{equation}
+J(x,i) \approx 2\pi \int_0^Rdb \hs b
+\int_0^{2\pi}d\phi \hs J(x,b,\phi,i)
+\end{equation}
+
+\subsection{Low redshift observations}
+
+The \ly emission line is a powerfull tool to study the properties 
+of the high redshift Universe. Important intrinsic properties of this
+galaxy population, such as the redshift, luminosity functions, 
+equivalent width and the kinematic state are derived from the 
+\ly line. With the aim to study in more detail the impact of this 
+properties on the \ly line several surveys have observe nearby
+galaxies whose properties are known from . We are particularly
+interested in study the kinematic state of the galaxys using 
+the \ly line. The \citep{LARS} survey have observed 14 nearby galaxies
+with strong \ly emission using the HST telescope and the .  
+
+The LARS survey have observed galaxies with different properties, 
+the spectra of all this galaxies and their properties are described 
+in detail in \citep{LARS2} \citep{LARS3, LARS4}.   
+
 \section{Results}
 \label{sec:results}
 
@@ -90,7 +123,7 @@ $$\theta = 44.495^\circ $$
 $$T = 9962.731 \rm K$$
 $$\Delta V_{off} = -9.722 \kms$$
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
   \includegraphics[width=0.5\textwidth]{mcmc.png}
 \end{center}
@@ -98,13 +131,13 @@ $$\Delta V_{off} = -9.722 \kms$$
     \label{fig:mcmc_result}}  
 \end{figure}
 
-\begin{figure*}
+\begin{figure}[H]
 \begin{center}
-  \includegraphics[width=0.7\textwidth]{parameters.png}
+  \includegraphics[width=0.5\textwidth]{parameters.png}
 \end{center}
 \caption{
     \label{fig:mcmc_triangle}}  
-\end{figure*}
+\end{figure}
 
 Results...\\
 

@@ -5,7 +5,7 @@ import os
 
 #Constants
 
-z = 0.029836
+z = 0
 c = 299792.458
 
 #Functions
@@ -74,10 +74,10 @@ def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
 #Observed data
 
-lars = loadtxt('./LARS02.txt')
+tol = loadtxt('./tol.txt')
 
-x_data = lars[:-17,0] - c*z
-y_data = lars[:-17,1]
+x_data = tol[:-17,0]
+y_data = tol[:-17,1]
 
 #emcee functions
 
@@ -85,7 +85,7 @@ def lnprior(param):
 
     logtau, vmax, theta, logT, voff = param
 
-    if 4 < logtau < 6 and 0 < vmax < 100 and 0 < theta < 90 and 4 < logT < 4.5 and -20 < voff < 20:
+    if 4 < logtau < 7 and 0 < vmax < 400 and 0 < theta < 90 and 4 < logT < 4.5 and -40 < voff < 40:
         return 0.0
 
     return -inf
