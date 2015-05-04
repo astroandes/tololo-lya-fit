@@ -76,8 +76,8 @@ def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
 tol = loadtxt('./tol.txt')
 
-x_data = tol[:-17,0]
-y_data = tol[:-17,1]
+x_data = tol[:,0]
+y_data = tol[:,1]
 
 #emcee functions
 
@@ -85,7 +85,7 @@ def lnprior(param):
 
     logtau, vmax, theta, logT, voff = param
 
-    if 4 < logtau < 7 and 0 < vmax < 400 and 0 < theta < 90 and 4 < logT < 4.5 and -40 < voff < 40:
+    if 6.0 < logtau < 8.0 and 500 < vmax < 800 and 0 < theta < 90 and 4 < logT < 4.5 and -40 < voff < 40:
         return 0.0
 
     return -inf
@@ -113,8 +113,8 @@ def lnprob(param, x_d, y_d):
 
 #First guess
 
-logtau_0 = 5
-vmax_0 = 50
+logtau_0 = 7.0
+vmax_0 = 600
 theta_0 = 45
 logT_0 = 4
 voff_0 = -11
