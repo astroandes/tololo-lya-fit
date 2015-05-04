@@ -76,8 +76,8 @@ def model(logtau, vmax, theta, logT, voff, x_d, y_d):
 
 tol = loadtxt('./tol.txt')
 
-x_data = tol[:-17,0]
-y_data = tol[:-17,1]
+x_data = tol[:,0]
+y_data = tol[:,1]
 
 #emcee functions
 
