@@ -16,8 +16,8 @@ c = 299792.458
 tol = loadtxt('./tol.txt')
 samples = loadtxt('./sampler_flatchain.dat', delimiter=',')
 
-x_data = tol[:-17,0]
-y_data = tol[:-17,1]
+x_data = tol[:,0]
+y_data = tol[:,1]
 
 #Best parameters
 
@@ -35,10 +35,30 @@ voff_b = float(best[4].split(r'\n')[0])
 def model_to_data_interp(x_m, y_m, x_d):
 
     f = interp1d(x_m, y_m, kind="linear")
-    x_m_new = x_d
-    y_m_new = f(x_d)
 
-    return x_m_new, y_m_new
+    try:
+        x_m_new = x_d
+        y_m_new = f(x_d)
+
+        return x_m_new, y_m_new
+
+    except ValueError:
+
+        n = len(x_d)
+
+        x_m_new = x_d
+        y_m_new = zeros(n)
+
+        for i in range(n):
+
+            x_d_i = x_d[i]
+
+            if(x_d_i >= x_m[0] and x_d_i <= x_m[-1]):
+                y_m_new[i] = f(x_d_i)
+            else:
+                y_m_new[i] = 0.0
+
+        return x_m_new, y_m_new
 
 def normalization(y_d, y_m):
 
