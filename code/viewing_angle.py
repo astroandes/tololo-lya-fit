@@ -15,7 +15,7 @@ def reading_data(filename):
 
 def viewing_angle(filename, angle):
     kz, x = reading_data(filename)
-    k = angle/90.0
+    k = np.cos((90-angle)*np.pi/180.)
     index = np.where((abs(kz)<(k+0.1)) & (abs(kz)>(k-0.1)))
     nbins =40
     x = x[index]
