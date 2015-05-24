@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
 
 def reading_data(filename):
-    data = np.loadtxt("../data/CLARA/"+filename)
+    data = np.loadtxt(filename)
     initpos=data[:,0]
     index_clean = np.where(~np.isnan(initpos))
     data = data[index_clean[0],:]
