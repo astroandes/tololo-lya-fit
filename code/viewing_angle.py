@@ -13,21 +13,23 @@ def reading_data(filename):
 
     return kz, x
 
-def viewing_angle(filename, angle):
+def viewing_angle(obsfilename, filename, angle):
     kz, x = reading_data(filename)
     k = np.cos((90-angle)*np.pi/180.)
     index = np.where((abs(kz)<(k+0.1)) & (abs(kz)>(k-0.1)))
-    nbins =40
+    obs_data = np.loadtxt(obsfilename)
+    nbins = 40
     x = x[index]
     hist, bins = np.histogram(x, bins=nbins)
 
     return hist, bins
  
 
-filename = sys.argv[1]
-angle = float(sys.argv[2])
+obsfilename = sys.argv[1]
+filename = sys.argv[2]
+angle = float(sys.argv[3])
 
-hist, bins = viewing_angle(filename, angle)
+hist, bins = viewing_angle(obsfilename, filename, angle)
 
 for i in range(len(hist)):
 	print hist[i], bins[i]
