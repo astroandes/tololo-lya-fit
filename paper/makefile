@@ -1,7 +1,7 @@
 #MAKEFILE
 
 #Name of tex file
-FILE_NAME  = ms
+FILE_NAME  = letter
 FILE_TEX = $(FILE_NAME).tex
 FILE_PDF = $(FILE_NAME).pdf
 
@@ -28,6 +28,7 @@ clean:
 		rm -f $(FILE_NAME).synctex.gz
 		rm -f $(FILE_NAME).blg
 		rm -f $(FILE_NAME)Notes.bib
+		rm -f $(FILE_NAME).pdf
 
 edit:
 		$(TEXEDIT) $(FILE_TEX) &
