@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, usenatbib, 12pt]{article}
 \usepackage{subfig}
 \usepackage{float}
 \usepackage{wrapfig}
@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
+\usepackage{cite}
 \usepackage[top=3.5cm, bottom=2.5cm, left=3.5cm, right=3.5cm]{geometry}
 
 %----------------------New commands -------------------
@@ -22,6 +23,20 @@
 \newcommand{\es}{erg s$^{-1}$}
 \newcommand{\esa}{erg s$^{-1}$}
 \newcommand{\kms}{km s$^{-1}$}
+\newcommand{\apj}{ApJ}  
+\newcommand{\jcap}{JCAP}  
+\newcommand{\apjs}{ApJS}  
+\newcommand{\apjl}{ApJL}  
+\newcommand{\aj}{AJ}  
+\newcommand{\mnras}{MNRAS}  
+\newcommand{\mnrassub}{MNRAS accepted}  
+\newcommand{\aap}{A\&A}  
+\newcommand{\aaps}{A\&AS}  
+\newcommand{\araa}{ARA\&A}  
+\newcommand{\nat}{Nature}  
+\newcommand{\physrep}{PhR}
+\newcommand{\pasp}{PASP}    
+\newcommand{\pasj}{PASJ}    
 \def\simgt{\lower.5ex\hbox{\gtsima}}
 \def\simlt{\lower.5ex\hbox{\ltsima}}
 %------------------------------------------------------
@@ -29,17 +44,16 @@
 \begin{document}
 \pagestyle{empty}
 \noindent
-\textbf{Measurement of a dwarf galaxy rotational velocity from its
-  Lyman-alpha line emission} 
+\textbf{Lyman-alpha emission reveals an unusual fast rotating dwarf galaxy}  
 \\
 \\
-JEFR$^{1}$, MCRG$^1$, JNGC$^1$,
+JEFR$^{1}$, MCRG$^1$, JNGC$^2$,
 \\
 \\
 \scriptsize
 {$^1$ Universided de los Andes
 \\
-$^2$ a
+$^2$ Arizona
 \normalsize
 \\
 \\
@@ -49,8 +63,8 @@ distant star forming galaxies, which in turn are useful for studies in
 cosmology and galaxy evolution.  
 The intepretation of Ly-$\alpha$ observations has to go together with
 computational models for the radiative transfer of Lyman-alpha photons.
-Recent theoretical work suggests that galaxy rotation has a
-measurable impact on the shape of the Lyman-alpha line. 
+Recent theoretical work suggests that galaxy rotation has a measurable
+impact on the shape of the Lyman-alpha line.  
 Here we report that lyman-alpha observations of a dwarf compact galaxy (TOL
 1214-277) in the local universe, which had previously evaded theoretical 
 interpretation, are naturally explained by rotational effects.
@@ -100,7 +114,7 @@ impossible to reproduce.
 dwarf galaxy and does not have old stars. 
 
 The Ly$\alpha$ emission line was first observed in the TOL1214-277 
-galaxy by \citep{Thuan97}. It has two main important features which 
+galaxy by \cite{Thuan97}. It has two main important features which 
 make this a very uncommun LAE. First it shown a symmetric profile 
 which is , Second the Ly$\alpha$ line is not shifted with respect to 
 the H$\beta$ line.  Blue compact Dwarf Galaxy
@@ -120,7 +134,6 @@ Observed line + fit.
 
 
 %6. Comparison of these results against other observational data.
-
 Assuming spherical symmetry and a homogeneous gas distribution we
 estimate the total neutral hydrogen mass to be on the order of
 $M\approx m_H\tau^3\sigma^{-3}n^{-2}$, where $m_H$ is the mass a
@@ -135,7 +148,34 @@ surveys have put an upper limit in the neutral hydrogen mass of ???
 
 7. Implications for outflow+rotation in existing samples.
 
-8. Implications for very high-z dwarf galaxies. 
+%8. Implications for very high-z dwarf galaxies. 
+
+
+%=====
+
+
+
+\bibliography{references}{}
+\bibliographystyle{plain}
+
+\newpage
+\begin{table}
+\begin{center}
+
+\begin{tabular}{lc}
+$\alpha$(2000)$^{a}$ & 12\ 17\ 17.1\\
+$\delta$(2000)$^{b}$ & -28\ 02\ 32\\
+$l$, $b$ (deg) & 294, 34\\
+$m_V$ & 17.5\\
+$v$(km s$^{-1}$) & 7795
+\end{tabular}
+\end{center}
+
+\caption{Observational characteristics of TOL1214-277 \cite{Thuan97}\\
+$^{a}$ Units of right ascension are hours, minutes and
+  seconds.\\ $^{b}$ Units of declination are degrees, arcminutes and arcseconds.}
+\end{table}
+
 
 \end{document}
 
