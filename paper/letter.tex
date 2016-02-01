@@ -181,9 +181,28 @@ spectroscopy. The observed flux for the Lyman alpha line is $\sim
 8.1\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \AA$^{-1}$ \cite{Thuan97}
 and a Equivalent Width of $70$\AA. 
 
-Interpretation by \citep{masshesse}.
+Interpretation by \cite{mashesse03}.
 
+For an homogeneous sphere the HI optical depth can be written
+as $\tau = \sigma_0 n s$, where $\sigma_0$ is the optical depth at the
+line's center, $n$ is the number density and $s$ is the sistem's
+size. 
+This can be rewritten in terms of the gas' temperature $T$ and column
+density $N_{H}$as $\tau = 3.31 \times 10^{-14} (10^{4}\mathrm{K}/T)^{1/2}
+(N_{H}/\mathrm{atoms\ cm}^{-2})$.  
 
+This allows us to approximate the total hydrogen mass as
+\begin{equation}
+M_{H} = m_{H}  N_{H} D^{2} = 226\times \tau  \left(\frac{T}{10^4
+  \mathrm{K}}\right)^{1/2}\left(\frac{D}{\mathrm{kpc}}\right)^2M_{\odot}
+\end{equation}
 
+On the other hand, we have an estimate for the dynamical mass from the
+galaxy size $D$ and its rotational velocity $V$:
+
+\begin{equation}
+M_{T} = \frac{V^{2}D}{G} = 4.32\times10^{5}
+\left(\frac{V}{\mathrm{km\ s}^{-1}}\right)^2\left(\frac{D}{\mathrm{kpc}}\right) M_{\odot}
+\end{equation}
 \end{document}
 
