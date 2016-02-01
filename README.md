@@ -1,2 +1,2 @@
-# MCLyA
-Repository to recreate the line of LARS02 with rotation model. The parameters will be found with a MCMC.
+# tololo-lya-fit
+Repository to recreate the Lya line of Tololo 1214. 
