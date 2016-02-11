@@ -7,7 +7,10 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{cite}
-\usepackage[top=3.5cm, bottom=2.5cm, left=3.5cm, right=3.5cm]{geometry}
+\usepackage[icelandic,spanish,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3.5cm, bottom=2.5cm, left=3.5cm,right=3.5cm]{geometry} 
 
 %----------------------New commands -------------------
 
@@ -44,8 +47,7 @@
 \begin{document}
 \pagestyle{empty}
 \noindent
-\textbf{Lyman-alpha emission reveals an unusual fastly rotating
-  compact dwarf galaxy}  
+\textbf{Þú ert jörðin}
 \\
 \\
 JEFR$^{1}$, MCRG$^1$, JNGC$^2$, MD$^3$
@@ -61,8 +63,7 @@ $^3$ Oslo
 \\
 \\
 \textbf{
-Star-forming Compact Dwarf Galaxies (CDGs) resemble the expected pristine
-conditions of the first galaxies.  
+Star-forming Compact Dwarf Galaxies (CDGs) resemble the expected pristine conditions of the first galaxies.  
 Until these early galaxy generations are observationally
 detected, CDGs are the best systems to test our ideas on primordial
 galaxy formation and evolution.  
@@ -119,7 +120,7 @@ will follow a difussion-like process before escaping the galaxy or
 being absorbed by dust. This makes it hard to interpret Lyman-alpha
 line observations as the reulting profile is sensitive to the
 dynamical, chemical and thermal conditions in the interstellar
-medium. State-of-the-art models use mon
+medium. State-of-the-art models use mon.
 
 4. [Rotation and the expected features.]
 It has been shown that rotation also imprints an effect on the
@@ -135,7 +136,7 @@ When the rotational velocity is close to the half-line width of the
 static line, the line becomes single peaked as it is observed in
 \tol, a unique feature that other theoretical models find
 impossible to reproduce.
-
+ 
 
 5. [The charachteristics of the dwarf galaxy of interest as a puzzling
 system]
@@ -152,13 +153,23 @@ the H$\beta$ line.  Blue compact Dwarf Galaxy
 
 6. [The results of the fit + Physical picture using other results]
 
-Figure 1. shows the observational data for \tol with the overplot from
+Figure 1. shows the observational data for \tol
+
+with the overplot from
 our best fit model from the full radiative transfer simulation. 
 The parameters for the best fit are
 $v_{max}=300$\kms, $\tau=1\times10^7$, $T=1.5\times 10^{4}$K and a
 viewing angle $\theta<30$ degrees. 
 
-Figura Observed line + fit. 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{tolfit.png}
+\caption{Nice fit}
+\end{center}
+\end{figure}
+
 
 
 %6. Comparison of these results against other observational 
@@ -175,19 +186,20 @@ surveys have put an upper limit in the neutral hydrogen mass of ???
 
 7. [Possible interpretation of this results]
 
-8. [Implications for outflow+rotation in existing samples.]
+8. [Implications for outflow+rotation in existing samples.] Why are
+not more examples of triple peaked emission? 
+The ubiuquity of galaxy outflows overimposed to the rotation
+transforms the line into the common double or single peaked
+observations.  
+
 
 9. [Future outlook]
-
-
-%=====
-
 
 
 \bibliography{references}{}
 \bibliographystyle{plain}
 
-\newpage
+\newpage 
 
 \section*{\tol\ characteristics}
 
@@ -207,10 +219,10 @@ $v$(km s$^{-1}$) & 7795
   \cite{Thuan97}\\} 
 \end{table}
 
-The receeding velocity is $7785\pm 50$km s$^{-1}$, which translates
+\tol receeding velocity is $7785\pm 50$km s$^{-1}$, which translates
 into a distance of $106.6$ Mpc (Hubble constant 73 Mpc km$^{-1}$
 s$^{1}$)
-The metallicity is $\sim Z_{\odot}/24$ \cite{Izotov04} as derived from optical
+Its metallicity is $\sim Z_{\odot}/24$ \cite{Izotov04} as derived from optical
 spectroscopy. 
 
 The observed flux for the Lyman alpha line is $\sim
