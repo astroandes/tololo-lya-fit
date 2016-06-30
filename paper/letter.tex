@@ -387,6 +387,30 @@ mass to luminosity ratio is in turn between $2$ to $7$ times
 $L_{\odot}/M_{\odot}$ considering the total luminosity in the $V$
 band. 
 
+\section*{Additional Information}
+
+The rotation model used was based on the one explored by
+\cite{GaravitoCamargo2014}. Ly-$\alpha$ photons are propagated
+within a spherical and homogeneous cloud of HI gas undergoing solid
+body rotation. The sources of Ly-$\alpha$ photons are located in the
+center of the sphere of HI gas. Dust is not taking into account in our
+simulations since their effect doesn't affect the morphology of the
+Ly-$\alpha$. The radiative transfer simulations were done using
+Monte Carlo simulations with the code \cite{CLARA}.
+
+In this model rotation increases the width of the line and the flux at
+the line center. Furthermore, observers at different line of sights
+(LOS) angles with respect to the rotation axis of the galaxy will observe
+different morphologies of the line. LOS parallel to the rotation axis
+will tend to observe a double peaked line, while an observer with a LOS
+perpendicular to the rotation axis will observed a single peaked
+broader line.
+
+The idealized multiphase model consists of spherical, cold, dens clumps of neutral hydrogen (and dust) embedded in a hot, ionized medium. The clumps also have a random and an outflowing velocity component which totals the number of parameters describing the model to be $14$. In order to map out this large parameter space, we randomly drew $2500$ sets of parameters within a observationally realistic range (based on the considerations of \cite{Laursen2013ApJ...766..124L}) yielding a large variety of single-, double- and triple-peaked spectra. The full analysis of the the spectral features as well as more details on the radiative transfer are presented in \cite{Gronke2016}. 
+
+\textbf{MG: I don't know how much details you want -- should we name all of the $14$ (best fit) parameters? Just delete what is unnecessary.}
+
+For the current work, we computed the $\chi^2$ for each of the $2500$ parameters yielding the best fit parameters of $(...)$. Here, the subscripts ${}_{\rm cl}$ and $_{\rm ICM}$ stand for the quantities filling the clumps and the medium between the clumps, respectively. Furthermore, we found that some parameters such as the magnitude of the random clump motion $\sigma_{\rm cl}$ improved the fit significantly whereas others did not. This makes sense also qualitatively as \tol\ possesses a very wide spectrum which can be achieved by subsequent scatterings off (relatively) fast moving clumps while the multi-phase nature (i.e., the existence of low-density channels) ensures the high flux at line center as observed.  
 
 
 \end{document}
