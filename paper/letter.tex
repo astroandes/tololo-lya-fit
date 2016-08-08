@@ -398,8 +398,8 @@ In that model the Ly-$\alpha$ photons are propagated
 within a spherical and homogeneous cloud of HI gas undergoing solid
 body rotation.
 The sphere is fully characterized by three parameters: the optical
-depth $\tau$ measured from the center to the surface, the HI
-temperature, $T$, and the velocity at the surface $V_{\rm max}$.  
+depth $\tau$ measured from the center to its surface, the HI
+temperature $T$, and the linear surface velocity $V_{\rm max}$.  
 Photons are emitted at their natural frequency from the center of the
 sphere. 
 Including the effect of dust only changes the overall line
@@ -410,21 +410,35 @@ In the current work, the radiative transfer simulations were done
 using Monte Carlo simulations with the code \texttt{CLARA}
 \cite{CLARA}.  
 
-The main effects of rotation are the following.
-First, rotation breaks spherical symmetry of the
-static case, making the line's observed morphology dependent on the
-angle between the line-of-sight and the rotation axis. 
+The first important effect of rotation is that it breaks the spherical
+symmetry of the static case. 
+Now the line's observed morphology depends on the angle between the
+line-of-sight (LOS) and the rotation axis. 
+LOS parallel to the rotation axis tend to observed the line without
+any modification from rotation, while the perpendicular LOS will
+observe a maximal change in the line's morphology due to rotation.
 
-First, the line width increases with rotational velocity.
-Second, the intensity at the line's center alto 
-In this model rotation increases the width of the line and the flux at
-the line center. 
-Furthermore, observers at different line of sights
-(LOS) angles with respect to the rotation axis of the galaxy will observe
-different morphologies of the line. LOS parallel to the rotation axis
-will tend to observe a double peaked line, while an observer with a LOS
-perpendicular to the rotation axis will observed a single peaked
-broader line.
+The main change in the line's morphology is that it broadens and the
+intensity at the center increases. 
+For high enough rotational velocities the intensity at the peak's
+center increases so much that the line goes from double to single
+peaked, sometimes slightly triple peaked.
+This is the feature that allows this model to fit the observational
+features of \tol.
+
+There is a concise analytical description for those features.
+This description takes into account how different parts of the
+sphere's surface shift in frequency the \lya photons. 
+Different shifts in frequency come from different values for the projected
+velocity along the LOS. 
+As presented in \cite{CLARA}, using the analytical solution for the
+\lya sphectra of a static sphere plus the right frequency shifts
+computed from geometrical considerations, one is able to produce an
+analytical solution for the rotating sphere that reproduces the main
+features found with the full numerical simulation.
+
+
+
 
 
 \section*{The Multiphase Model}
