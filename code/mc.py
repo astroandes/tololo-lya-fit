@@ -4,135 +4,119 @@ import emcee
 import os
 
 #Constants
-
-z = 0
 c = 299792.458
 
 #Functions
 
 def model_to_data_interp(x_m, y_m, x_d):
 
-    f = interp1d(x_m, y_m, kind="linear")
+    f = interp1d(x_m, y_m, kind="linear", fill_value=0.0, bounds_error=False)    
+    x_m_new = x_d.copy()
+    y_m_new = f(x_m_new)
 
-    try:
-        x_m_new = x_d
-        y_m_new = f(x_d)
-
-        return x_m_new, y_m_new
-
-    except ValueError:
-
-        n = len(x_d)
-
-        x_m_new = x_d
-        y_m_new = zeros(n)
-
-        for i in range(n):
-
-            x_d_i = x_d[i]
-
-            if(x_d_i >= x_m[0] and x_d_i <= x_m[-1]):
-                y_m_new[i] = f(x_d_i)
-            else:
-                y_m_new[i] = 0.0
-
-        return x_m_new, y_m_new
+    return x_m_new, y_m_new
 
 
-def normalization(y_d, y_m):
+def normalization(x_d, y_d, x_m, y_m):
 
-    obs_int = sum(y_d)
-    teo_int = sum(y_m)
-    y_m = y_m*obs_int/teo_int
+    obs_int = trapz(y_d, x_d)
+    teo_int = trapz(y_m, x_m)
+    y_m = y_m * obs_int/teo_int
 
     return y_m
 
-def model(logtau, vmax, theta, logT, voff, x_d, y_d):
+def model(logtau, vmax, theta, logT, x_d, y_d):
 
-    os.system( ('./analytic_solution.x %f %f %f > "./model_lt%f_vm%f_th%f.dat"')%(10.0**logtau, vmax, theta, logtau, vmax, theta) )
+    filename = "model_lt{}_vm{}_th{}.dat".format(logtau, vmax, theta)
+    os.system( ('./analytic_solution.x {} {} {} > {}'.format(10.0**logtau, vmax, theta, filename)))
 
     try:
-	       mod = genfromtxt( ('./model_lt%f_vm%f_th%f.dat')%(logtau, vmax, theta) )
+        mod = genfromtxt(filename)
 
     except ValueError:
-	       mod = genfromtxt( ('./model_lt%f_vm%f_th%f.dat')%(logtau, vmax, theta), skip_footer=3)
+        mod = genfromtxt(filename, skip_footer=3)
 
     x_m_i = mod[:,0]
     y_m_i = mod[:,1]
 
-    v_th = 12.85*sqrt((10.0**logT)/(10.0**4.0))
-    x_m_i = x_m_i*v_th + voff
+    v_th = 12.85*sqrt((10.0**logT)/(1.0E4))
+    x_m_i = x_m_i*v_th 
 
     x_m, y_m = model_to_data_interp(x_m_i, y_m_i, x_d)
 
-    y_m = normalization(y_d, y_m)
+    y_m = normalization(x_d, y_d, x_m, y_m)
 
-    os.system( ('rm model_lt%f_vm%f_th%f.dat')%(logtau, vmax, theta) )
+    os.system(('rm {}'.format(filename)))
 
     return x_m, y_m
 
 
-#Observed data
-
-tol = loadtxt('./tol.txt')
-
-x_data = tol[:,0]
-y_data = tol[:,1]
 
 #emcee functions
 
 def lnprior(param):
 
-    logtau, vmax, theta, logT, voff = param
+    logtau, vmax, theta, logT = param
 
-    if 6.0 < logtau < 8.0 and 500 < vmax < 800 and 0 < theta < 90 and 4 < logT < 4.5 and -40 < voff < 40:
+    if 6.0 < logtau < 8.0 and 200 < vmax < 500 and 0 < theta < 90 and 4 < logT < 4.5 :
         return 0.0
 
     return -inf
 
 
-def lnlike(param, x_d, y_d):
+def lnlike(param, x_d, y_d, y_sigma):
 
-    logtau, vmax, theta, logT, voff = param
+    logtau, vmax, theta, logT = param
 
-    x_m, y_m = model(logtau, vmax, theta, logT, voff, x_d, y_d)
+    x_m, y_m = model(logtau, vmax, theta, logT, x_d, y_d)
 
-    chi_squared = (1.0/2.0)*sum((y_d-y_m)**2)
+    chi_squared = 0.5*sum(((y_d-y_m)/y_sigma)**2)
 
+    print('chi squared {}'.format(chi_squared))
     return -chi_squared
 
 
-def lnprob(param, x_d, y_d):
+def lnprob(param, x_d, y_d, y_sigma):
 
     lp = lnprior(param)
     if not isfinite(lp):
         return -inf
 
-    return lp + lnlike(param, x_d, y_d)
+    return lp + lnlike(param, x_d, y_d, y_sigma)
+
+
+
+#Observed data
+
+tol = loadtxt('../data/obs/t1214-cleanf0_normalized.txt')
+
+x_data = tol[:,0]
+y_data = tol[:,1]
+y_data_sigma = tol[:,2]
 
 
 #First guess
 
 logtau_0 = 7.0
-vmax_0 = 600
-theta_0 = 45
-logT_0 = 4
-voff_0 = -11
+vmax_0 = 300
+theta_0 = 45.0
+logT_0 = 4.0
 
-x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, voff_0, x_data, y_data)
+#x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, x_data, y_data)
 
-first_guess = [logtau_0, vmax_0, theta_0, logT_0, voff_0]
+first_guess = [logtau_0, vmax_0, theta_0, logT_0]
+
 
 
 #Running emcee
 
-ndim = 5
-nwalkers = 10
-nsteps = 2000
+ndim = 4
+nwalkers = 8
+nsteps = 10
 
 pos = [first_guess+ 1e-3*random.randn(ndim) for i in range(nwalkers)]
 
-sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x_data, y_data), threads=8)
+sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x_data, y_data, y_data_sigma), threads=4)
 
 print("Running MCMC...")
 sampler.run_mcmc(pos, nsteps, rstate0=random.get_state())
