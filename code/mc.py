@@ -58,7 +58,7 @@ def lnprior(param):
 
     logtau, vmax, theta, logT = param
 
-    if 6.0 < logtau < 8.0 and 200 < vmax < 500 and 0 < theta < 90 and 4 < logT < 4.5 :
+    if 6.0 < logtau < 9.0 and 200.0 < vmax < 600.0 and 0 < theta < 90 and 4 < logT < 4.5 :
         return 0.0
 
     return -inf
@@ -99,8 +99,8 @@ y_data_sigma = tol[:,2]
 
 logtau_0 = 7.0
 vmax_0 = 300
-theta_0 = 45.0
-logT_0 = 4.0
+theta_0 = 10.0
+logT_0 = 4.3
 
 #x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, x_data, y_data)
 
@@ -111,12 +111,12 @@ first_guess = [logtau_0, vmax_0, theta_0, logT_0]
 #Running emcee
 
 ndim = 4
-nwalkers = 8
-nsteps = 10
+nwalkers = 24
+nsteps = 500
 
-pos = [first_guess+ 1e-3*random.randn(ndim) for i in range(nwalkers)]
+pos = [first_guess+ array([0.2,20.0,5.0,0.01])*random.randn(ndim) for i in range(nwalkers)]
 
-sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x_data, y_data, y_data_sigma), threads=4)
+sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x_data, y_data, y_data_sigma), threads=24)
 
 print("Running MCMC...")
 sampler.run_mcmc(pos, nsteps, rstate0=random.get_state())
