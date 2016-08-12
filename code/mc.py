@@ -99,7 +99,7 @@ y_data_sigma = tol[:,2]
 
 logtau_0 = 7.0
 vmax_0 = 300
-theta_0 = 10.0
+theta_0 = 45.0
 logT_0 = 4.3
 
 #x_0, y_0 = model(logtau_0, vmax_0, theta_0, logT_0, x_data, y_data)
@@ -114,22 +114,33 @@ ndim = 4
 nwalkers = 24
 nsteps = 500
 
-pos = [first_guess+ array([0.2,20.0,5.0,0.01])*random.randn(ndim) for i in range(nwalkers)]
+pos0 = [first_guess+ array([0.2,20.0,5.0,0.01])*random.randn(ndim) for i in range(nwalkers)]
 
 sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(x_data, y_data, y_data_sigma), threads=24)
 
-print("Running MCMC...")
-sampler.run_mcmc(pos, nsteps, rstate0=random.get_state())
-print("Done!")
+#print("Running MCMC...")
+#sampler.run_mcmc(pos, nsteps, rstate0=random.get_state())
+#print("Done!")
+
+f = open("chain.dat", "w")
+f.close()
+
+for result in sampler.sample(pos0, iterations=nsteps, storechain=False):
+    position = result[0]
+    f = open("chain.dat", "a")
+    print position
+    for k in range(position.shape[0]):
+        f.write("{} {}\n".format(k, " ".join(str(v) for v in position[k])))
+    f.close()
 
 
 # Saving results
 
-samples_fc = sampler.flatchain
+#samples_fc = sampler.flatchain
 
-savetxt('sampler_flatchain.dat', samples_fc, delimiter=',')
+#savetxt('sampler_flatchain.dat', samples_fc, delimiter=',')
 
-print("Mean acceptance fraction: {0:.3f}".format(mean(sampler.acceptance_fraction)))
+#print("Mean acceptance fraction: {0:.3f}".format(mean(sampler.acceptance_fraction)))
 
 #Links:
 # https://github.com/dfm/emcee/blob/master/examples/line.py
