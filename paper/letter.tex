@@ -300,7 +300,7 @@ $21$cm (Jy km s$^{-1}$)& $<0.10$ \\
 %\url{http://vizier.u-strasbg.fr/cgi-bin/VizieR?-source=B/2mass}
 % TOLOLO 00021
 %https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=Tol+21&extend=no&hconst=73&omegam=0.27&omegav=0.73&corr_z=1&out_csys=Equatorial&out_equinox=J2000.0&obj_sort=RA+or+Longitude&of=pre_text&zv_breaker=30000.0&list_limit=5&img_stamp=YES 
-\tol receding velocity is $7785\pm 50$km s$^{-1}$, which translates
+\tol\ receding velocity is $7785\pm 50$km s$^{-1}$, which translates
 into a distance of $106.6$ Mpc (with the Hubble constant $H_{0}$=73
 Mpc km s$^{-1}$) 
 Its metallicity is $\sim Z_{\odot}/24$ \cite{Izotov04} as derived from optical
@@ -337,12 +337,12 @@ upper limit for the HI mass of $M<2.65\times 10^{8}$ M$_{\odot}$
 
 The near-infrared fluxes at $3.6$ $\mu$m and $4.5$ $\mu$m are
 $7.71\pm0.55\times 10^{-5}$ Jy and $7.98\pm0.71\times 10^{-5}$ Jy
-\cite{2008ApJ...678..804E}.  Using a convertion betwen fluxes and
-stellar mass calibrted on the Large Magellanic Cloud $M_{\star} =
+\cite{2008ApJ...678..804E}.  Using a conversion between fluxes and
+stellar mass calibrated on the Large Magellanic Cloud $M_{\star} =
 10^{5.65} \times F_{3.6}^{2.85} \times F_{4.5}^{-1.85} \times
 (D/0.05)^2 M_{\odot}$, where fluxes are in Jy and $D$ is the luminosity
 distance to the source in Mpc, we find $M_{\star} = 1.45\pm0.45\times 10^{8}
-M_{\odot}$, with a $30\%$ uncertainty coming from the callibration
+M_{\odot}$, with a $30\%$ uncertainty coming from the calibration
 process \cite{2012AJ....143..139E}.  
 
 
@@ -395,30 +395,40 @@ analytical solution for the rotating sphere that reproduces the main
 features found using the full numerical simulation.
 
 The analytical solution for the rotation sphere was the base to
-perform the Markov Chain Monte Carlo Calculation using the
-\texttt{emcee} implementation.
-We explore flat priors on $V_{\rm max}$ $\log_{10}\tau$, $\log_{10} T$ and
-$\theta$ using $500$ steps with $24$ walkers for a total of $12000$
-points.
-The results are summarized in Figure \ref{emceeresults}. 
-From this model we find that the fiducial parameters that could
-explain the broad features in \tol\ are $V_{\rm max}=348^{+75}_{-48}$
-km s$^{-1}$, $\log \tau = 6.96^{+0.26}_{-0.18}$, $\log_{10} T/\mathrm
-{K} = 4.27^{+0.11}_{-0.18}$ and  $\theta = 35.78^{+2.13}_{-1.88}$ degrees.
+perform the Markov Chain Monte Carlo (MCMC) calculation using the
+\texttt{emcee} Python library \cite{2013PASP..125..306F}. \texttt{emcee} 
+is an open source optimized implementation of the affine-invariant 
+ensemble sampler for MCMC. The algorithm creates a number of walkers that,
+during a sufficient number of steps, generate parameters' combinations for
+a specific model. For each time, the code calculates the likelihood of the
+combination to be \textit{ideal} regarding the observational data. It 
+iterates then over the parameter space until it finds the set of
+parameters that maximizes the logarithm of likelihood (known as $\chi^2$). 
+
+MCMC methods are optimal for sampling parameters at a high number of 
+dimensions. In this case we explore flat priors on four: $V_{\rm max}$, 
+$\log_{10}\tau$, $\log_{10} T$ and $\theta$ using $500$ steps with $24$ 
+walkers for a total of $12000$ points. The results are summarized in 
+Figure \ref{emceeresults}. From this model we find that the fiducial 
+parameters that could explain the broad features in \tol\ are 
+$V_{\rm max}=348^{+75}_{-48}$ km s$^{-1}$, $\log \tau = 6.96^{+0.26}_{-0.18}$, 
+$\log_{10} T/\mathrm {K} = 4.27^{+0.11}_{-0.18}$ and $\theta = 35.78^{+2.13}_{-1.88}$ 
+degrees.
 
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=1.0\textwidth]{emcee_results.pdf}
-\caption{{\bf Results from the Markov Chain Monte Carlo compuation for
-    the rotation model.}\label{emceeresults}} 
+\caption{{\bf Results from the Markov Chain Monte Carlo computation for
+    the rotation model.} The dotted vertical lines in the outer histograms 
+	represent the percentiles 16\%, 50\% and 84\%. \label{emceeresults}} 
 \end{center}
 \end{figure}
 
 
 \section*{The Outflow Model}
-The galaxy outflow model is a highly sucessful framework to fit
-and interprete \lya\ line observations. 
+The galaxy outflow model is a highly successful framework to fit
+and interpret \lya\ line observations. 
 
 
 
@@ -474,10 +484,10 @@ $5$ times the HI mass plus the stellar mass estimated from
 observations.   
 
 In the rotation model the size of the spherical region, $r_{s}$, can
-be infered from the relationship $\tau = \sigma_0 n r_s$, where
+be inferred from the relationship $\tau = \sigma_0 n r_s$, where
 $\sigma_0=5.898\times 10^{-14}$cm$^{-2}$ is the Lyman$\alpha$
 cross section at the  line's center, $n$ is the number density. 
-This expresion can be rewritten as
+This expression can be rewritten as
 \begin{equation}
 r_{s} = 0.055 \left(\frac{\tau}{10^7}\right) \left(
 \frac{\mathrm{atoms\ cm^{-3}}}{n}\right) \mathrm{kpc}.
@@ -497,7 +507,7 @@ M_{H} = 5.70 \times 10^{6} \left(\frac{\tau}{10^{7}}\right)
 \left(\frac{r_s}{\mathrm{kpc}}\right)^2 M_{\odot}
 \end{equation}
 %
-The uppper limit from the HI mass non-detection imposes $r_{s} <
+The upper limit from the HI mass non-detection imposes $r_{s} <
 6.81$ kpc, which is consistent with the bound we found in the first
 place, as we wanted to show.
 
