@@ -395,16 +395,17 @@ peaked, sometimes slightly triple peaked.
 This is the feature that allows this model to fit the observational
 features of \tol.
 
-There is a concise analytical description for those features.
+\cite{GaravitoCamargo2014} derive a concise analytical description for
+those features. 
 This description takes into account how different parts of the
-sphere's surface shift in frequency the \lya photons. 
+sphere's surface shift in frequency the \lya\ photons. 
 Different shifts in frequency come from different values for the projected
 velocity along the LOS. 
-As presented in \cite{CLARA}, using the analytical solution for the
-\lya\ spectra of a static sphere plus the right frequency shifts
-computed from geometrical considerations, one is able to produce an
-analytical solution for the rotating sphere that reproduces the main
-features found using the full numerical simulation.
+Using the analytical solution for the \lya\ spectra of a static sphere
+plus the right frequency shifts  computed from geometrical
+considerations, one is able to compute an analytical solution for the
+rotating sphere that reproduces the main features found using the full
+numerical simulation. 
 
 The analytical solution for the rotation sphere was the base to
 perform the Markov Chain Monte Carlo (MCMC) calculation using the
@@ -413,15 +414,18 @@ is an open source optimized implementation of the affine-invariant
 ensemble sampler for MCMC. The algorithm creates a number of walkers that,
 during a sufficient number of steps, generate parameters' combinations for
 a specific model. For each time, the code calculates the likelihood of the
-combination to be \textit{ideal} regarding the observational data. It 
-iterates then over the parameter space until it finds the set of
-parameters that maximizes the logarithm of likelihood (known as $\chi^2$). 
+combination with respect to the observational data. The walkers ecplore
+the parameter space sampling the likelihood function.
 
 MCMC methods are optimal for sampling parameters at a high number of 
-dimensions. In this case we explore flat priors on four: $V_{\rm max}$, 
-$\log_{10}\tau$, $\log_{10} T$ and $\theta$ using $500$ steps with $24$ 
-walkers for a total of $12000$ points. The results are summarized in 
-Figure \ref{emceeresults}. From this model we find that the fiducial 
+dimensions. In this case we explore flat priors on four parameters:
+$200<V_{\rm max}/\mathrm{km\ s}^{-1} <600$,  
+$6.0<\log_{10}\tau<9.0$, $4.0<\log_{10} T/10^4\mathrm{K}< 4.5$ and
+$0<\theta<90$ using $500$ steps with $24$ walkers for a total of
+$12000$ points in the chain. 
+The results are summarized in 
+Figure \ref{emceeresults}. 
+From this model we find that the fiducial 
 parameters that could explain the broad features in \tol\ are 
 $V_{\rm max}=348^{+75}_{-48}$ km s$^{-1}$, $\log \tau = 6.96^{+0.26}_{-0.18}$, 
 $\log_{10} T/\mathrm {K} = 4.27^{+0.11}_{-0.18}$ and $\theta = 35.78^{+2.13}_{-1.88}$ 
