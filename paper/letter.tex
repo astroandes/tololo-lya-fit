@@ -1,18 +1,40 @@
-\documentclass[a4paper, usenatbib, 12pt]{article}
-\usepackage{subfig}
+\documentclass[a4,useAMS,usenatbib,usegraphicx]{mn2e} 
+%=========================================================================
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage {graphicx}
+\usepackage[dvips]{epsfig}
+\usepackage{epsfig}  
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\usepackage{caption}
+%Non reposionated tables
 \usepackage{float}
-\usepackage{wrapfig}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\restylefloat{table}
+%Multiple columns support for tables
+\usepackage{array}
 \usepackage{booktabs}
-\usepackage{cite}
-\usepackage[icelandic,spanish,english]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[top=3.5cm, bottom=2.5cm, left=3.5cm,right=3.5cm]{geometry} 
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
 
-%----------------------New commands -------------------
+
+%=========================================================================
+%		INTERNAL MACROS
+%=========================================================================
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\ba{\begin{eqnarray}}
+\def\ea{\end{eqnarray}}
+
+% To highlight comments 
+\definecolor{red}{rgb}{1,0.0,0.0}
+\newcommand{\red}{\color{red}}
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+\newcommand{\SRK}[1]{\textcolor{darkgreen}{\bf SRK: \textit{#1}}}
+\newcommand{\SRKED}[1]{\textcolor{darkgreen}{\bf #1}}
+\newcommand{\before}[1]{\textcolor{red}{ #1}}
+\newcommand{\after}[1]{\textcolor{darkgreen}{ #1}}
 
 \newcommand{\tol}{Tololo 1214-277}
 \newcommand{\lya}{Ly$\alpha$}
@@ -46,32 +68,56 @@
 \newcommand{\probaclump}{$0.96\pm 0.01$}
 \def\simgt{\lower.5ex\hbox{\gtsima}}
 \def\simlt{\lower.5ex\hbox{\ltsima}}
-%------------------------------------------------------
 
 \begin{document}
-\pagestyle{empty}
-\noindent
-\textbf{Line Traces of a Supermassive Dwarf Galaxy}
-\\
-\\
-Jaime E. Forero-Romero$^{1}$, Max Gronke$^2$, Mar\'ia Camila
-Remolina-Guti\'errez$^1$, Juan Nicol\'as
-Garavito-Carmargo$^3$, Mark Dijkstra$^2$.
-\\
-\\
-\scriptsize
-{$^1$ Departamento de Física, Universidad de los Andes, Cra. 1
-  No. 18A-10 Edificio Ip, CP 111711, Bogot\'a, Colombia 
-\\
+
+%=========================================================================
+%		FRONT MATTER
+%=========================================================================
+\title[Atypical Dwarf LAE]{
+Atypical Lyman-$\alpha$ emission in a dwarf galaxy via multiphase
+gas and rotation.}
+\author[J.E. Forero-Romero et al.]
+{Jaime E. Forero-Romero $^{1}$ \thanks{je.forero@uniandes.edu.co},
+Max Gronke$^2$, 
+Mar\'ia Camila Remolina-Guti\'errez$^1$,
+\newauthor
+Nicol\'as Garavito-Camargo$^3$, 
+Mark Dijkstra$^2$\\
+%%
+$^1$ Departamento de F\'isica, Universidad de los Andes, Cra. 1
+  No. 18A-10 Edificio Ip, CP 111711, Bogot\'a, Colombia \\
 $^2$ Institute of Theoretical Astrophysics, University of Oslo,
-Postboks 1029 Blindern, NO-0315 Oslo, Norway.
-\\
+Postboks 1029 Blindern, NO-0315 Oslo, Norway.\\
 $^3$ Department of Astronomy, University of Arizona, 933 North Cherry
 Avenue, Tucson, AZ 85721, USA. 
-\normalsize
-\\
-\\
-\textbf{
+}
+
+%\vspace*{6pt}\\
+
+%}
+\maketitle
+
+
+\begin{abstract}
+Example.
+\end{abstract}
+
+\begin{keywords}
+Methods: data analysis - numerical 
+\end{keywords}
+
+
+%=========================================================================
+%		PAPER CONTENT
+%=========================================================================
+
+%*************************************************************************
+\section{Introduction}
+\label{sec:introduction}
+
+
+
   Star-forming Compact Dwarf Galaxies (CDGs) resemble the expected
   pristine conditions of the first galaxies in the Universe.    
 Before the observational detection of the first galaxies becomes
@@ -100,7 +146,7 @@ Additionally, if future kinematic maps of \tol\ confirm the high
 velocities postulated in our model, it would provide new
 evidence for dwarf galaxies as hosts of supermassive black
 holes.  
-}  
+
 
 
 
@@ -117,11 +163,13 @@ This kind of primordial galaxies have not been detected yet.
 However, dwarf star forming galaxies with a low metallicity content
 are seen as templates to understand the early galaxy evolution process. 
 
-Almost fifty years ago \cite{PartridgePeebles} it was realized that
+Almost fifty years ago \citep{PartridgePeebles} it was realized that
 young galaxies could be detected through a strong Lyman-$\alpha$ line
 emission.  
+
+
 This theoretical prediction was only confirmed thirty years later on
-distant, relatively young, not primordial, galaxies \cite{1998ApJ...498L..93D}.
+distant, relatively young, not primordial, galaxies \citep{1998ApJ...498L..93D}.
 Currently Lyman Alpha Emitting (LAE) galaxies are commonly targeted
 in surveys. 
 The presence of the Ly-$\alpha$ emission line provides confirmation of
@@ -134,14 +182,14 @@ Any galaxy with low dust content and ongoing star formation has the
 right conditions to show this line.  
 There are, for instance,  local Universe surveys that target
 Ly-$\alpha$ emission in nearby dwarf star forming galaxies 
-\cite{LARS}. 
+\citep{LARS}. 
 The study of nearby LAE samples has allowed the study of other
 indicators that might be more difficult to obtain for distant galaxies
 such as morphology, dust attenuation, neutral hydrogen contents and
 ionization state.  
 
 However, the physical interpretation of Ly-$\alpha$ observations is
-not straightforward \cite{2015ApJ...805...14R}. 
+not straightforward \citep{2015ApJ...805...14R}. 
 This is due to the resonant nature of the Ly-$\alpha$ line. 
 A Ly-$\alpha$ photon follows a diffusion-like process before escaping
 the galaxy or being absorbed by dust. 
@@ -156,17 +204,17 @@ requires state-of-the-art Monte Carlo radiative transfer simulations.
 
 
 \tol\ is a compact star forming dwarf galaxy that presents a
-strong Ly-$\alpha$ emission \cite{Thuan97} with two puzzling 
+strong Ly-$\alpha$ emission \citep{Thuan97} with two puzzling 
 features: the line is symmetric and single peaked.
 Usually the Ly-$\alpha$ line has an asymmetric single or double peak. 
 These two special features in \tol\ cannot be explained with
-conventional models \cite{2006A&A...460..397V,2015ApJ...812..123G}.  
+conventional models \citep{2006A&A...460..397V,2015ApJ...812..123G}.  
 
 In this letter we show how the \tol's \lya\ profile can be explained
-either by rotation \cite{GaravitoCamargo2014} or the recently developed
+either by rotation \citep{GaravitoCamargo2014} or the recently developed
 class of more complex 
 multiphase models that predict a wider variety of spectra
-including, single, double and triply peaked spectra \cite{Gronke2016}.  
+including, single, double and triply peaked spectra \citep{Gronke2016}.  
 Figure 1. summarizes our findings.
 Dots represent the observational data for \tol\ with the
 overplot from our best fits from the analytical solution for a
@@ -199,8 +247,8 @@ this corresponds to dynamical masses of $M_{\rm dyn} =
 rotation and multiphase models, respectively, 
 
 \tol's stellar mass is  $M_{\star} = 1.45\pm0.45\times 10^{8}
-M_{\odot}$   \cite{2014PASP..126.1079M} and its total neutral HI mass is $M_{\rm HI}<2.65\times 10^{8}$ M$_{\odot}$
-\cite{pustilnikmartin07}; the dynamical mass is at least 12 to 160 times
+M_{\odot}$   \citep{2014PASP..126.1079M} and its total neutral HI mass is $M_{\rm HI}<2.65\times 10^{8}$ M$_{\odot}$
+\citep{pustilnikmartin07}; the dynamical mass is at least 12 to 160 times
 the baryonic mass, depending if one considers the multiphase or
 rotation estimate. 
 
@@ -209,14 +257,14 @@ model as it seems easier to reconcile with the following two
 astrophysical mechanisms for its origin.
 The first way to explain a dynamical mass of $10^{9} M_{\odot}$
 in a sphere of 2.25 kpc in radius, could be a dark matter halo of at
-least $10^{12}$ M$_{\odot}$ in mass \cite{2011ApJ...726..108T}, which
+least $10^{12}$ M$_{\odot}$ in mass \citep{2011ApJ...726..108T}, which
 leaves open the question as to why  \tol\ is not more similar to the
 Milky Way galaxy as it would be hosted by a dark matter halo of similar
 mass. 
 A second possibility is that \tol\ hosts a supermassive black hole of
 $10^{9} M_{\odot}$. This is almost two orders of magnitude higher
 than the supermassive black hole found in the compact dwarf galaxy
-M60-UCD1 \cite{2014Natur.513..398S}, which has a similar stellar mass
+M60-UCD1 \citep{2014Natur.513..398S}, which has a similar stellar mass
 as \tol. This would leave open the question about the formation
 process of such a system.   
  
@@ -227,7 +275,7 @@ galaxies.
 Assuming that \tol\ followed the fundamental plane relationship
 between its mean surface brightness $I_e$, the projected half-light
 radius $R_e$ and the velocity dispersion $\sigma$, described by $\log
-I_e=1.6 \log\sigma - 1.21\log R_e + 0.55$ \cite{2009ApJ...698.1590G},
+I_e=1.6 \log\sigma - 1.21\log R_e + 0.55$ \citep{2009ApJ...698.1590G},
 the expected velocity dispersion should be on the order of $5 \pm 1$ 
 \kms, which is a factor of $\sim$ $10$ - $60$ lower than the 
 results from the multiphase and rotation models, respectively. 
@@ -245,7 +293,7 @@ We suggest that integral field unit measurements spatially
 resolving its spatial extent are up to the task. 
 \tol\ spans a region of $4$ arcseconds,
 an instrument such as the Multi Unit Spectroscopic Explorer
-\cite{2014Msngr.157...13B} with its
+\citep{2014Msngr.157...13B} with its
 nominal $0.2$ arcseconds spatial sampling over a $1.0$ arcminute field
 in wide-field mode could provide a coarse mapping of different
 ionization lines to infer a kinematic map.
@@ -254,7 +302,7 @@ Another observational test includes the measurement of the
 In the rotational model this fraction should be zero, while
 the multiphase model predicts that averaging over all sightlines
 it should be around $0.5^{+1.0}_{-0.4}$\%, with the possibility of strong
-variations depending on viewing angle \cite{2014MNRAS.444.1095G}. 
+variations depending on viewing angle \citep{2014MNRAS.444.1095G}. 
 
 All in all, the mere existence of a strong LAE galaxy with a broad,
 symmetric line is interesting.
@@ -263,7 +311,7 @@ lines because the blue half was truncated by the intergalactic medium.
 In this case the \lya\ radiation could emerge as a low surface
 brightness glow, which may be connected to \lya\ halos, while also
 influencing the way LAEs can be used as a probe of reionization
-\cite{2014PASA...31...40D}.  
+\citep{2014PASA...31...40D}.  
 
 These findings demonstrate the importance of including rotation and multiphase
 conditions as features to model the \lya\ line in high redshift
@@ -275,7 +323,7 @@ supermassive black hole in a dwarf galaxy, providing a new way to test
 and probe theories on the co-evolution of galaxies and black holes in
 the first generation of galaxies.   
 
-\begin{figure}
+\begin{figure*}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{CLARA-TOL-main.pdf}
 \caption{{\bf Broad, single peaked and symmetric Ly-$\alpha$ emission of \tol.}
@@ -283,12 +331,8 @@ the first generation of galaxies.
 of our best model from a full radiative transfer simulation both for
 the rotation and multiphase models.} 
 \end{center}
-\end{figure}
+\end{figure*}
 
-\bibliography{references}{}
-\bibliographystyle{ieeetr}
-
-\newpage 
 
 \section*{\tol\ characteristics}
 
@@ -309,22 +353,22 @@ $21$cm (Jy km s$^{-1}$)& $<0.10$ \\
 \end{tabular}
 \end{center}
 \caption{Basic observational characteristics of TOL1214-277
-  \cite{Thuan97}\\} 
+  \citep{Thuan97}\\} 
 \end{table}
 
 
 \tol\ receding velocity is $7785\pm 50$km s$^{-1}$, which translates
 into a distance of $106.6$ Mpc (with the Hubble constant $H_{0}$=73
 Mpc km s$^{-1}$) 
-Its metallicity is $\sim Z_{\odot}/24$ \cite{Izotov04} as derived from optical
+Its metallicity is $\sim Z_{\odot}/24$ \citep{Izotov04} as derived from optical
 spectroscopy. 
 
 
 The observed flux for the Lyman alpha line is $\sim
-8.1\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \cite{Thuan97}
+8.1\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \citep{Thuan97}
 and a Equivalent Width of $70$\AA\ and its H$\beta$ flux is 
 $1.62\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \AA${-1}$
-\cite{Izotov04} which gives a Ly$\alpha$/H$\beta$ flux ratio of
+\citep{Izotov04} which gives a Ly$\alpha$/H$\beta$ flux ratio of
 4.9$\pm$0.1. The Ly-$\alpha$ flux values correspond to luminosities of
 $L_{Ly\alpha}=2.2\times 10^{42}$ erg s$^{-1}$ over a $20$\AA\ 
 bandwidth, which in turns translates  into a star formation rate of
@@ -335,7 +379,7 @@ The absolute magnitude in the $V$ band translates into a luminosity of
 $8.9\times 10^{8}$ L$_{\odot}$.
 % using http://tomdwelly.com/tools_fluxtolum.php
 Comparing this ratio with the theoretical expectation from case B
-recombination of $23.3$ \cite{Hummer1987} one can estimate an escape
+recombination of $23.3$ \citep{Hummer1987} one can estimate an escape
 fraction of $20$\% for Ly$\alpha$ radiation.
 The bolometric UV luminosity is $9.43\pm1.94 \times 10^{8}$
 L$_{\odot}$ as measured by GALEX. 
@@ -344,22 +388,22 @@ L$_{\odot}$ as measured by GALEX.
 There is an upper limit for the  
 integrated flux of $<0.10$ Jy km s$^{-1}$, which translates into a
 upper limit for the HI mass of $M<2.65\times 10^{8}$ M$_{\odot}$
-\cite{pustilnikmartin07}.  
+\citep{pustilnikmartin07}.  
 
 The near-infrared fluxes at $3.6$ $\mu$m and $4.5$ $\mu$m are
 $7.71\pm0.55\times 10^{-5}$ Jy and $7.98\pm0.71\times 10^{-5}$ Jy
-\cite{2008ApJ...678..804E}.  Using a conversion between fluxes and
+\citep{2008ApJ...678..804E}.  Using a conversion between fluxes and
 stellar mass calibrated on the Large Magellanic Cloud $M_{\star} =
 10^{5.65} \times F_{3.6}^{2.85} \times F_{4.5}^{-1.85} \times
 (D/0.05)^2 M_{\odot}$, where fluxes are in Jy and $D$ is the luminosity
 distance to the source in Mpc, we find $M_{\star} = 1.45\pm0.45\times 10^{8}
 M_{\odot}$, with a $30\%$ uncertainty coming from the calibration
-process \cite{2012AJ....143..139E}.  
+process \citep{2012AJ....143..139E}.  
 
 
 We computed the projected half-luminosity radius to be $R_s=1.5\pm0.1$ kpc 
 from the surface intensity profiles reported by.
-\cite{2003A&A...410..481N}. 
+\citep{2003A&A...410..481N}. 
 Assuming spherical geometry, one can translate this value into a 3D
 half-luminosity radius of $r_s=3R_s/2=2.25$ kpc.
 
@@ -368,8 +412,8 @@ half-luminosity radius of $r_s=3R_s/2=2.25$ kpc.
 \section*{The Rotation Model}
 
 The rotation model corresponds to the work presented in
-\cite{GaravitoCamargo2014} based on the Monte Carlo code
-\texttt{CLARA} \cite{CLARA}. 
+\citep{GaravitoCamargo2014} based on the Monte Carlo code
+\texttt{CLARA} \citep{CLARA}. 
 In that model the Ly-$\alpha$ photons are propagated 
 within a spherical and homogeneous cloud of HI gas undergoing solid
 body rotation.
@@ -403,7 +447,7 @@ peaked, sometimes slightly triple peaked.
 This is the feature that allows this model to fit the observational
 features of \tol.
 
-\cite{GaravitoCamargo2014} derived a concise analytical description for
+\citep{GaravitoCamargo2014} derived a concise analytical description for
 those features. 
 This description takes into account how different parts of the
 sphere's surface shift in frequency the \lya\ photons. 
@@ -417,7 +461,7 @@ numerical simulation.
 
 The analytical solution for the rotation sphere was the base to
 perform the Markov Chain Monte Carlo (MCMC) calculation using the
-\texttt{emcee} Python library \cite{2013PASP..125..306F}. \texttt{emcee} 
+\texttt{emcee} Python library \citep{2013PASP..125..306F}. \texttt{emcee} 
 is an open source optimized implementation of the affine-invariant 
 ensemble sampler for MCMC. The algorithm creates a number of walkers that,
 during a sufficient number of steps, generate parameters' combinations for
@@ -440,14 +484,14 @@ $\log_{10} T/\mathrm {K} = 4.27^{+0.11}_{-0.18}$ and $\theta = 35.78^{+2.13}_{-1
 degrees.
 
 
-\begin{figure}
+\begin{figure*}
 \begin{center}
 \includegraphics[width=1.0\textwidth]{emcee_results.pdf}
 \caption{{\bf Results from the Markov Chain Monte Carlo computation for
     the rotation model.} The dotted vertical lines in the outer histograms 
 	represent the 16th, 50th and 84th percentiles. \label{emceeresults}} 
 \end{center}
-\end{figure}
+\end{figure*}
 
 \section*{The Multiphase Model} 
 
@@ -460,12 +504,12 @@ to be $14$.
 
 In order to map out this large parameter space, we randomly drew
 $2500$ sets of parameters within a observationally realistic range
-(based on the considerations of \cite{Laursen2013ApJ...766..124L})
+(based on the considerations of \citep{Laursen2013ApJ...766..124L})
 yielding a large variety of single-, double- and triple-peaked
 spectra. 
 The full analysis of the the spectral features as well as
 more details on the radiative transfer are presented in
-\cite{Gronke2016}.    
+\citep{Gronke2016}.    
  For the current work, we computed the $\chi^2$ for each of the $2500$
 models. We selected the best $50$ models with the lowest $\chi^2$. The
 $\chi^2$ gap in those $50$ models is close to $3000$, the lowest
@@ -526,6 +570,8 @@ M_{\rm dyn} = \frac{v ^{2}r}{G} = 1.16\times10^{9}
 \left(\frac{v}{100\ \mathrm{km\ s}^{-1}}\right)^2\left(\frac{r}{\mathrm{kpc}}\right)M_{\odot} 
 \end{equation}
 
+\bibliographystyle{mn2e}
+\bibliography{references}
 
 \end{document}
 
