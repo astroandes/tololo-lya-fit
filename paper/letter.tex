@@ -288,10 +288,58 @@ $21$cm (Jy km s$^{-1}$)& $<0.10$ \\
 \end{table}
 
 
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{CLARA-TOL-main.pdf}
+\caption{Broad, single peaked and symmetric Ly-$\alpha$ emission of \tol.
+  Dots correspond to the observational data. The line shows the results
+of our best model from a full radiative transfer simulation both for
+the rotation and multiphase models.} 
+\end{center}
+\end{figure*}
+
+\begin{figure*}
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{vinf_cl.pdf}
+  \includegraphics[width=0.6\textwidth]{P_cl.pdf}
+  \includegraphics[width=0.6\textwidth]{sigma_cl.pdf}
+\caption{Results from the multiphase model\label{multiphaseresults}}
+\end{center}
+\end{figure*}
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{emcee_results.pdf}
+\caption{Results from the Markov Chain Monte Carlo computation for
+    the rotation model. The dotted vertical lines in the outer histograms 
+	represent the 16th, 50th and 84th percentiles. \label{emceeresults}} 
+\end{center}
+\end{figure*}
+
+
 \section{Theoretical Models}
 
 
-\subsection{Rotation}
+\subsection{Multiphase ISM} 
+
+The idealized multiphase model consists of spherical, cold, dens
+clumps of neutral hydrogen (and dust) embedded in a hot, ionized
+medium. 
+The clumps also have a random and an outflowing velocity
+component which totals the number of parameters describing the model
+to be $14$. 
+
+In order to map out this large parameter space, we randomly drew
+$2500$ sets of parameters within a observationally realistic range
+(based on the considerations of \citep{Laursen2013ApJ...766..124L})
+yielding a large variety of single-, double- and triple-peaked
+spectra. 
+The full analysis of the the spectral features as well as
+more details on the radiative transfer are presented in
+\citep{Gronke2016}.    
+
+\subsection{Bulk Rotation}
 
 The rotation model corresponds to the work presented in
 \citep{GaravitoCamargo2014} based on the Monte Carlo code
@@ -356,37 +404,11 @@ the parameter space sampling the likelihood function.
 
 
 
-\subsection{Multiphase ISM} 
 
-The idealized multiphase model consists of spherical, cold, dens
-clumps of neutral hydrogen (and dust) embedded in a hot, ionized
-medium. 
-The clumps also have a random and an outflowing velocity
-component which totals the number of parameters describing the model
-to be $14$. 
-
-In order to map out this large parameter space, we randomly drew
-$2500$ sets of parameters within a observationally realistic range
-(based on the considerations of \citep{Laursen2013ApJ...766..124L})
-yielding a large variety of single-, double- and triple-peaked
-spectra. 
-The full analysis of the the spectral features as well as
-more details on the radiative transfer are presented in
-\citep{Gronke2016}.    
 
 
 
 \section{Results}
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.7\textwidth]{CLARA-TOL-main.pdf}
-\caption{Broad, single peaked and symmetric Ly-$\alpha$ emission of \tol.
-  Dots correspond to the observational data. The line shows the results
-of our best model from a full radiative transfer simulation both for
-the rotation and multiphase models.} 
-\end{center}
-\end{figure*}
 
 
 Figure 1. summarizes our findings.
@@ -457,14 +479,10 @@ while the multi-phase nature (i.e., the existence of low-density
 channels) ensures the high flux at line center as observed.     
 
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{emcee_results.pdf}
-\caption{Results from the Markov Chain Monte Carlo computation for
-    the rotation model. The dotted vertical lines in the outer histograms 
-	represent the 16th, 50th and 84th percentiles. \label{emceeresults}} 
-\end{center}
-\end{figure*}
+
+
+
+
 
 
 \section{Discussion}
@@ -586,7 +604,7 @@ the first generation of galaxies.
 
 
 
-
+\section*{Acknowledgments}
 
 \bibliographystyle{mn2e}
 \bibliography{references}
