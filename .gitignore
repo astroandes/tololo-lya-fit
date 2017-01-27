@@ -5,4 +5,6 @@
 *.bbl
 *.blg
 *.log
+*.out
 *Notes.bib
+code/*.pdf
