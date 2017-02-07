@@ -303,7 +303,7 @@ the rotation and multiphase models.}
 \end{figure*}
 
 
-\section{Theoretical Models}
+\section{Theoretical Models and Parameter Exploration}
 
 
 \subsection{Multiphase ISM} 
@@ -313,7 +313,7 @@ clumps of neutral hydrogen (and dust) embedded in a hot, ionized
 medium. 
 The clumps also have a random and an outflowing velocity
 component which totals the number of parameters describing the model
-to be $14$. 
+to be $14$.  {\bf These parameters are: MAX}
 
 In order to map out this large parameter space, we randomly drew
 $2500$ sets of parameters within a observationally realistic range
@@ -335,62 +335,23 @@ body rotation.
 The sphere is fully characterized by three parameters: the HI line's
 center optical  depth $\tau$ measured from the center to its surface, the HI
 temperature $T$, and the linear surface velocity $V_{\rm max}$.  
-Photons are emitted at their natural frequency from the center of the
-sphere. 
 Including the effect of dust only changes the overall line
 normalization but not its shape.  
-The results we report in the main body of the paper do not include any
-dust model.
+The results we report do not include any dust model.
 In this paper we use an analytical solution that captures the most
-important effects of rotation onto the \lya\ line.
+important effects of rotation onto the \lya\ line as explained by \citet{GaravitoCamargo2014}.
 
 
-
-The first important effect of rotation is that it breaks the spherical
-symmetry of the static case. 
-Now the line's observed morphology depends on the angle $\theta$ between the
-line-of-sight (LOS) and the rotation axis. 
-LOS parallel to the rotation axis tend to observed the line without
-any modification from rotation, while the perpendicular LOS will
-observe a maximal change in the line's morphology due to rotation.
-
-The main change in the line's morphology is that it broadens and the
-intensity at the center increases. 
-For high enough rotational velocities the intensity at the peak's
-center increases so much that the line goes from double to single
-peaked, sometimes slightly triple peaked.
-This is the feature that allows this model to fit the observational
-features of \tol.
-
-\citep{GaravitoCamargo2014} derived a concise analytical description for
-those features. 
-This description takes into account how different parts of the
-sphere's surface shift in frequency the \lya\ photons. 
-Different shifts in frequency come from different values for the projected
-velocity along the LOS. 
-Using the analytical solution for the \lya\ spectra of a static sphere
-plus the right frequency shifts  computed from geometrical
-considerations, one is able to compute an analytical solution for the
-rotating sphere that reproduces the main features found using the full
-numerical simulation. 
-
-The analytical solution for the rotation sphere was the base to
+The analytical solution for the rotation sphere is the base to
 perform the Markov Chain Monte Carlo (MCMC) calculation using the
 \texttt{emcee} Python library \citep{2013PASP..125..306F}. \texttt{emcee} 
 is an open source optimized implementation of the affine-invariant 
-ensemble sampler for MCMC. The algorithm creates a number of walkers that,
-during a sufficient number of steps, generate parameters' combinations for
-a specific model. For each time, the code calculates the likelihood of the
+ensemble sampler for MCMC. 
+The algorithm creates a number of walkers that,
+during a sufficient number of steps, generate parameters' combinations
+for a specific model. For each time, the code calculates the likelihood of the
 combination with respect to the observational data. The walkers ecplore
 the parameter space sampling the likelihood function.
-
-
-
-
-
-
-
-
 
 
 \section{Results}
