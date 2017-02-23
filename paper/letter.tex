@@ -310,7 +310,7 @@ the rotation and multiphase models.}
 \end{figure*}
 
 
-\section{Theoretical Models and Parameter Exploration}
+\section{Theoretical Models and Parameter Estimation}
 
 
 \subsection{Multiphase ISM} 
@@ -340,9 +340,7 @@ $1\%$ models according to the lowest $\chi^2$ values.
 The
 $\chi^2$ gap in those $25$ models is close to $3000$, the lowest
 $\chi^2$ being close to $1200$.
-The total number of degrees of freedom is
-$104$.    
-
+The total number of degrees of freedom is $104$.    
 
 Then we performed a Kolmogorov-Smirnov test to compare each parameter
 distribution in the best $25$ models against the parent distribution
@@ -375,31 +373,40 @@ temperature $T$, and the linear surface velocity $V_{\rm max}$.
 Including the effect of dust only changes the overall line
 normalization but not its shape.  
 The results we report do not include any dust model.
-In this paper we use an analytical solution that captures the most
-important effects of rotation onto the \lya\ line as explained by \citet{GaravitoCamargo2014}.
+Here we use an analytical solution that captures the most important
+effects of rotation onto the \lya\ line as explained by
+\citet{GaravitoCamargo2014} and allows us a full parameter space
+exploaration.  
 
 
 The analytical solution for the rotation sphere is the base to
-perform the Markov Chain Monte Carlo (MCMC) calculation using the
+perform a Markov Chain Monte Carlo (MCMC) calculation using the
 \texttt{emcee} Python library \citep{2013PASP..125..306F}. \texttt{emcee} 
 is an open source optimized implementation of the affine-invariant 
 ensemble sampler for MCMC. 
 The algorithm creates a number of walkers that,
 during a sufficient number of steps, generate parameters' combinations
 for a specific model. For each time, the code calculates the likelihood of the
-combination with respect to the observational data. The walkers ecplore
-the parameter space sampling the likelihood function.
+combination with respect to the observational data. The walkers explore
+the parameter space sampling the likelihood function built as $\propto
+\exp(\chi^2/2)$, where the $\chi^2$ is computed from each bin in the
+spectra after normalization.
+
+We explore flat priors on four parameters: $200<V_{\rm
+  max}/\mathrm{km\ s}^{-1} <600$,   $6.0<\log_{10}\tau<9.0$,
+$4.0<\log_{10} T/10^4\mathrm{K}< 4.5$ and $0<\theta<90$ using $500$
+steps with $24$ walkers for a total of $12000$ points in the chain.
+We estimate the parameter values from the 16th, 50th and 84th
+percentiles. 
 
 
 \section{Results}
 
 
-Figure 1. summarizes our findings.
+Figure 1. summarizes our main finding.
 Dots represent the observational data for \tol\ with the
-overplot from our best fits from the analytical solution for a
-urotating homogeneous gas sphere (thin line) and the multiphase
-model (thick line). 
-
+overplot from our best fits from the analytical solution for the multiphase model (thick line). 
+and the rotating homogeneous gas sphere (thin line).
 
 In spite of the simplicity of our models, this is the first time that
 the main \tol\ features can be reproduced: a wide, centered,
@@ -429,12 +436,7 @@ channels) ensures the high flux at line center as observed.
 
 \subsection{Bulk Rotation}
 
-MCMC methods are optimal for sampling parameters at a high number of 
-dimensions. In this case we explore flat priors on four parameters:
-$200<V_{\rm max}/\mathrm{km\ s}^{-1} <600$,  
-$6.0<\log_{10}\tau<9.0$, $4.0<\log_{10} T/10^4\mathrm{K}< 4.5$ and
-$0<\theta<90$ using $500$ steps with $24$ walkers for a total of
-$12000$ points in the chain. 
+
 The results are summarized in 
 Figure \ref{emceeresults}. 
 From this model we find that the fiducial 
