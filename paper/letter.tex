@@ -75,7 +75,7 @@
 %		FRONT MATTER
 %=========================================================================
 \title[An atypical Lyman-$\alpha$ dwarf galaxy]{
-Ouflows and rotation: possible causes for an atypical Lyman-$\alpha$ dwarf galaxy}
+Clumpiness and rotation: possible causes for an atypical Lyman-$\alpha$ dwarf galaxy}
 \author[J.E. Forero-Romero et al.]
 {Jaime E. Forero-Romero $^{1}$ \thanks{je.forero@uniandes.edu.co},
 Max Gronke$^2$, 
@@ -337,8 +337,29 @@ flux integral of one.
 We then build a $\chi^2$ on the normalized flux measurements for each one
 of the $2500$ models, and then select for further analysis the best
 $1\%$ models according to the lowest $\chi^2$ values.
-These best $50$ models have a large span in $\chi^2$ going from values
-of $1000$ to $3000$. 
+The
+$\chi^2$ gap in those $25$ models is close to $3000$, the lowest
+$\chi^2$ being close to $1200$.
+The total number of degrees of freedom is
+$104$.    
+
+
+Then we performed a Kolmogorov-Smirnov test to compare each parameter
+distribution in the best $25$ models against the parent distribution
+of $2500$ models. 
+If we obtain a p-value $<0.05$ for a given model parameter, we conclude that
+this parameter does influence the $\chi^2$ fit, as the distribution for
+the best $\chi^2$ models is statistically different to the
+distribution from the global sample of $2500$ models.  
+
+The best values for the influential parameters correspond to
+the values that produce the minimum
+$\chi^2$.
+The 1-$\sigma$ uncertainty comes from a parabolic fit to the
+$\chi^2$ as a function of $v_{\infty,\rm{cl}}$, $\sigma_{\rm cl}$,
+$P_{\rm cl}$ around its corresponding minimum.
+
+
 
 \subsection{Bulk Rotation}
 
@@ -376,11 +397,37 @@ the parameter space sampling the likelihood function.
 Figure 1. summarizes our findings.
 Dots represent the observational data for \tol\ with the
 overplot from our best fits from the analytical solution for a
-rotating homogeneous gas sphere (thin line) and the multiphase
+urotating homogeneous gas sphere (thin line) and the multiphase
 model (thick line). 
-This is the first time that these models have been introduced with
-success to explain an observed \lya\ profile.   
 
+
+In spite of the simplicity of our models, this is the first time that
+the main \tol\ features can be reproduced: a wide, centered,
+single-peaked \lya\ line.
+This result does not demonstrate that our models are unique to
+reproduce \tol's features, but is a significant step forward to
+understand why this source is atypical.
+
+
+\subsection{Multiphase ISM}
+Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
+$v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump. 
+
+From this test we found that only three parameters influence the
+$\chi^2$: the clump outflow velocity $v_{\infty,\rm{cl}}$ (p-value 
+$10^{-18}$), the clump velocity dispersion $\sigma_{\rm cl}$ (p-value
+$10^{-4}$) and the probability that the \lya\ emission comes from the
+clumps $P_{\rm cl}$ (p-value $10^{-4}$). This does not mean the other
+parameters do not influence the resulting spectra at all; it means
+that they cannot be constrained from \tol's observations. 
+
+
+Qualitatively as \tol\ possesses a very wide spectrum which can be
+achieved by subsequent scatterings off (relatively) fast moving clumps
+while the multi-phase nature (i.e., the existence of low-density
+channels) ensures the high flux at line center as observed.     
+
+\subsection{Bulk Rotation}
 
 MCMC methods are optimal for sampling parameters at a high number of 
 dimensions. In this case we explore flat priors on four parameters:
@@ -405,40 +452,6 @@ perpendicular to the rotation axis and the observational line-of-sight
 to $\theta = 35.78^{+2.13}_{-1.88}$ degrees.
 
 
- For the current work, we computed the $\chi^2$ for each of the $2500$
-models. We selected the best $50$ models with the lowest $\chi^2$. The
-$\chi^2$ gap in those $50$ models is close to $3000$, the lowest
-$\chi^2$ is close to $1200$. The total number of degrees of freedom is
-$104$.    
-
-Then we performed a Kolmogorov-Smirnov test to compare each parameter
-distribution in the best $50$ models against the parent distribution
-of $2500$ models. 
-If we obtain a p-value $<0.05$ for a given parameter, we conclude that
-this parameter does influence the $\chi^2$ fit, as the distribution for
-the best $\chi^2$ models is statistically different to the
-distribution from the global sample of $2500$ models.  
-
-From this test we found that only three parameters influence the
-$\chi^2$: the clump outflow velocity $v_{\infty,\rm{cl}}$ (p-value 
-$10^{-18}$), the clump velocity dispersion $\sigma_{\rm cl}$ (p-value
-$10^{-4}$) and the probability that the \lya\ emission comes from the
-clumps $P_{\rm cl}$ (p-value $10^{-4}$). This does not mean the other
-parameters do not influence the resulting spectra at all; it means
-that they cannot be constrained from \tol's observations. 
-
-The best values for those parameters that we report here correspond to
-the values that produce the minimum
-$\chi^2$. The 1-$\sigma$ uncertainty comes from a parabolic fit to the
-$\chi^2$ as a function of $v_{\infty,\rm{cl}}$, $\sigma_{\rm cl}$,
-$P_{\rm cl}$ around its corresponding minimum.
-Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
-$v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump. 
-
-Qualitatively as \tol\ possesses a very wide spectrum which can be
-achieved by subsequent scatterings off (relatively) fast moving clumps
-while the multi-phase nature (i.e., the existence of low-density
-channels) ensures the high flux at line center as observed.     
 
 
 
