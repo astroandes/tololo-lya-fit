@@ -75,7 +75,7 @@
 %		FRONT MATTER
 %=========================================================================
 \title[An atypical Lyman-$\alpha$ dwarf galaxy]{
-Possible kinematics of an atypical Lyman-$\alpha$ dwarf galaxy}
+Modelling the gas kinematics of an atypical Lyman-$\alpha$ emitting compact dwarf galaxy}
 \author[J.E. Forero-Romero et al.]
 {Jaime E. Forero-Romero $^{1}$ \thanks{je.forero@uniandes.edu.co},
 Max Gronke$^2$, 
@@ -107,24 +107,25 @@ galaxy formation and evolution.
 Here we report on one of such CDGs, \tol, which presents
 a broad symmetric Lyman-$\alpha$ line emission that had evaded theoretical
 interpretation so far. 
-In this paper we explain these features by two different models: 
-an interstellar medium composed by outflowing clumps with additional
-random motions and an homogeneous gaseous sphere undergoing bulk rotation.
+In this paper we explain these features by two different kinematic models: 
+an interstellar medium composed by outflowing clumps with 
+random motions and an homogeneous gaseous sphere undergoing solid body
+rotation.
 It is the first time that an observed \lya\ spectrum can be explained
 assuming either of these kinematic conditions.
 We find that both models independently require high velocities
 (either a  a clump velocity dispersion of \sigmaclump\ with outflows of
 \inftyclump\ or a bulk rotation of $348^{+75}_{-48}$ km s$^{-1}$)
 consistent with a dynamical mass of at 
-least a $10^{10}$ M$_{\odot}$, ten times larger than its baryonic mass.   
+least a $10^{10}$ M$_{\odot}$, ten times larger than its estimated baryonic mass.   
 We argue that a possible explanation for this excess of
 dynamical mass is the presence of a supermassive black hole at the
 center of \tol. 
 This work demonstrates the importance of considering multiphase
 kinematics and rotation among the possible conditions shaping the
 \lya\ spectra of the first galaxies.  
-Additionally, if future kinematic maps of \tol\ confirm the high
-velocities postulated in our model, it would provide new
+Additionally, if future kinematic maps of \tol\ confirm the 
+velocities found by our models, it would provide new
 evidence for dwarf galaxies as hosts of supermassive black
 holes.  
 \end{abstract}
@@ -280,7 +281,7 @@ $21$cm (Jy km s$^{-1}$)& $<0.10$ \\\hline
 
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.6\textwidth]{CLARA-TOL-main.pdf}
+\includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
 \caption{Broad, single peaked and symmetric Ly-$\alpha$ emission of \tol.
   Dots correspond to the observational data. The line shows the results
 of our best model from a full radiative transfer simulation both for
@@ -294,13 +295,15 @@ the rotation and multiphase models.}
   \includegraphics[width=0.6\textwidth]{P_cl.pdf}
   \includegraphics[width=0.6\textwidth]{sigma_cl.pdf}
 \caption{Results from the multiphase
-  model\label{multiphaseresults}.
+  model.
   The left column corresponds to the parameter's integrated distributions for
   models with the lowest $\chi^2$ values (dotted line) compared against the
   parameter's integrated distributions (continous line) used as a prior.
   These are the only three parameters that show a significant statistical difference from
   the prior distributions, for all the other eleven parameters we
-  cannot find any significant difference.}  
+  cannot find any significant difference.
+  \label{multiphaseresults}
+}  
 \end{center}
 \end{figure*}
 
@@ -319,12 +322,14 @@ the rotation and multiphase models.}
 
 \subsection{Multiphase ISM} 
 
-The idealized multiphase model consists of spherical, cold, dens
+The idealized multiphase model consists of spherical, cold, dense
 clumps of neutral hydrogen (and dust) embedded in a hot, ionized
 medium. 
 The clumps also have a random and an outflowing velocity
 component which totals the number of parameters describing the model
-to be $14$.  {\bf These parameters are: MAX}
+to be $14$, which also include information about the spatial
+distribution and thermal state of the clumps and the intraclump
+medium. 
 
 In order to map out this large parameter space, we randomly drew
 $2500$ sets of parameters within a observationally realistic range
@@ -338,13 +343,25 @@ more details on the radiative transfer are presented in
 We compare each resulting spectra to the observational results from
 \tol\ after normalizing the observed and simulated spectra to have a a
 flux integral of one.
-We then build a $\chi^2$ on the normalized flux measurements for each one
-of the $2500$ models, and then select for further analysis the best
-$1\%$ models according to the lowest $\chi^2$ values.
-The
-$\chi^2$ gap in those $25$ models is close to $\Delta\chi^2 = 3000$, the lowest
-$\chi^2$ being close to $\chi^2_{min}=1200$.
-The total number of degrees of freedom is $104$.    
+We build a $\chi^2$ on the normalized flux measurements for each one
+of the $2500$ models
+
+\begin{equation}
+\chi^2 = \sum_{i} \frac{({f}_i - \hat{f}_i)^2}{\sigma_i^2}, 
+\label{eq:chi2}
+\end{equation}
+
+where $i$ iterates over velocity bins, $f_{i}$ is the observed flux,
+$\sigma_i$ is the observed flux uncertainty and $\hat{f}_i$ is the
+model estimated flux.
+ 
+We select for further analysis the best $1\%$ models according to the
+lowest $\chi^2$ values.
+We note that the $\chi^2$ gap in those $25$ models is close to
+$\Delta\chi^2 = 3000$, the lowest $\chi^2$ being close to
+$\chi^2_{min}=1200$.
+To have a sense of scale, the total number of degrees of freedom is
+$104$. 
 
 Then we perform a Kolmogorov-Smirnov test to compare each parameter
 distribution in the best $25$ models against the parent distribution
@@ -357,9 +374,9 @@ distribution from the global sample of $2500$ models.
 The best values for the influential parameters correspond to
 the values that produce the minimum
 $\chi^2$.
-The 1-$\sigma$ uncertainty comes from a parabolic fit to the
+We estimate the 1-$\sigma$ uncertainty from a parabolic fit to the
 $\chi^2$ as a function of the influential parameters around its
-corresponding minimum.  
+corresponding minimum.   
 %$v_{\infty,\rm{cl}}$, $\sigma_{\rm cl}$,
 %$P_{\rm cl}$ 
 
@@ -392,11 +409,14 @@ is an open source optimized implementation of the affine-invariant
 ensemble sampler for MCMC. 
 The algorithm creates a number of walkers that,
 during a sufficient number of steps, generate parameters' combinations
-for a specific model. For each time, the code calculates the likelihood of the
-combination with respect to the observational data. The walkers explore
+for a specific model.
+For each timestep, the code calculates the likelihood of the
+combination with respect to the observational data.
+The walkers explore
 the parameter space sampling the likelihood function built as $\propto
-\exp(\chi^2/2)$, where the $\chi^2$ is computed from each bin in the
-spectra after normalization.
+\exp(\chi^2/2)$, where the $\chi^2$ follows the definition in Equation
+\ref{eq:chi2}. 
+
 
 We explore flat priors on four parameters: $200<V_{\rm
   max}/\mathrm{km\ s}^{-1} <600$,   $6.0<\log_{10}\tau<9.0$,
@@ -411,155 +431,157 @@ percentiles.
 
 Figure 1. summarizes our main finding.
 Dots represent the observational data for \tol\ with the
-overplot from our best fits from the analytical solution for the multiphase model (thick line). 
-and the rotating homogeneous gas sphere (thin line).
+overplot from our best fits from the analytical solution for the
+multiphase model (thick line)  and the rotating homogeneous gas sphere
+(thin line). 
 
 In spite of the simplicity of our models, this is the first time that
 the main \tol\ features can be reproduced: a wide, centered,
 single-peaked \lya\ line.
-This result does not demonstrate that our models are unique to
-reproduce \tol's features, but is a significant step forward to
-understand why this source is atypical.
+This result does not demonstrate that the kinematic features we
+include in our models are necessary to reproduce \tol's features, but
+at least they show that they are a sufficient condition.
+This is a significant step forward to understand the influence that
+different kinematics have in producing the atypical line profile shown
+by \tol.
+
+In what follows we summarize the values of the kinematic parameters
+that managed to explain \tol\'s \lya\ profile.
 
 
 \subsection{Multiphase ISM}
+
+From the K-S tests we find that only three parameters can be
+constrained by the observations: the clump outflow velocity
+$v_{\infty,\rm{cl}}$ (p-value  $10^{-18}$), the clump velocity
+dispersion $\sigma_{\rm cl}$ (p-value $10^{-4}$) and the probability
+that the \lya\ emission comes from the clumps $P_{\rm cl}$ (p-value
+$10^{-4}$).
+This does not mean the other parameters do not influence the resulting
+spectra at all; it means that they cannot be constrained from \tol's
+observations.
+
+
+The results are summarized in Figure \ref{multiphaseresults}.
+Left panels show the difference between the integrated distributions
+of the full sample (2500 input models) and the models with the lowest
+$\chi^2$. 
+The right panel shows the actual $\chi^2$ values and its corresponding
+parameter value. 
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump. 
 
-From this test we found that only three parameters influence the
-$\chi^2$: the clump outflow velocity $v_{\infty,\rm{cl}}$ (p-value 
-$10^{-18}$), the clump velocity dispersion $\sigma_{\rm cl}$ (p-value
-$10^{-4}$) and the probability that the \lya\ emission comes from the
-clumps $P_{\rm cl}$ (p-value $10^{-4}$). This does not mean the other
-parameters do not influence the resulting spectra at all; it means
-that they cannot be constrained from \tol's observations. 
-
-
-Qualitatively as \tol\ possesses a very wide spectrum which can be
+Qualitatively, as \tol\ possesses a very wide spectrum which can be
 achieved by subsequent scatterings off (relatively) fast moving clumps
 while the multi-phase nature (i.e., the existence of low-density
-channels) ensures the high flux at line center as observed.     
+channels) ensures the high flux at line center as observed.
+A lower velocity dispersion would produce a thiner line than the
+observed.
+From the lower right panel in \ref{multiphaseresults} we find that it
+is unlikely that the clump velocity dispersion is lower than
+$50$\kms. 
+
 
 \subsection{Bulk Rotation}
 
 
-The results are summarized in 
-Figure \ref{emceeresults}. 
-From this model we find that the fiducial 
-parameters that could explain the broad features in \tol\ are 
-$V_{\rm max}=348^{+75}_{-48}$ km s$^{-1}$, $\log \tau = 6.96^{+0.26}_{-0.18}$, 
-$\log_{10} T/\mathrm {K} = 4.27^{+0.11}_{-0.18}$ and $\theta = 35.78^{+2.13}_{-1.88}$ 
-degrees.
-
-
-The best parameters in the rotation model are a rotational velocity of 
-$V_{\rm max}=348^{+75}_{-48}$ \kms, a neutral Hydrogen optical depth of 
-$\log_{10}\tau=6.96^{+0.26}_{-0.18}$,  and an inter-stellar medium temperature of $\log_{10} T/\mathrm {K} = 4.27^{+0.11}_{-0.18}$.  
+The results are summarized in  Figure \ref{emceeresults}. 
+From this analysis we find that the best parameters in the rotation
+model are a rotational velocity of  $V_{\rm max}=348^{+75}_{-48}$
+\kms, a neutral Hydrogen optical depth of
+$\log_{10}\tau=6.96^{+0.26}_{-0.18}$,  and an inter-stellar medium
+temperature of $\log_{10} T/\mathrm {K} = 4.27^{+0.11}_{-0.18}$.   
 This model is also able to constrain the angle between the plane
 perpendicular to the rotation axis and the observational line-of-sight
 to $\theta = 35.78^{+2.13}_{-1.88}$ degrees.
 
-
-
-
-
-
+Lower rotational velocities are disfavored by the fact that the line
+is single peaked.
+Fixing the optical depth at a high value of $10^7$ ensures that the line width
+is close to its observed value.
+A lower rotational velocity would produce a double peaked line.
+The fact that the velocity and optical depth priors were wide enough,
+allows us to think that the current values found by the MCMC are
+robust given the observational constraints.
 
 
 
 
 \section{Discussion}
 
-Having constrains for  velocity dipersion $\sigma$ of some dynamical
-tracers (clumps in the case of the multiphase model) in a spherical
-system located in a region of size $r$ we estimate the dynamical mass
-within $r$. 
+Using the constrains for the velocity dipersion $\sigma$ and the
+maximum rotational velocity $V_m$ in a spherical system localized in a
+region of size $r$ we can estimate two different values for the
+dynamical mass within $r$: 
 
 
 \begin{equation}
 M_{\rm dyn} = 3 \frac{\sigma ^{2}r}{G} = 3.48\times10^{9}
-\left(\frac{\sigma}{100\ \mathrm{km\ s}^{-1}}\right)^2\left(\frac{r}{\mathrm{kpc}}\right) M_{\odot}
+\left(\frac{\sigma}{100\ \mathrm{km\ s}^{-1}}\right)^2\left(\frac{r}{\mathrm{kpc}}\right)
+M_{\odot}, 
 \end{equation}
-
-We use the 3D half-luminosity
-radius, $r_{s}$, as the typical size for the HI region. 
-
-In the case of rotational velocity $v$ in a region of size $r$ we
-estimate the dynamical mass by 
-
+%
+and
+%
 \begin{equation}
-M_{\rm dyn} = \frac{v ^{2}r}{G} = 1.16\times10^{9}
-\left(\frac{v}{100\ \mathrm{km\ s}^{-1}}\right)^2\left(\frac{r}{\mathrm{kpc}}\right)M_{\odot} 
+M_{\rm dyn} = \frac{V_m ^{2}r}{G} = 1.16\times10^{9}
+\left(\frac{V_m}{100\ \mathrm{km\ s}^{-1}}\right)^2\left(\frac{r}{\mathrm{kpc}}\right)M_{\odot}, 
 \end{equation}
+%
+for the multiphase and rotation model, respectively.
+Assuming that the \lya\ emission is entirely powered by star formation 
+we use the 3D half-luminosity radius $r_s=2.25$ kpc as the typical size
+for the HI region,
 
 
-In the multiphase model the best constrained parameters by the
-observational data are the clump velocity dispersion
-$\sigma_{\rm{cl}}=$\sigmaclump ,  the clump's outflowing velocity
-$v_{\infty, \rm{cl}}=$\inftyclump\ and the fraction of the
-\lya\ emission that is  coming from the cold clumps  $P_{\rm cl}=$\probaclump.
+In the multiphase model the clump velocity dispersion
+$\sigma_{\rm{cl}}=$\sigmaclump corresponds to a dynamical mass of
+$M_{\rm dyn}=2.31\pm0.04 \times 10^{9}$ $M_{\odot}$, while the
+rotational velocity of $V_{\rm max}=348^{+75}_{-48}$\kms corresponds
+$M_{\rm dyn} = 3.2_{-1.0}^{+1.6}\times 10^{10} M_{\odot}$.
 
-
-Assuming that the clumps are located in a spherical region of radius
-$r_s=2.25$ kpc (corresponding to \tol's estimated 3D half-luminosity
-radius), 
-this corresponds to dynamical masses of $M_{\rm dyn} =
-3.2_{-1.0}^{+1.6}\times 10^{10} M_{\odot}$ and $M_{\rm
-  dyn}=2.31\pm0.04 \times 10^{9}$ $M_{\odot}$ for the
-rotation and multiphase models, respectively, 
 
 \tol's stellar mass is  $M_{\star} = 1.45\pm0.45\times 10^{8}
 M_{\odot}$   \citep{2014PASP..126.1079M} and its total neutral HI mass is $M_{\rm HI}<2.65\times 10^{8}$ M$_{\odot}$. 
 \citep{pustilnikmartin07}; the dynamical mass is at least 12 to 160 times
 the baryonic mass, depending if one considers the multiphase or
-rotation estimate. 
-
+bulk rotation estimate. 
 We lean towards the lower dynamical mass estimate from the multiphase
 model as it seems easier to reconcile with the following two
 astrophysical mechanisms for its origin.
-The first way to explain a dynamical mass of $10^{9} M_{\odot}$
+
+A first possibility to explain a dynamical mass of $10^{9} M_{\odot}$
 in a sphere of 2.25 kpc in radius, could be a dark matter halo of at
 least $10^{12}$ M$_{\odot}$ in mass \citep{2011ApJ...726..108T}, which
 leaves open the question as to why  \tol\ is not more similar to the
 Milky Way galaxy as it would be hosted by a dark matter halo of similar
-mass. 
+mass.
+
 A second possibility is that \tol\ hosts a supermassive black hole of
 $10^{9} M_{\odot}$. This is almost two orders of magnitude higher
 than the supermassive black hole found in the compact dwarf galaxy
 M60-UCD1 \citep{2014Natur.513..398S}, which has a similar stellar mass
 as \tol. This would leave open the question about the formation
 process of such a system.   
- 
-Another perspective to appreciate the atypically high dynamical mass
-estimates comes from the observed scaling relations for dwarf
-galaxies.
-Assuming that \tol\ followed the fundamental plane relationship
-between its mean surface brightness $I_e$, the projected half-light
-radius $R_e$ and the velocity dispersion $\sigma$, described by $\log
-I_e=1.6 \log\sigma - 1.21\log R_e + 0.55$ \citep{2009ApJ...698.1590G},
-the expected velocity dispersion should be on the order of $5 \pm 1$ 
-\kms, which is a factor of $\sim$ $10$ - $60$ lower than the 
-results from the multiphase and rotation models, respectively. 
-These are equivalent to factors of $\sim$ $100$ - $3600$ on the
-dynamical mass.
-Once again,  \tol\ seems to be significantly more massive than
-expected. 
 
+%Another perspective to appreciate the atypically high dynamical mass
+%estimates comes from the observed scaling relations for dwarf
+%galaxies.
+%Assuming that \tol\ followed the fundamental plane relationship
+%between its mean surface brightness $I_e$, the projected half-light
+%radius $R_e$ and the velocity dispersion $\sigma$, described by $\log
+%I_e=1.6 \log\sigma - 1.21\log R_e + 0.55$ \citep{2009ApJ...698.1590G},
+%the expected velocity dispersion should be on the order of $5 \pm 1$ 
+%\kms, which is a factor of $\sim$ $10$ - $60$ lower than the 
+%results from the multiphase and rotation models, respectively. 
+%These are equivalent to factors of $\sim$ $100$ - $3600$ on the
+%dynamical mass.
+%Once again,  \tol\ seems to be significantly more massive than
+%expected. 
 
-
-\section{Conclusions}
-
-In this paper we presented two theoretical models that explain the main
-observational feature of \tol, which have been unexplained so far.
-One model is based on a multiphase ISM and the other on gas rotation,  
-It is the first time that an observed \lya\ profile can be fully
-reproduced by either of these two conditions.
-Furthermore, the kinematics of both models suggest a dynamical mass
-ten times larger than the baryonic mass infered from observations.
-
-A new observational test is needed to clarify the physical nature of
+A new observational test is needed to clarify the kinematical nature of
 \tol. 
-We suggest that integral field unit measurements spatially
+We suggest that integral field unit measurements 
 resolving its spatial extent are up to the task. 
 \tol\ spans a region of $4$ arcseconds,
 an instrument such as the Multi Unit Spectroscopic Explorer
@@ -567,12 +589,34 @@ an instrument such as the Multi Unit Spectroscopic Explorer
 nominal $0.2$ arcseconds spatial sampling over a $1.0$ arcminute field
 in wide-field mode could provide a coarse mapping of different
 ionization lines to infer a kinematic map.
+We note that archival Chandra X-ray archival
+data \footnote{\url{http://cxc.harvard.edu/cda/}} does not show any
+detection for \tol\. This lack of observations also puts an upper
+limit on the intensity of recent black hole activity.
+
 Another observational test includes the measurement of the
 \lya\ ionizing continuum escape fraction.
 In the rotational model this fraction should be zero, while
 the multiphase model predicts that averaging over all sightlines
 it should be around $0.5^{+1.0}_{-0.4}$\%, with the possibility of strong
 variations depending on viewing angle \citep{2014MNRAS.444.1095G}. 
+recent 
+
+
+\section{Conclusions}
+
+In this paper we presented two kinematic models that independently
+reproduce the so far unexplained observational features of \tol's
+\lya\ emission line.  
+
+One model is based on a multiphase ISM with random clump motions and
+the other on gas bulk solid body rotation.
+It is the first time that an observed \lya\ profile can be fully
+reproduced by either of these two kinematic conditions.
+Furthermore, the kinematics of both models suggest a dynamical mass
+at least ten times larger than the baryonic mass infered from observations.
+We suggest that additional integral field unit observations are the
+only way to be certain about the detailed kinematic structure in \tol.
 
 All in all, the mere existence of a strong LAE galaxy with a broad,
 symmetric line is interesting.
@@ -584,7 +628,7 @@ influencing the way LAEs can be used as a probe of reionization
 \citep{2014PASA...31...40D}.  
 
 These findings demonstrate the importance of including rotation and multiphase
-conditions as features to model the \lya\ line in high redshift
+conditions as kinematic features to model the \lya\ line in high redshift
 galaxies.
 Additionally, if the hypothesis of a supermassive black
 hole in \tol\ proves to be consistent with future observational
@@ -596,6 +640,11 @@ the first generation of galaxies.
 
 
 \section*{Acknowledgments}
+We thanks J. M. Mas-Hesse for providing us with \tol's observational
+\lya\ data in electronic format. This data was used to prepare Figure
+1.
+
+
 
 \bibliographystyle{mn2e}
 \bibliography{references}
