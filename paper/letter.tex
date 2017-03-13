@@ -289,7 +289,9 @@ $21$cm (Jy km s$^{-1}$)& $<0.10$ \\\hline
 \caption{Broad, single peaked and symmetric Ly-$\alpha$ emission of \tol.
   Dots correspond to the observational data. The line shows the results
 of our best model from a full radiative transfer simulation both for
-the rotation and multiphase models.} 
+the rotation and multiphase models.
+The observational points corresponds to the data as shown in
+\citep{mashesse03}.}   
 \end{center}
 \end{figure*}
 
@@ -306,6 +308,9 @@ the rotation and multiphase models.}
   These are the only three parameters that show a significant statistical difference from
   the prior distributions, for all the other eleven parameters we
   cannot find any significant difference.
+  The right column shows a scatter plot of $\chi^2/1000$
+  and its corresponding physical parameters.
+  Only the  25 models with the lowest $\chi^2$ are included.
   \label{multiphaseresults}
 }  
 \end{center}
@@ -426,7 +431,9 @@ We explore flat priors on four parameters: $200<V_{\rm
   max}/\mathrm{km\ s}^{-1} <600$,   $6.0<\log_{10}\tau<9.0$,
 $4.0<\log_{10} T/10^4\mathrm{K}< 4.5$ and $0<\theta<90$ using $500$
 steps with $24$ walkers for a total of $12000$ points in the chain.
-We estimate the parameter values from the 16th, 50th and 84th
+Previous exploratory work shows that it is impossible to fit the
+observed line outside thsese priors.
+Finally, we estimate the parameter values from the 16th, 50th and 84th
 percentiles. 
 
 
@@ -556,10 +563,15 @@ astrophysical mechanisms for its origin.
 
 A first possibility to explain a dynamical mass of $10^{9} M_{\odot}$
 in a sphere of 2.25 kpc in radius, could be a dark matter halo of at
-least $10^{12}$ M$_{\odot}$ in mass \citep{2011ApJ...726..108T}, which
-leaves open the question as to why  \tol\ is not more similar to the
-Milky Way galaxy as it would be hosted by a dark matter halo of similar
-mass.
+least $10^{12}$ M$_{\odot}$ in mass \citep{2011ApJ...726..108T}.
+This estimate is based on computing the integrated mass profile of a
+spherical dark matter halo with a Navarro-Frenk-White profile with its
+concentration following the \emph{median} mass-concentration
+relationship found in the Bolshoi simulation
+\citep{2012MNRAS.423.3018P}. 
+This estimate leaves open the question as to why  \tol\ is not more
+similar to the Milky Way galaxy as it would be hosted by a dark matter
+halo of similar mass.
 
 A second possibility is that \tol\ hosts a supermassive black hole of
 $10^{9} M_{\odot}$. This is almost two orders of magnitude higher
@@ -603,7 +615,7 @@ Another observational test includes the measurement of the
 In the rotational model this fraction should be zero, while
 the multiphase model predicts that averaging over all sightlines
 it should be around $0.5^{+1.0}_{-0.4}$\%, with the possibility of strong
-variations depending on viewing angle \citep{2014MNRAS.444.1095G}. 
+variations depending on viewing angle \citep{Gronke2016}. 
 
 
 
@@ -645,7 +657,7 @@ the first generation of galaxies.
 
 \section*{Acknowledgments}
 We thank J. M. Mas-Hesse for providing us with \tol's observational
-\lya\ data \citep{Mas-Hesse09} in electronic format. This data was
+\lya\ data \citep{mashesse03} in electronic format. This data was
 used to prepare Figure 1.
 
 
