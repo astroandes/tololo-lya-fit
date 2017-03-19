@@ -13,8 +13,8 @@ all: $(FILE_PDF)
 
 $(FILE_PDF) : $(FILE_TEX) references.bib
 	$(LATEX) $(FILE_TEX)
-	bibtex $(FILE_NAME)
-	$(LATEX) $(FILE_TEX)
+#	bibtex $(FILE_NAME)
+#	$(LATEX) $(FILE_TEX)
 	$(LATEX) $(FILE_TEX)
 
 diff: 
@@ -23,6 +23,9 @@ diff:
 	bibtex $(FILE_NAME)
 	$(LATEX) diff_$(FILE_TEX)
 	$(LATEX) diff_$(FILE_TEX)
+
+submit:
+	tar -xzvf submit.tgz paper.tex  CLARA-TOL-main.pdf P_cl.pdf emcee_results.pdf sigma_cl.pdf tolfit.pdf vinf_cl.pdf
 
 clean:
 		rm -f $(FILE_NAME).aux
