@@ -170,32 +170,6 @@ feature.  This needs to be better justified/explained.
 
 C- MINOR COMMENTS/DETAILS (in order of appearance):
 
-1) In the abstract: "(either a a clump" --> "(either a clump".
-
-2) In the abstract: the authors say "This work demonstrates the
-importance of considering multiphase kinematics and rotation among the
-possible conditions shaping the Ly-alpha spectra of the first
-galaxies". In relation to this sentence, it is not clear that this
-work actually provides such a demonstration. It would be better to
-change the word "demonstrates" for "suggests".
-
-3) In the Intro: "Over fifty years ago (Partridge & Peebles 1967) it
-was realized that young galaxies could be detected through a strong
-Ly-alpha line emission." --> "Over fifty years ago, it was realized
-that young galaxies could be detected through a strong Ly-alpha line
-emission (Partridge & Peebles 1967).".
-
-4) In the Intro, 2nd paragraph: "of the distance of a galaxy" --> "of
-the distance to a galaxy". Moreover, the whole sentence where this
-phrase is in needs some references.
-
-5) In the Intro, end of 2nd paragraph: when referring to the
-clustering of LAEs, there is a much larger bibliography that could go
-together with the reference to Mejia-Restrepo & Forero-Romero (2016).
-
-6) In the Intro, 3rd paragraph: when the authors say "difficult to
-obtain for distant galaxies such as morphology,", are they referring
-to galaxy morphology or the morphology of the Ly-alpha line emission?
 
 Also, at the end of the same paragraph: "(see (Hayes 2015) and
 references therein for a review)" --> "(see Hayes (2015), and
