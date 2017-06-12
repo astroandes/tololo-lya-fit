@@ -13,8 +13,8 @@ all: $(FILE_PDF)
 
 $(FILE_PDF) : $(FILE_TEX) references.bib
 	$(LATEX) $(FILE_TEX)
-#	bibtex $(FILE_NAME)
-#	$(LATEX) $(FILE_TEX)
+	bibtex $(FILE_NAME)
+	$(LATEX) $(FILE_TEX)
 	$(LATEX) $(FILE_TEX)
 
 diff: 
