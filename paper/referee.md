@@ -170,36 +170,6 @@ feature.  This needs to be better justified/explained.
 
 C- MINOR COMMENTS/DETAILS (in order of appearance):
 
-16) Last paragraph of section 2: the integrated upper-limit flux
-indicated, what wavelength was it measured at?
-
-17) Page 2, right column, 3rd paragraph of Sec. 3.1: "have a a flux"
---> "have a flux".
-
-18) Figure 1: I would suggest rewording the third sentence in the
-caption as "The thick red and thin blue curves represent our best fit
-to the data using the full radiative transfer simulation with a
-rotation and multiphase model, respectively". Also, what is the main
-point to take away from this figure? This should be summarized with
-some few words in the caption.
-
-19) Page 3, left column, 2nd paragraph: when the authors say "We note
-that the chi^2 gap in those 25 models is", it is not clear what this
-gap means or how it is defined. Is it just the distance between the
-chi^2 value of a model to the minimum chi^2 value?
-
-20) Page 3, right column, 1st paragraph: with respect to the bulk
-rotation model and the fact that dust "only weakly" changes the shape
-of the line, how weakly is this effect? Can this explain the poorer
-fit of this model to the blue side of the Ly-alpha line shown in
-Fig. 1? Since no dust model is considered, how does this impact the
-kinematic results based on the line fitting? Can this be quantified?
-20%? 10%? Less?
-
-21) Page 3, right column, end of 1st paragraph: "and allows us a full
-parameter space exploration" --> "and allow us to fully explore the
-parameter space" or "and allows for a full parameter space
-exploration".
 
 22) Page 3, last paragraph of Sec. 3.2: what is theta and how is it
 defined? This information is provided later in the text, but it's

@@ -280,11 +280,10 @@ from the surface brightness profiles reported by \cite{2003A&A...410..481N}.
 Assuming spherical geometry, one can translate this value into a 3D
 half-light radius of $r_s=3R_s/2=2.25$ kpc.
 
-There is an upper limit for the  
-integrated flux of $<0.10$ Jy km s$^{-1}$ \citep{pustilnikmartin07},
-which translates into a upper limit for the HI mass of $M<2.65\times
-10^{8}$ M$_{\odot}$. 
-
+There is an upper limit for the  21 cm line integrated flux of $<0.10$
+Jy km s$^{-1}$ \citep{pustilnikmartin07}, which translates into a
+upper limit for the HI mass of $M<2.65\times 10^{8}$ M$_{\odot}$.  
+ 
 
 
 
@@ -312,11 +311,12 @@ $21$cm (Jy km s$^{-1}$)& $<0.10$ \\\hline
 \begin{center}
 \includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
 \caption{Broad, single peaked and symmetric \lya\ emission of \tol.
-  Dots correspond to the observational data. The line shows the results
-of our best model from a full radiative transfer simulation both for
-the rotation and multiphase models.
-The observational points corresponds to the data as shown in
-\citep{mashesse03}.}   
+  Dots correspond to the observational data \citep{mashesse03}. 
+The thick red and thin blue curves represent our best fit
+to the data using the full radiative transfer simulation with a
+rotation and multiphase model, respectively. 
+These two different models are able to reproduce the main morphological
+features of \tol's \lya\ line emission.}
 \end{center}
 \end{figure*}
 
@@ -391,11 +391,10 @@ model estimated flux.
  
 We select for further analysis the best $1\%$ models according to the
 lowest $\chi^2$ values.
-We note that the $\chi^2$ gap in those $25$ models is close to
-$\Delta\chi^2 = 3000$, the lowest $\chi^2$ being close to
-$\chi^2_{min}=1200$.
-To have a sense of scale, the total number of degrees of freedom is
-$104$. 
+We note that the difference between the lowest and highest $\chi^2$ values in
+those $25$ models is close to $\Delta\chi^2 = 3000$, the lowest
+$\chi^2$ being close to $\chi^2_{min}=1200$. To have a sense of scale,
+the total number of degrees of freedom is $104$. 
 
 Then we perform a Kolmogorov-Smirnov (K-S) test to compare each parameter
 distribution in the best $25$ models against the parent distribution
@@ -428,16 +427,18 @@ The sphere is fully characterized by three parameters: the HI line's
 center optical  depth $\tau$ measured from the center to its surface, the HI
 temperature $T$, and the linear surface velocity $V_{\rm max}$.  
 In this model, dust only changes the overall line
-normalization and only weakly its shape.  
-The results we report do not include any dust model.
-Here we use an analytical solution that captures the most important
+normalization and only weakly its shape, i.e. 
+dust cannot change the line symmetry or induce a change in the number
+of line peaks, moreover it does not change the line width by more than
+$1\%$ ($5$ \kms\ in the case of \tol), an effect too small to be
+observed at the resolution at which we have \tol's line profile and
+also negligeable compared to the influence of the other free parameters in the model.
+For these reasons we do not include any dust model. 
+
+We use an analytical solution that captures the most important
 effects of rotation onto the \lya\ line as explained by
-\citet{GaravitoCamargo2014} and allows us a full parameter space
-exploration.  
-
-
-The analytical solution for the rotation sphere is the base to
-perform a Markov Chain Monte Carlo (MCMC) calculation using the
+\citet{GaravitoCamargo2014} and allows us to fully explore the
+parameter space using a Markov Chain Monte Carlo (MCMC) calculation with the
 \texttt{emcee} Python library \citep{2013PASP..125..306F}. \texttt{emcee} 
 is an open source optimized implementation of the affine-invariant 
 MCMC sampler \citep{goodman2010ensemble}. 
