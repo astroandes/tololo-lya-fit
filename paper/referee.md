@@ -170,61 +170,6 @@ feature.  This needs to be better justified/explained.
 
 C- MINOR COMMENTS/DETAILS (in order of appearance):
 
-
-Also, at the end of the same paragraph: "(see (Hayes 2015) and
-references therein for a review)" --> "(see Hayes (2015), and
-references therein for a review)".
-
-7) In the Intro, 4th paragraph: "There are very few analytically
-tools" --> "There are very few analytical tools".
-
-Also, in the next line: "Ly-alpha Line Harrington (1973); Neufeld
-(1991); Loeb & Rybicki (1999); Tasitsiomi (2006)." --> "Ly-alpha Line
-(Harrington 1973; Neufeld 1991; Loeb & Rybicki 1999; Tasitsiomi
-2006).".
-
-In the following line, when the authors say "highly symmetrical
-conditions", it is not clear what they are referring to. Are these
-some kind of physical conditions, or they are talking about the
-symmetry of the line's shape? This should be clarified.
-
-8) In the Intro, 2nd page, left column, 2nd paragraph: when saying
-"Usually the Ly-alpha line has an asymmetric single or double peak.",
-a reference to Yamada et al. (2012) can be included.
-
-9) In the Intro, 2nd page, left column, 2nd paragraph: it says
-"(?Verhamme et al. 2015". This reference needs to be fixed.
-
-10) In the Intro, 2nd page, left column, 3rd paragraph: when referring
-to Ly-alpha as a probe of reionization, these references may be
-helpful: Stark, D. et al. (2011); Ono, Y. et al. (2012).
-
-11) Last paragraph in the Intro: "physical scenarios that open up by
-our results" --> "physical scenarios opened up by our results".
-
-12) The first sentence of the 2nd paragraph in section 2 needs some
-rewording. In the following sentence: "The Ly-alpha flux values
-correspond to luminosities of" --> "The Ly-alpha flux value
-corresponds to a luminosity of". Later, the sentence "using a standard
-conversion factor" needs a reference.
-
-13) Second paragraph in Sec. 2: the bolometric UV luminosity value
-given needs a reference. Also, if no extinction correction is
-considered, the quoted SFR is then a lower limit. This should be said
-and commented on in the text.
-
-14) Page 2, right column, 2nd paragraph: the second sentence there may
-be reworded as "Using the conversion between fluxes and stellar mass,
-<<enter formula here>>, calibrated on the Large Magellanic Cloud and
-where fluxes are in Jy and D is the luminosity distance to the source
-in Mpc, we find". Indicate reference to the formula, placed before
-presenting the stellar mass found.
-
-15) In the following paragraph, and throughout the text when
-applicable: "half-luminosity" --> "half-light". Also, "surface
-intensity" --> "surface brightness" and "by (Noeske et al. 2003)" -->
-"by Noeske et al. (2003)".
-
 16) Last paragraph of section 2: the integrated upper-limit flux
 indicated, what wavelength was it measured at?
 

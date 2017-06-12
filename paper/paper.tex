@@ -172,7 +172,7 @@ dwarf star forming galaxies.
 The study of nearby LAE samples has allowed the study of other
 indicators that might be more difficult to obtain for distant galaxies
 such as galaxy morphology, dust attenuation, neutral hydrogen contents and
-ionization state. See \citep{Hayes15}, and references therein for a review.
+ionization state. See \cite{Hayes15} and references therein for a review.
 
 However, the physical interpretation of \lya\ observations is
 not straightforward \citep{LARS,2015ApJ...805...14R}. 
@@ -181,11 +181,12 @@ A \lya\ photon follows a diffusion-like process before escaping
 the galaxy or being absorbed by dust. 
 The resulting line profile becomes sensitive to the dynamical, chemical
 and thermal conditions in the interstellar medium. 
-There are very few analytically tools available to interpret the
+There are few analytical tools available to interpret the
 emerging \lya\ line
-\cite{Harrington73,1991ApJ...370L..85N,LoebRybicki,2006ApJ...645..792T}. 
-They are applicable only in very few cases of highly symmetrical
-conditions, which are hardly met in real astrophysical systems.
+\citep{Harrington73,1991ApJ...370L..85N,LoebRybicki,2006ApJ...645..792T}. 
+They are applicable only in cases of highly symmetrical
+conditions of the gaseous hydrogen distribution in the galaxy model,
+which are hardly met in real astrophysical systems. 
 For these reasons the interpretation of \lya\ observations
 requires state-of-the-art Monte Carlo radiative transfer simulations.   
 
@@ -196,7 +197,7 @@ line's center.
 Usually the \lya\ line has an asymmetric single or double peak. 
 These two special features in \tol\ cannot be explained quantitatively
 with conventional shell models
-\citep{Mas-Hesse09,2015A&A...578A...7V,2015ApJ...812..123G}.   
+\citep{mashesse03,2012ApJ...751...29Y,2015A&A...578A...7V,2015ApJ...812..123G}.   
 
 This kind of profile also raises the question whether some high redshift
 LAEs have asymmetric lines because the blue half was truncated by the
@@ -204,7 +205,7 @@ intergalactic medium \citep{2007MNRAS.377.1175D}.
 In this case the \lya\ radiation could emerge as a low surface
 brightness glow, which may be connected to \lya\ halos, while also
 influencing the way LAEs can be used as a probe of reionization
-\citep{2014PASA...31...40D}.
+See the review by \cite{2014PASA...31...40D} and the references therein.
 
 Here we show how the \tol's \lya\ profile can be explained
 either by  or the recently developed class of complex multiphase models 
@@ -220,7 +221,7 @@ rotation models to explain how we fit their free parameters
 to the \tol's \lya\ line shape.
 We use the results to interpret them in terms of the galaxy's
 dynamical mass. 
-We close by discussing the physical scenarios that open up by our
+We close by discussing the physical scenarios opened up by our
 results and the additional observational information needed to clarify
 the kinematic nature of \tol.
 
@@ -231,54 +232,59 @@ Its receding velocity is $7785\pm 50$km s$^{-1}$, which translates
 into a distance of $106.6$ Mpc (with the Hubble constant $H_{0}$=73
 km s$^{-1}$ Mpc$^{-1}$.) 
 
-
-
 The observed flux for the \lya\ line is $\sim
 8.1\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \citep{Thuan97}
 and a Equivalent Width of $70$\AA\ and its H$\beta$ flux is 
 $1.62\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \AA${-1}$
 \citep{Izotov04} which gives a \lya/H$\beta$ flux ratio of
 4.9$\pm$0.1.
-The \lya\ flux values correspond to luminosities of
+The \lya\ flux values correspond to a luminosity of
 $L_{Ly\alpha}=2.2\times 10^{42}$ erg s$^{-1}$, which in turn
-translates  into a star formation rate of $2.0$ M$_{\odot}$ yr$^{-1}$
-using a standard conversion factor between luminosity and star
-formation rate of $9.1\times 10^{-43}$ $L_{Ly\alpha}$ M$_{\odot}$ yr$^{-1}$. 
-The absolute magnitude in the $V$ band translates into a luminosity of
-$8.9\times 10^{8}$ L$_{\odot}$.
-% using http://tomdwelly.com/tools_fluxtolum.php
-Comparing this ratio with the theoretical expectation from case B
-recombination of $23.3$ \citep{Hummer1987} one can estimate an escape
-fraction of $20$\% for \lya\ radiation.
+translates  into a lower bound for the star formation rate of $2.0$
+M$_{\odot}$ yr$^{-1}$ after using a standard conversion factor between
+luminosity and star formation rate of $9.1\times 10^{-43}$
+$L_{Ly\alpha}$ M$_{\odot}$ yr$^{-1}$ \citep{Kennicutt98} without any
+correction by extinction.  
+Comparing the \lya/H$\beta$ ratio with the theoretical
+expectation from case B recombination of $23.3$ \citep{Hummer1987} one
+can estimate an escape fraction of $20$\% for \lya\ radiation.
+
 The bolometric UV luminosity is $9.43\pm1.94 \times 10^{8}$
 L$_{\odot}$ as measured by GALEX, without any correction by extinction
 and following the empirical relation by \cite{Kennicutt98}, this
 corresponds to a star formation rate of $0.35\pm 0.05$ M$_{\odot}$
-yr$^{-1}$. Its metallicity is $\sim Z_{\odot}/24$ as derived from
+yr$^{-1}$. 
+Its metallicity is $\sim Z_{\odot}/24$ as derived from
 optical spectroscopy \citep{Izotov04}. 
 
+%The absolute magnitude in the $V$ band translates into a luminosity of
+%$8.9\times 10^{8}$ L$_{\odot}$.  
+% using http://tomdwelly.com/tools_fluxtolum.php
+%
 
 
 The near-infrared fluxes at $3.6$ $\mu$m and $4.5$ $\mu$m are
 $7.71\pm0.55\times 10^{-5}$ Jy and $7.98\pm0.71\times 10^{-5}$ Jy
 \citep{2008ApJ...678..804E}.
-Using a conversion between fluxes and
-stellar mass calibrated on the Large Magellanic Cloud $M_{\star} =
+Using the conversion between fluxes and
+stellar mass, $M_{\star} =
 10^{5.65} \times F_{3.6}^{2.85} \times F_{4.5}^{-1.85} \times
-(D/0.05)^2 M_{\odot}$, where fluxes are in Jy and $D$ is the luminosity
+(D/0.05)^2 M_{\odot}$,  calibrated on the Large Magellanic Cloud 
+and  where fluxes are in Jy and $D$ is the luminosity
 distance to the source in Mpc, we find $M_{\star} = 1.45\pm0.45\times 10^{8}
 M_{\odot}$, with a $30\%$ uncertainty coming from the calibration
 process \citep{2012AJ....143..139E}.  
 
-We computed the projected half-luminosity radius to be $R_s=1.5\pm0.1$ kpc 
-from the surface intensity profiles reported by \citep{2003A&A...410..481N}. 
+We computed the projected half-light radius to be $R_s=1.5\pm0.1$ kpc 
+from the surface brightness profiles reported by \cite{2003A&A...410..481N}. 
 Assuming spherical geometry, one can translate this value into a 3D
-half-luminosity radius of $r_s=3R_s/2=2.25$ kpc.
+half-light radius of $r_s=3R_s/2=2.25$ kpc.
 
 There is an upper limit for the  
-integrated flux of $<0.10$ Jy km s$^{-1}$, which translates into a
-upper limit for the HI mass of $M<2.65\times 10^{8}$ M$_{\odot}$
-\citep{pustilnikmartin07}.  
+integrated flux of $<0.10$ Jy km s$^{-1}$ \citep{pustilnikmartin07},
+which translates into a upper limit for the HI mass of $M<2.65\times
+10^{8}$ M$_{\odot}$. 
+
 
 
 
@@ -582,7 +588,7 @@ M_{\rm dyn} = \frac{V_m ^{2}r}{G} = 1.16\times10^{9}
 %
 for the multiphase and rotation model, respectively.
 Assuming that the \lya\ emission is entirely powered by star formation 
-we use the 3D half-luminosity radius $r_s=2.25$ kpc as the typical size
+we use the 3D half-light radius $r_s=2.25$ kpc as the typical size
 for the HI region,
 
 
