@@ -171,20 +171,6 @@ feature.  This needs to be better justified/explained.
 C- MINOR COMMENTS/DETAILS (in order of appearance):
 
 
-24) Figure 3: the main point to take away from this figure should be
-summarized in the caption. What does the gray scale represent?
-
-25) Page 5, left column, 3rd paragraph: "subsequent scatterings off
-(relatively) fast moving clumps" --> "subsequent scattering due to
-(relatively) fast moving clumps". In the same sentence, when saying
-"very wide spectrum", do the authors mean a "very broad/wide Ly-alpha
-feature"? I am not sure what a "wide spectrum" means. Or is it wide
-spectral coverage? This should be clarified. Also, when saying
-"existence of low-density channels", it is not clear what those
-low-density channels are. Please explain or reword. Later in the
-paragraph: "right panel in 2 we find" --> "right panel in Figure 2 we
-find".
-
 26) Page 5, last sentence of section 4.1: it says "once new
 observations clarify". It would be helpful to be more specific/explicit
 on the kind of new observations the authors are considering.

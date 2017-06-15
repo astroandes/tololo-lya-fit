@@ -338,7 +338,7 @@ features of \tol's \lya\ line emission.}
   parameter's prior integrated distributions (continuous line).
   The right column shows a scatter plot of $\chi^2$ (normalized by the
   degrees of freedom) and its corresponding physical parameters.
-  This shows that the clump kinematic state is the key ingredient to
+  The clump kinematic state is the key ingredient to
   reproduce \tol's \lya\ line morphology.
   \label{multiphaseresults}
 }  
@@ -349,8 +349,14 @@ features of \tol's \lya\ line emission.}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{emcee_results.pdf}
 \caption{Results from the Markov Chain Monte Carlo computation for
-    the rotation model. The dotted vertical lines in the outer histograms 
-	represent the 16th, 50th and 84th percentiles. \label{emceeresults}} 
+    the rotation model. 
+    The gray scale indicates the point density in parameter space. 
+    The dotted vertical lines in the histograms in the diagonal panels
+    represent the 16th, 50th and 84th percentiles. 
+    All parameters in the rotation model can be succesfuly constrained by \tol's
+    \lya\ line morphology to the values written in the top region of
+    the diagonal panels.
+    \label{emceeresults}} 
 \end{center}
 \end{figure*}
 
@@ -509,18 +515,19 @@ The results are summarized in Figure \ref{multiphaseresults}.
 Left panels show the difference between the integrated distributions
 of the full sample (2500 input models) and the models with the lowest
 $\chi^2$. 
-The right panel shows the actual $\chi^2$ values and its corresponding
-parameter value. 
+The right panel shows the actual $\chi^2$ values (normalized by the
+degrees of freedom) and its corresponding parameter value. 
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump. 
 
-Qualitatively, as \tol\ possesses a very wide spectrum which can be
-achieved by subsequent scatterings off (relatively) fast moving clumps
-while the multi-phase nature (i.e., the existence of low-density
-channels) ensures the high flux at line center as observed.
-In turn, a lower velocity dispersion would produce a thiner line than the
-observed.
-From the lower right panel in \ref{multiphaseresults} we find that it
+Qualitatively this can be understood as follows. The broad \lya\ line
+is the result of subsequent \lya\ photon scatterings due to
+(relatively) fast moving clumps while the multi-phase nature (i.e., the existence of low-density
+inter-clump regions where \lya\ photons can freely prograpagate)
+ensures the high flux at line center as observed.  
+In turn, a lower velocity dispersion would produce a thiner line than
+it is observed.
+From the lower right panel in Figure \ref{multiphaseresults} we find that it
 is unlikely that the clump velocity dispersion is lower than
 $50$\kms. 
 
@@ -530,7 +537,7 @@ clump) is high and most photons are produced at
 large radii making the radiative transfer effects in the center less
 important.  
 We cannot discard that another region of parameter space with similar
-velocity structure but empty interclump medium, relatively dense
+velocity structure but an empty inter-clump medium, relatively dense
 clumps and at least a few clumps per sightline 
 could also work \citep{Hansen06}.
 This possibility does not change our conclusions about the
