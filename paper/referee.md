@@ -170,10 +170,6 @@ feature.  This needs to be better justified/explained.
 
 C- MINOR COMMENTS/DETAILS (in order of appearance):
 
-23) Figure 2: in the figure's caption, it would be good to explicitly
-state what these parameters are. Also, why are the chi^2 values
-rescaled by 1000 and not by the number of degrees of freedom (one
-order of magnitude less)?
 
 24) Figure 3: the main point to take away from this figure should be
 summarized in the caption. What does the gray scale represent?
