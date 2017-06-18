@@ -154,6 +154,13 @@ rotation models related to each other? It is desirable to have some
 more explicit, mathematical description of the models and provide
 analytical expressions if they exist.
 
+Reply.  We don't have analytic approximations that can be directly
+written down in a closed form. For the rotation we have an analytic
+equations that must be numerically integrated. For the multi-phase
+model the full MC simulation has to be performed. We now explain this in
+the text.
+
+
 4) On page 6, at the end of Sec. 4.2, it is said that "Lower
 rotational velocities are disfavored by the fact that the line is
 single peaked". What is the physical meaning of a single-peaked
@@ -168,3 +175,10 @@ line is produced. For example, there could be more than one
 kinematical component in the interstellar medium producing such a
 feature.  This needs to be better justified/explained.
 
+Reply. We have included a comment on the physical intution that explains
+the results for the rotation model (Based on our previous published
+results in Garavito-Camargo et al 2014). We also emphasize in the
+introduction that our approach does not intend us to reject the
+existence of different models that reproduce the observed features in
+Tololo-1214, but insted focuses on the existence of two physically
+motivated models that are suceessful in providing a solution.  

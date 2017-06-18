@@ -35,7 +35,7 @@
 \newcommand{\SRKED}[1]{\textcolor{darkgreen}{\bf #1}}
 \newcommand{\before}[1]{\textcolor{red}{ #1}}
 \newcommand{\after}[1]{\textcolor{darkgreen}{ #1}}
-
+\newcommand{\hs}{{\hspace{1mm}}}  
 \newcommand{\tol}{Tololo 1214-277}
 \newcommand{\lya}{Ly$\alpha$}
 \newcommand{\hb}{H$\beta$}
@@ -216,6 +216,14 @@ to allow a deep exploration of parameter space and gain, for the first time,
 some physical insight into the \tol's kinematic properties.
 
 
+We focus on showing how  two physically motivated models that can be suceessful
+in reproducing \tol's \lya\ line morphology. 
+It is not our aim to reject the existence of different models
+that reproduce the observed features in \tol. 
+Indeed more complex models with multiple kinematic components could
+be also sucessful.
+
+
 We review first the observational characteristics of
 \tol, then we summarize the main features in the multiphase and
 rotation models to explain how we fit their free parameters 
@@ -299,7 +307,8 @@ $\delta$(2000)$^{b}$ & -28d02m32s\\
 $l$, $b$ (deg) & 294, 34\\
 $m_V$ & 17.5\\
   M$_V$ & -17.6\\ 
-$v$(km s$^{-1}$) & 7795\\
+$v$(km s$^{-1}$) & $7785\pm 50$\\
+$z$ & $0.0259\pm0.0002$ \\
 \lya\ (erg cm$^{-2}$ s$^{-1}$ \AA$^{-1}$)& $8.1\times 10^{-14}$ \\
 \lya\ Equivalent Width (\AA) & $70$\\
 $21$cm (Jy km s$^{-1}$)& $<0.10$ \\\hline
@@ -372,7 +381,7 @@ features of \tol's \lya\ line emission.}
 
 The idealized multiphase model consists of spherical, cold, dense
 clumps of neutral hydrogen (and dust) embedded in a hot, ionized
-medium. 
+medium \citep{Gronke2016}. 
 The clumps also have a random and an outflowing velocity
 component which totals the number of parameters describing the model
 to be $14$, which also include information about the spatial
@@ -398,11 +407,19 @@ of the $2500$ models
 \chi^2 = \sum_{i} \frac{({f}_i - \hat{f}_i)^2}{\sigma_i^2}, 
 \label{eq:chi2}
 \end{equation}
-
+%
 where $i$ iterates over velocity bins, $f_{i}$ is the observed flux,
 $\sigma_i$ is the observed flux uncertainty and $\hat{f}_i$ is the
 model estimated flux.
  
+We do not have analytic expression for $\hat{f}$. 
+For the multi-phase model the results of the MonteCarlo are used to
+build histograms that play the role of $\hat{f}$. 
+For the rotation model $\hat{f}$ is computed 
+has to be computed by numerical integration of analytical
+approximations found in  \citet{GaravitoCamargo2014}.
+
+
 We select for further analysis the best $1\%$ models according to the
 lowest $\chi^2$ values.
 We note that the difference between the lowest and highest $\chi^2$ values in
@@ -452,9 +469,11 @@ observed at the resolution at which we have \tol's line profile and
 also negligeable compared to the influence of the other free parameters in the model.
 For these reasons we do not include any dust model. 
 
-We use an analytical solution that captures the most important
-effects of rotation onto the \lya\ line as explained by
-\citet{GaravitoCamargo2014} and allows us to fully explore the
+We use an analytical approximation that captures the most important
+effects of rotation onto the \lya\ line. 
+We defer the reader to \citet{GaravitoCamargo2014} for complete
+details on the explicit form of this approximation.
+To fully explore the
 parameter space using a Markov Chain Monte Carlo (MCMC) calculation with the
 \texttt{emcee} Python library \citep{2013PASP..125..306F}. \texttt{emcee} 
 is an open source optimized implementation of the affine-invariant 
@@ -564,15 +583,16 @@ We are also able to constrain the angle between the plane
 perpendicular to the rotation axis and the observational line-of-sight
 to $\theta = 35.78^{+2.13}_{-1.88}$ degrees.
 
-Lower rotational velocities are disfavored by the fact that the line
-is single peaked.
-The observed line width is better reproduced with a
-high optical depth value $\sim10^7$ as we found.
-For such optical depth values a lower rotational velocity would
-produce a double peaked line \citep{GaravitoCamargo2014}. 
+Lower rotational velocities than the favored value would produce a
+double peaked line as the different doppler shifts produced on
+different regions of the rotating sphere would not be large enough to
+smear the double peaks into a single peak
+\citep{GaravitoCamargo2014}. 
+For the same reason, higher rotation velocities could produce a single
+peak but the line would be broader than it is observed.
 The fact that the velocity and optical depth priors were wide enough,
-allows us to suggest that the current values found by the MCMC are
-robust given the observational constraints.
+allows us to suggest that the current values for the spherical model
+found by the MCMC are robust given the observational constraints.
 
 
 
