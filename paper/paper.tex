@@ -215,6 +215,7 @@ The models we use correspond to simplified geometrical configurations
 to allow a deep exploration of parameter space and gain, for the first time,
 some physical insight into the \tol's kinematic properties.
 
+
 We review first the observational characteristics of
 \tol, then we summarize the main features in the multiphase and
 rotation models to explain how we fit their free parameters 
@@ -231,6 +232,11 @@ the kinematic nature of \tol.
 Its receding velocity is $7785\pm 50$km s$^{-1}$, which translates
 into a distance of $106.6$ Mpc (with the Hubble constant $H_{0}$=73
 km s$^{-1}$ Mpc$^{-1}$.) 
+
+Archival Chandra X-ray data \footnote{\url{http://cxc.harvard.edu/cda/}} does not show any
+detection for \tol. 
+This lack of detection motivates our assumption that \lya\ emission is
+powered by star formation only.
 
 The observed flux for the \lya\ line is $\sim
 8.1\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \citep{Thuan97}
@@ -262,7 +268,6 @@ optical spectroscopy \citep{Izotov04}.
 % using http://tomdwelly.com/tools_fluxtolum.php
 %
 
-
 The near-infrared fluxes at $3.6$ $\mu$m and $4.5$ $\mu$m are
 $7.71\pm0.55\times 10^{-5}$ Jy and $7.98\pm0.71\times 10^{-5}$ Jy
 \citep{2008ApJ...678..804E}.
@@ -283,7 +288,6 @@ half-light radius of $r_s=3R_s/2=2.25$ kpc.
 There is an upper limit for the  21 cm line integrated flux of $<0.10$
 Jy km s$^{-1}$ \citep{pustilnikmartin07}, which translates into a
 upper limit for the HI mass of $M<2.65\times 10^{8}$ M$_{\odot}$.  
- 
 
 
 
@@ -542,8 +546,10 @@ clumps and at least a few clumps per sightline
 could also work \citep{Hansen06}.
 This possibility does not change our conclusions about the
 kinematic parameters, but it might be interesting to explore in the
-future with a higher sampling of the parameter space once new
-observations clarify the kinematic nature of \tol.  
+future with a higher sampling of the parameter space once new 
+observations  clarify the kinematic nature of \tol \footnote{In Section \S \ref{sec:conclusions} we describe  in more detail what kind of observations could be performed in the
+  near future to improve our understanding of \tol's kinematics.} .
+  
 
 \subsection{Bulk Rotation}
 
@@ -560,11 +566,12 @@ to $\theta = 35.78^{+2.13}_{-1.88}$ degrees.
 
 Lower rotational velocities are disfavored by the fact that the line
 is single peaked.
-Fixing the optical depth at a high value of $10^7$ ensures that the line width
-is close to its observed value.
-A lower rotational velocity would produce a double peaked line.
+The observed line width is better reproduced with a
+high optical depth value $\sim10^7$ as we found.
+For such optical depth values a lower rotational velocity would
+produce a double peaked line \citep{GaravitoCamargo2014}. 
 The fact that the velocity and optical depth priors were wide enough,
-allows us to think that the current values found by the MCMC are
+allows us to suggest that the current values found by the MCMC are
 robust given the observational constraints.
 
 
@@ -575,7 +582,7 @@ robust given the observational constraints.
 \tol\ shows one of the most atypical \lya\ spectra observed so far.
 Its flux at the line's center is high compared to other LAEs at low
 redshift and the wide symmetrical peak is virtually absent from other
-LAEs at low and high redshift \citep{LARS,Erb14,Trainor16}. Simple
+LAEs at low and high redshift \citep{2012ApJ...751...29Y,LARS,Erb14,Trainor16}. Simple
 shell models fail to reproduce such a spectrum
 \cite{2015A&A...578A...7V}.  
 In the previous sections we show how these characteristics can be
@@ -671,11 +678,6 @@ ionization lines to infer a kinematic map in the H$\alpha$ line,
 following the kind of work presented by \citet{Herenz16} done with the Potsdam
 Multi-Aperture Spectrometer (PMAS) \citet{PMAS} on nearby
 \lya\ emitting galaxies.
-We note that archival Chandra X-ray archival
-data \footnote{\url{http://cxc.harvard.edu/cda/}} does not show any
-detection for \tol.
-This lack of detection would also put an upper limit on the intensity
-of recent black hole activity due to accretion. 
 
 Another observational test includes the measurement of the
 \lya\ ionizing continuum escape fraction.
@@ -688,6 +690,7 @@ an escape fraction close to $100\%$)\citep{Gronke2016} .
 
 
 \section{Conclusions}
+\label{sec:conclusions}
 
 In this paper we presented two kinematic models that independently
 reproduce the so far unexplained observational features of \tol's

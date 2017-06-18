@@ -168,28 +168,3 @@ line is produced. For example, there could be more than one
 kinematical component in the interstellar medium producing such a
 feature.  This needs to be better justified/explained.
 
-C- MINOR COMMENTS/DETAILS (in order of appearance):
-
-
-26) Page 5, last sentence of section 4.1: it says "once new
-observations clarify". It would be helpful to be more specific/explicit
-on the kind of new observations the authors are considering.
-
-27) Page 6, at the end of Sec. 4.2: the sentence "Fixing the optical
-depth at a high value of 10^7 ensures that the line width is close to
-its observed value" implies that tau has been imposed. How about
-something like "The observed line width is better reproduced with a
-high optical depth value of ~10^7". In fact, the tau value is obtained
-from a Monte Carlo computation process rather than by being fixed.
-
-28) Page 6, at the end of Sec. 4.2: "allow us to think that" -->
-"allow us to suggest that".
-
-29) In the 1st paragraph of Sec. 5: a reference to Yamada et
-al. (2012), ApJ, 751, 29 may be added to Oestlin et al., Erb et al.,
-and Trainor et al.
-
-30) In Sec. 5, its 2nd paragraph, when the authors "assume" that the
-Ly-alpha emission is entirely powered by star formation, this is in
-fact supported by the lack of X-ray flux associated with the
-galaxy. The authors could refer to this here.
