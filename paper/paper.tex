@@ -104,8 +104,8 @@ Avenue, Tucson, AZ 85721, USA.
   are the best systems to test models on primordial
 galaxy formation and evolution.    
 Here we report on one of such CDGs, \tol, which presents
-a broad symmetric \lya\ line emission that had evaded theoretical
-interpretation so far. 
+a broad, single peaked, highly symmetric \lya\ line emission that had
+evaded theoretical interpretation so far.  
 In this paper we explain these features by two different kinematic models: 
 an interstellar medium composed by outflowing clumps with 
 random motions and an homogeneous gaseous sphere undergoing solid body
@@ -120,12 +120,15 @@ least a $10^{10}$ M$_{\odot}$, ten times larger than its estimated
 baryonic mass.     
 This work shows the importance of considering multiphase
 kinematics and rotation among the possible conditions shaping the
-\lya\ spectra of the first galaxies.  
+\lya\ spectra of the first galaxies.
 Additionally, if future kinematic maps of \tol\ confirm the 
-velocities found by our models, it would provide new
-evidence for dwarf galaxies as hosts of supermassive black
-holes.  
+velocities found by our models, it would provide additional support to
+radiative transfer modelling as a technique to constrain 
+the kinematical state of \lya\ emitting galaxies.
 \end{abstract}
+%\lya\ modelling as complementary way to estimate dynamical masses in
+%\lya\ emitting galaxies. 
+
 
 \begin{keywords}
 galaxies: dwarf --- galaxies: individual:\tol\ --- radiative transfer --- Methods: numerical 
@@ -140,16 +143,11 @@ galaxies: dwarf --- galaxies: individual:\tol\ --- radiative transfer --- Method
 \section{Introduction}
 \label{sec:introduction}
 
-
-
-
-
 Primordial galaxies have not been detected yet. 
 However, dwarf star forming galaxies with a low metallicity content
 are seen as templates to understand the early galaxy evolution process. 
 Over fifty years ago it was realized that young galaxies could be
 detected through a strong \lya\ line emission \citep{PartridgePeebles}.    
-
 
 This theoretical prediction was only confirmed thirty years later on
 distant, relatively young, not primordial, galaxies \citep{1998ApJ...498L..93D}.
@@ -187,18 +185,23 @@ which are hardly met in real astrophysical systems.
 For these reasons the interpretation of \lya\ observations
 requires state-of-the-art Monte Carlo radiative transfer simulations.   
 
+Observed \lya\ line profiles usually present a single peak shifted
+redwards from the line's center. 
+Sometimes a double peak is present but the asymmetry persists with 
+the peak on the red side being stronger. 
+This can be explained as a result of an outflowing shell of neutral Hydrogen.
+\citep{2006A&A...460..397V,Orsi12,2012ApJ...751...29Y,2015ApJ...812..123G}.
+
 \tol\ is a compact star forming dwarf galaxy that presents a
 strong \lya\ emission \citep{Thuan97} with two puzzling 
-features: the line is symmetric, single peaked and wide around the
+features: the line is highly symmetric, single peaked and wide around the
 line's center.
-Usually the \lya\ line has an asymmetric single or double peak. 
-These two special features in \tol\ cannot be explained quantitatively
-with conventional shell models
-\citep{mashesse03,2012ApJ...751...29Y,2015A&A...578A...7V,2015ApJ...812..123G}.   
+Attempts to explain these to features with conventional models have
+not been succesfyul \citep{mashesse03,2015A&A...578A...7V}.      
 
-This kind of profile also raises the question whether some high redshift
-LAEs have asymmetric lines because the blue half was truncated by the
-intergalactic medium \citep{2007MNRAS.377.1175D}. 
+This kind of profile also raises the question whether some high
+redshift LAEs have asymmetric lines because the blue half was
+truncated by the intergalactic medium \citep{2007MNRAS.377.1175D}. 
 In this case the \lya\ radiation could emerge as a low surface
 brightness glow, which may be connected to \lya\ halos, while also
 influencing the way LAEs can be used as a probe of reionization
@@ -212,13 +215,14 @@ The models we use correspond to simplified geometrical configurations
 to allow a deep exploration of parameter space and gain, for the first time,
 some physical insight into the \tol's kinematic properties.
 
-
-We focus on showing how  two physically motivated models that can be suceessful
+We focus on showing how two physically motivated models can be sucessful
 in reproducing \tol's \lya\ line morphology. 
-It is not our aim to reject the existence of different models
-that reproduce the observed features in \tol. 
-Indeed more complex models with multiple kinematic components could
-be also sucessful.
+We do not claim that we have discarded the existence of different
+undiscovered models that reproduce the observed features in \tol.
+More involved models with multiple kinematic components could
+in principple be also sucessful.
+We only present the existence of two simple good models.
+
 
 
 We review first the observational characteristics of

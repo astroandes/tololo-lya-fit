@@ -14,11 +14,14 @@ but quickly moves on to the properties of the Ly-alpha emission
 without developing the connection between this particular feature and
 the physics of dwarf galaxies, particularly at z~0 as the target of
 the this work is.
-
 Or is it just the atypical line profile that matters? Why is this
 Ly-alpha profile considered atypical? Why a symmetrical line profile
 should not be expected? It would be good to have some explanation
 about this too.
+
+Reply. In this paper it is the atypical line what matter. This is emphasized
+by the fact that this is the first time that models can reproduce the
+main features of this line. We have added some paragraphs. 
 
 2) It is not clear what the physical motivation for using the models
 selected for the work and described in the text is. Why these models
