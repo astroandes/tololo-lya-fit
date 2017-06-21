@@ -19,9 +19,13 @@ Ly-alpha profile considered atypical? Why a symmetrical line profile
 should not be expected? It would be good to have some explanation
 about this too.
 
-Reply. In this paper it is the atypical line what matter. This is emphasized
-by the fact that this is the first time that models can reproduce the
-main features of this line. We have added some paragraphs. 
+Reply. In this paper it is the atypical Lya line what matters to
+us. The highlight of this paper is the existence of models that are
+able to reproduce the main feature of this line. A feat achieved for
+the first time since the first Tololo Lya observations in 1997.
+We have modified parts of the Abstract, Introduction and Conclusions
+to highlight this perspective.
+
 
 2) It is not clear what the physical motivation for using the models
 selected for the work and described in the text is. Why these models
@@ -35,6 +39,9 @@ central piece of the study has an unusual shape, not commonly seen in
 Ly-alpha emitters. It would be good to provide an explanation on how
 this fact drives the selection of the models in question. I encourage
 the authors to expand more on this matter.
+
+We have included a paragraph in the introduction highlighting the
+physical motivation for these two models. 
 
 3) Have the authors checked dynamical masses for compact dwarf
 galaxies in general reported in the literature? How do those values

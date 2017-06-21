@@ -2,21 +2,15 @@
 %=========================================================================
 \usepackage{amsmath} 
 \usepackage{amssymb} 
-\usepackage {graphicx}
+\usepackage{graphicx}
 \usepackage[dvips]{epsfig}
 \usepackage{epsfig}  
 \usepackage{color}
-\usepackage[normalem]{ulem}
-\usepackage{hyperref}
 \usepackage{caption}
+\usepackage[draft]{hyperref}
 %Non reposionated tables
-\usepackage{float}
-\restylefloat{table}
-%Multiple columns support for tables
-\usepackage{array}
-\usepackage{booktabs}
-\setlength{\heavyrulewidth}{1.5pt}
-\setlength{\abovetopsep}{4pt}
+
+
 
 
 %=========================================================================
@@ -66,8 +60,6 @@
 \newcommand{\sigmaclump}{$54.3\pm 0.6$ km s$^{-1}$}
 \newcommand{\inftyclump}{$54.3\pm 5.1$ km s$^{-1}$}
 \newcommand{\probaclump}{$0.96\pm 0.01$}
-\def\simgt{\lower.5ex\hbox{\gtsima}}
-\def\simlt{\lower.5ex\hbox{\ltsima}}
 
 \begin{document}
 
@@ -106,7 +98,8 @@ galaxy formation and evolution.
 Here we report on one of such CDGs, \tol, which presents
 a broad, single peaked, highly symmetric \lya\ line emission that had
 evaded theoretical interpretation so far.  
-In this paper we explain these features by two different kinematic models: 
+In this paper we explain these features by two different physically
+motivated kinematic models: 
 an interstellar medium composed by outflowing clumps with 
 random motions and an homogeneous gaseous sphere undergoing solid body
 rotation.
@@ -121,13 +114,12 @@ baryonic mass.
 This work shows the importance of considering multiphase
 kinematics and rotation among the possible conditions shaping the
 \lya\ spectra of the first galaxies.
-Additionally, if future kinematic maps of \tol\ confirm the 
-velocities found by our models, it would provide additional support to
-radiative transfer modelling as a technique to constrain 
-the kinematical state of \lya\ emitting galaxies.
+Additionally, if future kinematic maps of tol confirm the velocities
+found by either of our models, it would completeley justify the need for
+detailed studies to understand the reasons behind a such a high
+dynamical mass for a compact dwarf galaxy.
 \end{abstract}
-%\lya\ modelling as complementary way to estimate dynamical masses in
-%\lya\ emitting galaxies. 
+
 
 
 \begin{keywords}
@@ -193,12 +185,9 @@ This can be explained as a result of an outflowing shell of neutral Hydrogen.
 \citep{2006A&A...460..397V,Orsi12,2012ApJ...751...29Y,2015ApJ...812..123G}.
 
 \tol\ is a compact star forming dwarf galaxy that presents a
-strong \lya\ emission \citep{Thuan97} with two puzzling 
+strong \lya\ emission with two puzzling 
 features: the line is highly symmetric, single peaked and wide around the
-line's center.
-Attempts to explain these to features with conventional models have
-not been succesfyul \citep{mashesse03,2015A&A...578A...7V}.      
-
+line's center \citep{Thuan97}.
 This kind of profile also raises the question whether some high
 redshift LAEs have asymmetric lines because the blue half was
 truncated by the intergalactic medium \citep{2007MNRAS.377.1175D}. 
@@ -207,23 +196,47 @@ brightness glow, which may be connected to \lya\ halos, while also
 influencing the way LAEs can be used as a probe of reionization
 See the review by \cite{2014PASA...31...40D} and the references therein.
 
-Here we show how the \tol's \lya\ profile can be explained
-either by  or the recently developed class of complex multiphase models 
-\citep{Gronke2016} or by a simple rotation model
-\citep{GaravitoCamargo2014}. 
-The models we use correspond to simplified geometrical configurations
-to allow a deep exploration of parameter space and gain, for the first time,
-some physical insight into the \tol's kinematic properties.
+Attempts to explain the atypical \lya\ features in \tol\ with
+conventional models based on a expanding shell have not been succesful
+so far \citep{mashesse03,2015A&A...578A...7V}. 
+This justifies a new study using two new physically motivated
+situations: a multiphase outflowing interstellar medium and bulk rotation for a
+galaxy without outflows.
 
-We focus on showing how two physically motivated models can be sucessful
-in reproducing \tol's \lya\ line morphology. 
-We do not claim that we have discarded the existence of different
-undiscovered models that reproduce the observed features in \tol.
+The main motivation for the outflowing multiphase model (as presented
+in \cite{Gronke2016}) is that some dwarf galaxies are expected to
+present outflows.  
+Observationally, outflows have been detected in few local dwarf galaxies
+\citep{1998ApJ...506..222M,2005MNRAS.358.1453O}. 
+Clumpy multiphase outflows are capable to explain \lya\ features around
+star-forming galaxies
+\citep{2010ApJ...717..289S,2012MNRAS.424.1672D}. 
+From this evidence we decide to try a multiphase model.
+
+The motivation for the rotation without outflows (as presented in \cite{GaravitoCamargo2014})is that
+dwarf galaxies show coherent rotation features
+\citep{2009A&A...493..871S} and it is expected that some of them have
+high neutral gas contents with long quiescent phases without high gas
+outflows triggered by supernova activity
+\citep{2005A&A...433L...1B,2008ApJ...672..888T,2013MNRAS.434.2491G}.  
+For these reasons we also explore a model with a spherical gas
+distribution with solid body rotation and without any outflows. 
+
+
+The models we use correspond to simplified geometrical configurations.
+This allows us to perform a deep exploration of parameter space and
+gain some physical insight into \tol's kinematic properties.
+In this paper we show, for the first time in the literature, that \tol's
+\lya\ profile can be explicitly modeled be either of these two
+models. 
+
+We do not claim that our findings discard the existence of different
+undiscovered models that could reproduce the observed features in \tol.
 More involved models with multiple kinematic components could
 in principple be also sucessful.
-We only present the existence of two simple good models.
-
-
+We focus on the existence of two simple and succesful models that
+manage, for the first time, to account for \tol's \lya\ line main
+features. 
 
 We review first the observational characteristics of
 \tol, then we summarize the main features in the multiphase and
@@ -237,10 +250,32 @@ the kinematic nature of \tol.
 
 
 \section{Observations}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lc}\hline
+$\alpha$(2000)$^{a}$ & 12h17min17.1s\\
+$\delta$(2000)$^{b}$ & -28d02m32s\\
+$l$, $b$ (deg) & 294, 34\\
+$m_V$ & 17.5\\
+  M$_V$ & -17.6\\ 
+$v$(km s$^{-1}$) & $7785\pm 50$\\
+$z$ & $0.0259\pm0.0002$ \\
+\lya\ (erg cm$^{-2}$ s$^{-1}$ \AA$^{-1}$)& $8.1\times 10^{-14}$ \\
+\lya\ Equivalent Width (\AA) & $70$\\
+$21$cm (Jy km s$^{-1}$)& $<0.10$ \\\hline
+\end{tabular}
+\end{center}
+\caption{Basic observational characteristics of \tol\ 
+  \citep{Thuan97}\label{obstable}} 
+\end{table}
+
+
 \tol's basic observational characteristics are summarized in Table \ref{obstable}.
-Its receding velocity is $7785\pm 50$km s$^{-1}$, which translates
-into a distance of $106.6$ Mpc (with the Hubble constant $H_{0}$=73
-km s$^{-1}$ Mpc$^{-1}$.) 
+Its receding velocity is $7785\pm 50$km s$^{-1}$ translates
+into a distance of $106.6$ Mpc, using a Hubble constant value of $H_{0}$=73
+km s$^{-1}$ Mpc$^{-1}$.
 
 Archival Chandra X-ray data \footnote{\url{http://cxc.harvard.edu/cda/}} does not show any
 detection for \tol. 
@@ -295,29 +330,10 @@ Assuming spherical geometry, one can translate this value into a 3D
 half-light radius of $r_s=3R_s/2=2.25$ kpc.
 
 There is an upper limit for the  21 cm line integrated flux of $<0.10$
-Jy km s$^{-1}$ \citep{pustilnikmartin07}, which translates into a
-upper limit for the HI mass of $M<2.65\times 10^{8}$ M$_{\odot}$.  
+Jy km s$^{-1}$  which translates into a upper limit for the HI mass of
+$M<2.65\times 10^{8}$ M$_{\odot}$ \citep{pustilnikmartin07}.
 
 
-
-\begin{table}
-\begin{center}
-\begin{tabular}{lc}\hline
-$\alpha$(2000)$^{a}$ & 12h17min17.1s\\
-$\delta$(2000)$^{b}$ & -28d02m32s\\
-$l$, $b$ (deg) & 294, 34\\
-$m_V$ & 17.5\\
-  M$_V$ & -17.6\\ 
-$v$(km s$^{-1}$) & $7785\pm 50$\\
-$z$ & $0.0259\pm0.0002$ \\
-\lya\ (erg cm$^{-2}$ s$^{-1}$ \AA$^{-1}$)& $8.1\times 10^{-14}$ \\
-\lya\ Equivalent Width (\AA) & $70$\\
-$21$cm (Jy km s$^{-1}$)& $<0.10$ \\\hline
-\end{tabular}
-\end{center}
-\caption{Basic observational characteristics of \tol\ 
-  \citep{Thuan97}\label{obstable}} 
-\end{table}
 
 
 
@@ -732,12 +748,11 @@ kinematic structure.
 Our findings highlight the importance of including multiphase and/or
 rotation conditions as kinematic features to model the \lya\ line.
 
-Additionally, if the hypothesis of a supermassive black
-hole in \tol\ proves to be consistent with future observational
-kinematic maps, it could correspond to a so far undetected
-supermassive black hole in a dwarf galaxy, providing a new way to test
-and probe theories on the co-evolution of galaxies and black holes in
-the first generation of galaxies.   
+We acknowledge that a final confirmation of our kinematic findings has
+to be provided by the new observational tests we suggest.
+If that were the case, this would open up a new line of more detailed
+enquiries to understand how a compact dwarf galaxy can have such a
+large dynamical mass. 
 
 \section*{Acknowledgments}
 We thank J. M. Mas-Hesse for providing us with \tol's observational
