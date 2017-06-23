@@ -108,6 +108,19 @@ need some correction. Is it possible to explain the data by means of
 other physical processes, without needing a supermassive black hole or
 an halo mass of 10^12 M_sun for a compact dwarf galaxy?
 
+Reply. We have looked carefully into published observational data for
+compact dwarf galaxies (UCD's) and dwarf ellipticals (DE's). This helped us to
+realize that Tololo is closer to the sizes and luminosities of dwarf
+ellipticals than UCDs'. Tololo is usually classified as a CDG as it is
+star forming and not "red and dead" as DE's. Furthermore, the velocity
+dispersions observed in DE match the results of our multiphase model. 
+It is still puzzling that: A) DE's are found in groups and clusters,
+while tololo is isolated and B) DE's are not star forming, while
+tololo hosts a starburst.
+For this reason we have completely restructure the discussion section
+to present this comparison. This also removes the motivation to
+consier the BH hypothesis. 
+
 The author should at least provide a more complete/compelling
 discussion on these issues.
 

@@ -111,8 +111,7 @@ a clump velocity dispersion of \sigmaclump\ with outflows of
 The velocity dispersion in the multiphase model is consistent with a dynamical
 mass of $2\times 10^{9}$ M$_{\odot}$, ten times its baryonic mass,
 which can be explained if \tol\ is hosted by a dark matter halo of at least
-$10^{11}$ M$_{\odot}$. 
-These conditions are similar to Dwarf Elliptical Galaxies.
+$10^{11}$ M$_{\odot}$; cconditions similar to those of Dwarf Elliptical Galaxies.
 This work shows the importance of considering multiphase
 and rotation kinematics among the possible conditions shaping the
 \lya\ spectra.
@@ -186,8 +185,8 @@ This can be explained as a result of an outflowing shell of neutral Hydrogen.
 \citep{2006A&A...460..397V,Orsi12,2012ApJ...751...29Y,2015ApJ...812..123G}.
 
 \tol\ is a compact star forming dwarf galaxy that presents a
-strong \lya\ emission with two puzzling 
-features: the line is highly symmetric, single peaked and wide around the
+strong \lya\ emission with puzzling 
+features: the line is highly symmetric, single peaked and broad around the
 line's center \citep{Thuan97}.
 This kind of profile also raises the question whether some high
 redshift LAEs have asymmetric lines because the blue half was
@@ -212,7 +211,7 @@ Observationally, outflows have been detected in few local dwarf galaxies
 Clumpy multiphase outflows are capable to explain \lya\ features around
 star-forming galaxies
 \citep{2010ApJ...717..289S,2012MNRAS.424.1672D}. 
-From this evidence we decide to try a multiphase model.
+
 
 The motivation for the rotation without outflows (as presented in \cite{GaravitoCamargo2014})is that
 dwarf galaxies show coherent rotation features
@@ -220,8 +219,7 @@ dwarf galaxies show coherent rotation features
 high neutral gas contents with long quiescent phases without high gas
 outflows triggered by supernova activity
 \citep{2005A&A...433L...1B,2008ApJ...672..888T,2013MNRAS.434.2491G}.  
-For these reasons we also explore a model with a spherical gas
-distribution with solid body rotation and without any outflows. 
+
 
 
 The models we use correspond to simplified geometrical configurations.
@@ -235,7 +233,7 @@ We do not claim that our findings discard the existence of different
 undiscovered models that could reproduce the observed features in \tol.
 More involved models with multiple kinematic components could
 in principple be also sucessful.
-We focus on the existence of two simple and succesful models that
+We focus on presenting two simple and succesful models that
 manage, for the first time, to account for \tol's \lya\ line main
 features. 
 
@@ -244,7 +242,8 @@ We review first the observational characteristics of
 rotation models to explain how we fit their free parameters 
 to the \tol's \lya\ line shape.
 We use the results to interpret them in terms of the galaxy's
-dynamical mass. 
+dynamical mass and explain why the multiphase model should be prefered
+over the rotation model.
 We close by discussing the physical scenarios opened up by our
 results and the additional observational information needed to clarify
 the kinematic nature of \tol.
@@ -346,7 +345,7 @@ The thick red and thin blue curves represent our best fit
 to the data using the full radiative transfer simulation with a
 rotation and multiphase model, respectively. 
 These two different models are able to reproduce the main morphological
-features of \tol's \lya\ line emission.}
+features of \tol's \lya\ line emission.\label{fig:results}}
 \end{center}
 \end{figure*}
 
@@ -404,6 +403,8 @@ component which totals the number of parameters describing the model
 to be $14$, which also include information about the spatial
 distribution and thermal state of the clumps and the intraclump
 medium. 
+We do not explore inflowing clumps given the slight line asymmetry
+redwards to the line center (see the dots in Figure \ref{fig:results})
 
 In order to map out this large parameter space, we randomly drew
 $2500$ sets of parameters within a observationally realistic range,
@@ -428,13 +429,10 @@ of the $2500$ models
 where $i$ iterates over velocity bins, $f_{i}$ is the observed flux,
 $\sigma_i$ is the observed flux uncertainty and $\hat{f}_i$ is the
 model estimated flux.
- 
-We do not have analytic expression for $\hat{f}$. 
-For the multi-phase model the results of the MonteCarlo are used to
-build histograms that play the role of $\hat{f}$. 
-For the rotation model $\hat{f}$ is computed 
-has to be computed by numerical integration of analytical
-approximations found in  \citet{GaravitoCamargo2014}.
+We do not have analytic expression for $\hat{f}$, instead we use the
+results of the MonteCarlo to build histograms that play the role of
+$\hat{f}$.   
+
 
 
 We select for further analysis the best $1\%$ models according to the
@@ -503,7 +501,9 @@ combination with respect to the observational data.
 The walkers explore the parameter space sampling the Gaussian likelihood
 function built as $\propto \exp(-\chi^2/2)$, where the $\chi^2$ follows
 the definition in Equation \ref{eq:chi2}. 
- 
+We do not have an analytic expresion for $\hat{f}$, we compute it
+by numerical integration of the analytical approximations found in
+\citet{GaravitoCamargo2014}.  
 
 We explore flat priors on four parameters: $200<V_{\rm
   max}/\mathrm{km\ s}^{-1} <600$,   $6.0<\log_{10}\tau<9.0$,
@@ -524,9 +524,11 @@ overplot from our best fits from the analytical solution for the
 multiphase model (thick line)  and the rotating homogeneous gas sphere
 (thin line). 
 
-In spite of the simplicity of our models, this is the first time that
-the main \tol\ features can be reproduced: a wide, centered,
-single-peaked \lya\ line.
+The fit to the observations is not perfect. However, in spite of the
+simplicity of our models, this is the first time that the main
+\tol\ features can be reproduced: a broad, highly symmetric,
+single-peaked \lya\ line. 
+
 This result does not demonstrate that the kinematic features we
 include in our models are necessary to reproduce \tol's features, but
 at least they show that they are a sufficient condition.
@@ -560,22 +562,35 @@ degrees of freedom) and its corresponding parameter value.
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump. 
 
-Qualitatively this can be understood as follows. The broad \lya\ line
-is the result of subsequent \lya\ photon scatterings due to
-(relatively) fast moving clumps while the multi-phase nature (i.e., the existence of low-density
-inter-clump regions where \lya\ photons can freely prograpagate)
-ensures the high flux at line center as observed.  
+We tested with a set of 100 additional Monte-Carlo simulations
+with random values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$ and
+$P_{\rm cl}$ within the derived constraints (and random values for the
+other parameters over the whole parameter range) and found that $30$
+models result in $\chi^2$ values  
+continue to provide a similar $\chi^2$ values as the best $25$ models.  
+
+Qualitatively this result can be understood as follows. 
+The broad \lya\ line is the result of subsequent \lya\ photon
+scatterings due to (relatively) fast moving clumps while the
+multi-phase nature (i.e., the existence of low-density inter-clump
+regions where \lya\ photons can freely prograpagate)  ensures the high
+flux at line center as observed.   
 In turn, a lower velocity dispersion would produce a thiner line than
 it is observed.
 From the lower right panel in Figure \ref{multiphaseresults} we find that it
 is unlikely that the clump velocity dispersion is lower than
 $50$\kms. 
 
-Why is it that the other parameters do not seem to matter? Probably
-because $P_{cl}$ (the probability for a \lya\ to be emitted in a
-clump) is high and most photons are produced at
-large radii making the radiative transfer effects in the center less
-important.  
+Having constrained only 3 parameters, one migh wonder why the other 11
+parameters do not seem to matter. 
+However, this view is misleading. 
+Event if for clumply models the line profile is most sensitive to only
+a few parameters \citep{Gronke}, there are the rest of parameters
+which affect the line profile at a level that cannot be neglected,
+i.e. we cannot randomly pick 11 random, reasonable values for these
+parameters, and expect to fit the line profile while only varying the
+other 3. 
+
 We cannot discard that another region of parameter space with similar
 velocity structure but an empty inter-clump medium, relatively dense
 clumps and at least a few clumps per sightline 
@@ -583,8 +598,10 @@ could also work \citep{Hansen06}.
 This possibility does not change our conclusions about the
 kinematic parameters, but it might be interesting to explore in the
 future with a higher sampling of the parameter space once new 
-observations  clarify the kinematic nature of \tol \footnote{In Section \S \ref{sec:conclusions} we describe  in more detail what kind of observations could be performed in the
-  near future to improve our understanding of \tol's kinematics.} .
+observations  clarify the kinematic nature of \tol \footnote{In
+  Section \S \ref{sec:conclusions} we describe  in more detail what
+  kind of observations could be performed in the near future to
+  improve our understanding of \tol's kinematics.} . 
   
 
 \subsection{Bulk Rotation}
@@ -618,10 +635,10 @@ found by the MCMC are robust given the observational constraints.
 
 \tol\ shows one of the most atypical \lya\ spectra observed so far.
 Its flux at the line's center is high compared to other LAEs at low
-redshift and the wide symmetrical peak is virtually absent from other
-LAEs at low and high redshift \citep{2012ApJ...751...29Y,LARS,Erb14,Trainor16}. Simple
-shell models fail to reproduce such a spectrum
-\cite{2015A&A...578A...7V}.  
+redshift and the broad, highly symmetrical peak is virtually absent from other
+LAEs at low and high redshift
+\citep{2012ApJ...751...29Y,LARS,Erb14,Trainor16}. Simple shell models
+fail to reproduce such a spectrum as reported by \cite{2015A&A...578A...7V}.  
 In the previous sections we show how these characteristics can be
 explained by two different kinematic models. Which model should we prefer?
 
@@ -629,8 +646,8 @@ explained by two different kinematic models. Which model should we prefer?
 elliptical galaxies \citep{2003AJ....126.1794G}. 
 Galaxies such as IC 3344 and NGC 4482 have similar absolute $M_V$
 magnitudes and size as \tol. 
-These galaxies have velocity dispersions in the range $30$-$45$ \kms. 
-The rotational velocities of those systems is lower than $1$\kms. 
+These galaxies have velocity dispersions in the range $30$-$45$ \kms
+and their rotational velocities are lower than $1$\kms. 
 This supports the idea that the multiphase model the correct model
 describing \tol, as it provides at least some consistency with
 kinematic properties of other dwarf elliptical galaxies.
