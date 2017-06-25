@@ -1,3 +1,33 @@
+We thank the referee for a detailed set of comments that allowed us to
+greatly improve the quality of the paper. 
+
+In this new version the most important change is in the Discussion of
+our results (which remain unchanged). We now discard the possible
+influence of a supermassive black hole and favor instead a picture
+where Tololo1244-277 has similar structural characteristics as
+observed dwarf ellipticals. 
+
+This opens up instead the puzzle as to why an isolated star-forming
+compact dwarf galaxy could have similar structura characteristics as a
+quiescent red dwarf galaxy found only in galaxy clusters. This
+potential evolutionary link still depends on observational
+confirmation of the velocity dispersion in Tololo124-277.
+
+New tests using random forets classifiers and additional monte carlo
+simulations allows to improve our discussion about the limitations of
+our method.
+
+We have also included the smaller modifications suggested by the
+referee.
+
+Below is the detailed reply to all the major comments by the referee.
+
+With best regards, 
+
+The Authors.
+
+==========
+ 
 1) The introduction lacks a stronger physical motivation for using the
 Ly-alpha line as a probe of the physical conditions inside galaxies
 and, in particular, the existence of a supermassive black hole. There
@@ -19,13 +49,12 @@ Ly-alpha profile considered atypical? Why a symmetrical line profile
 should not be expected? It would be good to have some explanation
 about this too.
 
-Reply. In this paper it is the atypical Lya line what matters to
+Reply. In this paper is the atypical Lya line what matters to
 us. The highlight of this paper is the existence of models that are
 able to reproduce the main feature of this line. A feat achieved for
-the first time since the first Tololo Lya observations in 1997.
+the first time since the first Tololo1214-277 Lya observations in 1997.
 We have modified parts of the Abstract, Introduction and Conclusions
 to highlight this perspective.
-
 
 2) It is not clear what the physical motivation for using the models
 selected for the work and described in the text is. Why these models
@@ -40,7 +69,7 @@ Ly-alpha emitters. It would be good to provide an explanation on how
 this fact drives the selection of the models in question. I encourage
 the authors to expand more on this matter.
 
-We have included a paragraph in the introduction highlighting the
+Reply. We have included a paragraph in the Introduction highlighting the
 physical motivation for these two models. 
 
 3) Have the authors checked dynamical masses for compact dwarf
@@ -49,26 +78,7 @@ compare with the dynamical mass estimate in this manuscript? How much
 larger, typically, are compact dwarf galaxies with respect to
 ultra-compact dwarfs?
 
-For example, ultra-compact dwarf galaxies are reported to have
-dynamical masses of the order of 10^7-10^8 M_sun (e.g. Evstigneeva et
-al. 2007, Hilker et al. 2007, Ahn et al. 2017). Some ultra-compact
-dwarf galaxies have supermassive black holes of the order of 10^6-10^7
-M_sun (Seth et al. 2014, Ahn et al. 2017). Our own Milky Way has a
-supermassive black hole of M~10^6 M_sun (e.g. Ghez et al. 2008).
-
-The supermassive black hole mass suggested here based on the dynamical
-mass estimates is of the order of 10^9 M_sun. This seems somewhat
-large for a compact dwarf galaxy considering that the supermassive
-black hole in M87 is of the order of 10^9 M_sun (e.g. Macchetto et
-al. 1997, Walsh et al. 2013). M87 mass within 32 kpc is of the order
-of 10^12 M_sun (Wu & Tremaine 2006) and its stellar velocity
-dispersion at ~1 kpc of the order of 300-400 km/s (Murphy et
-al. 2014), consistent with the M-sigma relation (Gultekin et
-al. 2009). Where does the black hole mass value proposed in this work
-fall in the M-sigma relation, considering a calculated velocity
-dispersion of ~55 km/s (Sec. 4.1)?  Is it possible to have a compact
-dwarf galaxy with a mass of the order of that of M87 (as proposed in
-Sec. 5) and a central velocity dispersion of 55 km/s? This looks odd.
+Reply. 
 
 My main concern with the final result (and the corresponding
 interpretation) of this paper is that the dynamical masses may have
@@ -79,6 +89,27 @@ mass galaxies have higher Ly-alpha equivalent widths. Is it possible
 that this effect, if not corrected for, may be causing to measure
 higher velocity values from the Ly-alpha profile that also result into
 higher dynamical masses?
+
+Reply. We have looked carefully into published observational data for
+compact dwarf galaxies (UCD's) and dwarf ellipticals (DE's). 
+This helped us to realize that Tololo is closer to the sizes and
+luminosities of dwarf ellipticals than UCDs'. 
+The velocity dispersions observed in DE match the results of our
+multiphase model.  
+Furthermore, the dynamical modelling that has been already performed
+on DE's allows us to put improve our constrains on the dark matter
+halo mass required to match the kinematics, discarding the need for a
+supermassive black hole.
+It is still puzzling that: A) DE's are found in groups and clusters,
+while tololo is isolated and B) DE's are not star forming, while
+tololo hosts a starburst.
+For this reason we have completely restructure the discussion section
+to present this comparison. We have removed the consideration of the
+black hole hypothesis.
+
+Reply. The high velocity come from the high line-width. Not from its
+Equivalent Width (i.e. intensity to continuum ratio). The effects of
+Oyarzun et al. 2016 should not change our conclusions.
 
 In Fig. 1, none of the models seems to fit accurately enough the data
 within the errors and within the full wavelength extent of the
@@ -91,38 +122,17 @@ these fits be improved, for example by considering a dust correction
 to the data?  Authors should comment more on the limitations of the
 fits shown in the figure.
 
-Also, in Sec. 5 the authors "lean towards the lower dynamical mass
-estimate from the multiphase model as it seems easier to reconcile
-with" a total halo mass of 10^12 M_sun (like Milky Way's or M87's) or
-a supermassive black hole of 10^9 M_sun. This gives the impression
-that the preferred model is selected only based on plausible outcomes
-without a clear physical motivation: we do not really know whether a
-supermassive black hole should exist or the total halo mass of the
-galaxy be of the order of that of the Milky Way.
 
-The authors should look into the questions above more carefully as the
-conclusion of a supermassive black hole of 10^9 M_sun may be a wrong
-interpretation of the data. There might be a black hole, but likely of
-a lower mass than that proposed. Dynamical mass estimated may also
-need some correction. Is it possible to explain the data by means of
-other physical processes, without needing a supermassive black hole or
-an halo mass of 10^12 M_sun for a compact dwarf galaxy?
+Reply. The fit to the observations is not perfect.  However, in spite of the
+simplicity of our models, this is the first time that the main
+features can be reproduced: a broad, highly symmetric, single-peaked Lya line. 
+We now highlight that our results do not demonstrate that the
+kinematic features we include in our models are necessary to reproduce
+Tololo's features, but at least they show that they are a sufficient condition.
+This is a significant step forward to understand the influence that
+different kinematics have in producing the atypical line profile shown
+by Tololo.
 
-Reply. We have looked carefully into published observational data for
-compact dwarf galaxies (UCD's) and dwarf ellipticals (DE's). This helped us to
-realize that Tololo is closer to the sizes and luminosities of dwarf
-ellipticals than UCDs'. Tololo is usually classified as a CDG as it is
-star forming and not "red and dead" as DE's. Furthermore, the velocity
-dispersions observed in DE match the results of our multiphase model. 
-It is still puzzling that: A) DE's are found in groups and clusters,
-while tololo is isolated and B) DE's are not star forming, while
-tololo hosts a starburst.
-For this reason we have completely restructure the discussion section
-to present this comparison. This also removes the motivation to
-consier the BH hypothesis. 
-
-The author should at least provide a more complete/compelling
-discussion on these issues.
 
 B- SPECIFIC COMMENTS:
 
@@ -145,6 +155,11 @@ What is the spectral resolution of the data? In addition to citing
 Thuan & Izotov, explicitly providing this information in the paper
 will make this one more self-contained. This may be helpful for
 readers who like to have all the more relevant information "handy".
+
+Reply. We have inlcuded a reference to the paper that presented the
+detailed imaging results for Tololo. We have also included more
+details on the intrumentation characteristics behind all the
+observations we report.
 
 2) The introduction of the idealized multiphase model (first sentence
 of Sec. 3.1) needs a reference. This model uses clumps with random
@@ -171,6 +186,15 @@ impact on the kinematics and the dynamical mass in this case? Is there
 any change/improvement with a fewer number of parameters? The authors
 should test and comment on this.
 
+Reply. In section 4.1 we have expanded our discussion on the
+multiphase model. We have performed additional tests using random
+forest classifiers to confirm that there are three parameters that are
+the most influential. We have also expanded the discussion on why this
+does not mean that thee other parameters are irrelevant. We have also
+performed a test with new 100 Monte Carlo runs to backup our
+comments. We hope that the new tests help to clarify the situation.
+
+
 3) In equation (1), what is the specific form of the model being
 utilized? How are the different parameters in the multiphase and bulk
 rotation models related to each other? It is desirable to have some
@@ -182,7 +206,6 @@ written down in a closed form. For the rotation we have an analytic
 equations that must be numerically integrated. For the multi-phase
 model the full MC simulation has to be performed. We now explain this in
 the text.
-
 
 4) On page 6, at the end of Sec. 4.2, it is said that "Lower
 rotational velocities are disfavored by the fact that the line is

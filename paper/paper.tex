@@ -105,14 +105,14 @@ rotation.
 It is the first time that an observed \lya\ spectrum can be explained
 assuming either of these kinematic conditions.
 The multiphase model requires a clump velocity dispersion of
-\sigmaclump\ with outflows of \inftyclump\ while the bulk rotation
-velocity is constrained to be $348^{+75}_{-48}$ \kms.
+at least \sigmaclump\ with outflows of \inftyclump\ at most, while the
+bulk rotation velocity is constrained to be $348^{+75}_{-48}$ \kms.
 This shows the importance of considering multiphase
 and rotation kinematics among the possible conditions shaping the
 \lya\ spectra.
 However, we consider that the multiphase model has more chances to
 agree with \tol's reality. 
-The clump velocity dispersion implies a dynamical mass of $2\times
+The clump velocity dispersion implies a dynamical mass of at least $2\times
 10^{9}$ M$_{\odot}$, ten times its baryonic mass, which can be
 explained if \tol\ is hosted by a dark matter halo of at least
 $10^{11}$ M$_{\odot}$; conditions similar to those of Dwarf Elliptical
@@ -299,6 +299,8 @@ detection for \tol.
 This lack of detection motivates our assumption that \lya\ emission is
 powered by star formation only.
 
+
+
 The observed flux for the \lya\ line is $\sim
 8.1\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \citep{Thuan97}
 and a Equivalent Width of $70$\AA\ and its H$\beta$ flux is 
@@ -344,6 +346,8 @@ We computed the projected half-light radius to be $R_s=1.5\pm0.1$ kpc
 from the surface brightness profiles reported by \cite{2003A&A...410..481N}. 
 Assuming spherical geometry, one can translate this value into a 3D
 half-light radius of $r_s=3R_s/2=2.25$ kpc.
+Imaging observations by \cite{2001AJ....121..169F} show that \tol\ is
+an isolated field galaxy not belonging to a group or cluster. 
 
 There is an upper limit for the  21 cm line integrated flux of $<0.10$
 Jy km s$^{-1}$  which translates into a upper limit for the HI mass of
@@ -469,8 +473,9 @@ The total number of degrees of freedom, $d.o.f$, is $104$.
 We divide the results in two classes: low $\chi^2/d.o.f.<35$ and high
 $\chi^2/d.o.f.35>$.
 We apply a random forest classification algorithm to find the
-parameters more relevant in splitting the results into these two
-classes. The algorithm uses $500$ trees for the classification and a
+more relevant parameters in splitting the results into these two
+classes. 
+The algorithm uses $500$ trees for the classification and a
 maximum of $3$ depth levels. 
 To check for tability we repeat the computation $10$ times by
 randomly subsampling the input data to use $80\%$ of the data as a
@@ -556,7 +561,8 @@ overplot from our best fits from the analytical solution for the
 multiphase model (thick line)  and the rotating homogeneous gas sphere
 (thin line). 
 
-The fit to the observations is not perfect. However, in spite of the
+The fit to the observations is not perfect. 
+However, in spite of the
 simplicity of our models, this is the first time that the main
 \tol\ features can be reproduced: a broad, highly symmetric,
 single-peaked \lya\ line. 
@@ -567,6 +573,7 @@ at least they show that they are a sufficient condition.
 This is a significant step forward to understand the influence that
 different kinematics have in producing the atypical line profile shown
 by \tol.
+
 
 In what follows we summarize the values of the kinematic parameters
 that managed to explain \tol\'s \lya\ profile.
@@ -592,8 +599,9 @@ classes, respectively, after selecting for $v_{\infty,{\rm cl}}<157.0$ \kms,
 $\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$. 
 The split in two classes is not perfect. 
 This means that the 3 parameters in the
-model are the most influential, but that some combinations of the
-other 11 parameters are also relevant to find a good fit. 
+model are the most influential in finding models with low
+$\chi^2/d.o.f.$, but that some combinations of the other 11 parameters
+are also relevant to find a good fit.  
 
 From the K-S tests we confirm that the same 3 parameters are the
 only ones that can be constrained by observations;
@@ -627,10 +635,9 @@ $50$\kms.
 This is also supported by the classification tree example in Figure
 \ref{fig:tree}.  
 
-
-As a test, we run a small set of 100 additional radiative transfer simulations
-with random values for all parameters, except for $\sigma_{\rm cl}$,
-$v_{\infty {\rm cl}}$, $P_{\rm cl}$ which are within the derived
+As a test, we also run a small set of 100 additional radiative
+transfer simulations with random values for all parameters, except for
+$\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm cl}$ which are within the derived
 constraints.
 Consistent with the results from the random forest algorithm,
 illustrated by the classification tree of Figure \ref{fig:tree}, we
@@ -648,22 +655,22 @@ parameters, and expect to fit the line profile while only varying the
 other 3, as the results for the classification tree example show in
 Figure \ref{fig:tree}.
 
-We cannot discard that another region of parameter space with similar
-velocity structure but an empty inter-clump medium, relatively dense
-clumps and at least a few clumps per sightline 
-could also work \citep{Hansen06}.
-This possibility does not change our conclusions about the
-kinematic parameters, but it might be interesting to explore in the
+
+
+We cannot discard that another region of parameter space
+could also work.
+It might be interesting to explore in the
 future with a higher sampling of the parameter space once new 
 observations  clarify the kinematic nature of \tol \footnote{In
   Section \S \ref{sec:conclusions} we describe  in more detail what
   kind of observations could be performed in the near future to
   improve our understanding of \tol's kinematics.} . 
 
+Considering this sparse sampling of parameter space and the results
+from the random forest classifier, it is reasonable to consider that
+the best values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm
+  cl}$ are actually lower/upper/lower bounds, respectively. 
 
-
-
-  
 
 \subsection{Bulk Rotation}
 
@@ -754,6 +761,9 @@ for the HI region, in the multiphase model the clump velocity dispersion
 $\sigma_{\rm{cl}}=$\sigmaclump corresponds to a dynamical mass of
 $M_{\rm dyn}=2.31\pm0.04 \times 10^{9}$ $M_{\odot}$, which is ten
 times the estimated baryonic mass in \tol.
+Considering that the results for $\sigma_{\rm{cl}}$ are most probably
+a lower bound, the results for the dynamical mass should also be
+considered as a lower bound. 
 
 \cite{2011ApJ...726..108T} showed that  that such dynamical
 mass can be explained if a dwarf galaxy is hosted by a dark matter halo of at
@@ -828,7 +838,7 @@ kinematic structure.
 Our findings highlight the importance of including multiphase and/or
 rotation conditions as kinematic features to model the \lya\ line.
 
-We acknowledge that a final confirmation of our kinematic findings has
+A definitive confirmation of our kinematic findings has
 to be provided by new observational tests with integral field unit
 spectroscopy. 
 If our results are confirmed, this would open up a new line of more detailed
