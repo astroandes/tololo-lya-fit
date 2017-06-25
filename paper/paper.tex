@@ -272,6 +272,20 @@ $21$cm (Jy km s$^{-1}$)& $<0.10$ \\\hline
 \end{table}
 
 
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
+\caption{Broad, single peaked and symmetric \lya\ emission of \tol.
+  Dots correspond to the observational data \citep{mashesse03}. 
+The thick red and thin blue curves represent our best fit
+to the data using the full radiative transfer simulation with a
+rotation and multiphase model, respectively. 
+These two different models are able to reproduce the main morphological
+features of \tol's \lya\ line emission.\label{fig:results}}
+\end{center}
+\end{figure*}
+
 \tol's basic observational characteristics are summarized in Table \ref{obstable}.
 Its receding velocity is $7785\pm 50$km s$^{-1}$ translates
 into a distance of $106.6$ Mpc, using a Hubble constant value of $H_{0}$=73
@@ -336,18 +350,25 @@ $M<2.65\times 10^{8}$ M$_{\odot}$ \citep{pustilnikmartin07}.
 
 
 
+
 \begin{figure*}
 \begin{center}
-\includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
-\caption{Broad, single peaked and symmetric \lya\ emission of \tol.
-  Dots correspond to the observational data \citep{mashesse03}. 
-The thick red and thin blue curves represent our best fit
-to the data using the full radiative transfer simulation with a
-rotation and multiphase model, respectively. 
-These two different models are able to reproduce the main morphological
-features of \tol's \lya\ line emission.\label{fig:results}}
+\includegraphics[width=0.95\textwidth]{tree_result.pdf}
+\caption{Classification tree example. 
+The aim is to find the parameters that separate two
+classes: low $\chi^2/d.o.f. < 35$ and high $\chi^2/d.o.f>35$. 
+Each box describes the condition over the parameter of interest, the
+level of sample impurity, the number of samples and the value of the
+number of samples in each classes.  
+In this example we start with $28$ models in the first class and
+$1962$ models in the second class; the best way to increase the probability to find a
+a result with low $\chi^2/d.o.f.$ ($13$ models) is having $v_{\infty,{\rm cl}}<157.0$ \kms,
+$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$.
+All other parameters are also importatn but these three are the most relevant.
+\label{fig:tree}}
 \end{center}
 \end{figure*}
+
 
 \begin{figure*}
 \begin{center}
@@ -374,21 +395,6 @@ features of \tol's \lya\ line emission.\label{fig:results}}
 \end{center}
 \end{figure*}
 
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.95\textwidth]{tree_result.pdf}
-\caption{A representative result from the tree classification algorithm. 
-Each box describes the condition over the parameter of interest, the
-level of sample impurity, the number of samples and the value of the
-number of samples in each of the classification classes.  We use two
-classes: low $\chi^2/d.o.f. < 35$ and $\chi^2/d.o.f>35$. 
-In this example the best way to increase the probability to find a
-model with  low $\chi^2/d.o.f.$ is having $v_{\infty,{\rm cl}}<157.0$ \kms,
-$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$.
-\label{fig:tree}}
-\end{center}
-\end{figure*}
 
 \begin{figure*}
 \begin{center}
@@ -449,31 +455,37 @@ We do not have analytic expression for $\hat{f}$, instead we use the
 results of the MonteCarlo to build histograms that play the role of
 $\hat{f}$.   
 
-
-
 We select for further analysis the best $1\%$ models according to the
 lowest $\chi^2$ values.
 We note that the difference between the lowest and highest $\chi^2$ values in
 those $25$ models is close to $\Delta\chi^2 = 3000$, the lowest
-$\chi^2$ being close to $\chi^2_{min}=1200$. To have a sense of scale,
-the total number of degrees of freedom is $104$. 
+$\chi^2$ being close to $\chi^2_{min}=1200$. 
+The total number of degrees of freedom, $d.o.f$, is $104$. 
 
-Then we perform a Kolmogorov-Smirnov (K-S) test to compare each parameter
+We divide the results in two classes: low $\chi^2/d.o.f.<35$ and high
+$\chi^2/d.o.f.35>$.
+We apply a random forest classification algorithm to find the
+parameters more relevant in splitting the results into these two
+classes. The algorithm uses $500$ trees for the classification and a
+maximum of $3$ depth levels. 
+To check for tability we repeat the computation $10$ times by
+randomly subsampling the input data to use $80\%$ of the data as a
+training set.
+
+We also perform a Kolmogorov-Smirnov (K-S) test to compare each parameter
 distribution in the best $25$ models against the parent distribution
 of $2500$ models. 
 If we obtain a p-value $<0.05$ for a given model parameter, we conclude that
-this parameter does influence the $\chi^2$ fit, as the distribution for
+this parameter does influence the $\chi^2$ result, as the distribution for
 the best $\chi^2$ models is statistically different to the
 distribution from the global sample of $2500$ models.  
 
-The best values for the influential parameters correspond to
-the values that produce the minimum
-$\chi^2$.
+We finally compute the best values for the influential parameters as
+the values that produce the minimum $\chi^2$.  
 We estimate the 1-$\sigma$ uncertainty from a parabolic fit to the
 $\chi^2$ as a function of the influential parameters around its
 corresponding minimum.   
-%$v_{\infty,\rm{cl}}$, $\sigma_{\rm cl}$,
-%$P_{\rm cl}$ 
+
 
 
 
@@ -558,32 +570,50 @@ that managed to explain \tol\'s \lya\ profile.
 
 \subsection{Multiphase ISM}
 
-From the K-S tests we find that only three parameters can be
-constrained by the observations: the clump outflow velocity
-$v_{\infty,\rm{cl}}$ (p-value  $10^{-18}$), the clump velocity
-dispersion $\sigma_{\rm cl}$ (p-value $10^{-4}$) and the probability
-that the \lya\ emission comes from the clumps $P_{\rm cl}$ (p-value
-$10^{-4}$).
-This does not mean the other parameters do not influence the resulting
-spectra at all; it means that they cannot be constrained from \tol's
-observations.
+With $14$ free parameters our first concern is discovering which are
+the most relevant in reproducing \tol's line shape.
+The results of the random forest classifier yield that the clump outflow velocity
+$v_{\infty,\rm{cl}}$, the clump velocity dispersion $\sigma_{\rm cl}$ and the probability
+that the \lya\ emission comes from the clumps $P_{\rm cl}$ are the
+most influential parameters in finding a model with low
+$\chi^2/d.o.f.$.
+
+Figure \ref{fig:tree} shows the results for one of such tree. 
+Starting with $28$ and $1962$ models in the low and high
+$\chi^2/d.o.f.$ classes respectively, we find that the best separation
+yields $13$ and $44$ models after selecting for $v_{\infty,{\rm cl}}<157.0$ \kms,
+$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$.
+The split is not perfect. This means that the three parameters in the
+model are the most influential, but that some combinations of the
+other 11 parameters are also relevant to find a good fit.
 
 
-The results are summarized in Figure \ref{multiphaseresults}.
-Left panels show the difference between the integrated distributions
+From the K-S tests we confirm that the same three parameters are the
+only ones that can be constrained by observations;
+$v_{\infty,\rm{cl}}$ (p-value  $10^{-18}$), $\sigma_{\rm cl}$ (p-value
+$10^{-4}$) $P_{\rm cl}$ (p-value $10^{-4}$).
+Once again, this test does not mean the other parameters do not
+influence the resulting spectra at all; it means that they cannot be
+constrained from \tol's observations. 
+
+
+The best models are summarized in Figure \ref{multiphaseresults}.
+Left column show the difference between the integrated distributions
 of the full sample (2500 input models) and the models with the lowest
-$\chi^2$. 
-The right panel shows the actual $\chi^2$ values (normalized by the
-degrees of freedom) and its corresponding parameter value. 
+$\chi^2/d.o.f.$. 
+The right column shows the actual $\chi^2/d.o.f.$ 
+and its corresponding parameter value. 
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump. 
 
-We tested with a set of 100 additional Monte-Carlo simulations
-with random values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$ and
-$P_{\rm cl}$ within the derived constraints (and random values for the
-other parameters over the whole parameter range) and found that $30$
-models result in $\chi^2$ values  
-continue to provide a similar $\chi^2$ values as the best $25$ models.  
+As a test, we ran a small set of 100 additional Monte-Carlo simulations
+with random values for all parameters, except for $\sigma_{\rm cl}$,
+$v_{\infty {\rm cl}}$, $P_{\rm cl}$ which where within the derived
+constraints.
+Consistent with the results from the random forest algorithm,
+illustrated by the classification tree of Figure \ref{fig:tree}, we
+found that $30$ models showed $\chi^2/d.o.f.<35$ values  
+
 
 Qualitatively this result can be understood as follows. 
 The broad \lya\ line is the result of subsequent \lya\ photon
@@ -601,7 +631,7 @@ Having constrained only 3 parameters, one migh wonder why the other 11
 parameters do not seem to matter. 
 However, this view is misleading. 
 Event if for clumply models the line profile is most sensitive to only
-a few parameters \citep{Gronke}, there are the rest of parameters
+a few parameters \citep{Gronke2016}, there are the rest of parameters
 which affect the line profile at a level that cannot be neglected,
 i.e. we cannot randomly pick 11 random, reasonable values for these
 parameters, and expect to fit the line profile while only varying the
