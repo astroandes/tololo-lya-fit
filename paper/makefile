@@ -13,15 +13,15 @@ all: $(FILE_PDF)
 
 $(FILE_PDF) : $(FILE_TEX) references.bib
 	$(LATEX) $(FILE_TEX)
-	bibtex $(FILE_NAME)
-	$(LATEX) $(FILE_TEX)
+#	bibtex $(FILE_NAME)
+#	$(LATEX) $(FILE_TEX)
 	$(LATEX) $(FILE_TEX)
 
 diff: 
-	latexdiff old_letter.tex letter.tex > diff_letter.tex
+	latexdiff old_$(FILE_TEX) $(FILE_TEX) > diff_$(FILE_TEX)
 	$(LATEX) diff_$(FILE_TEX)
-	bibtex $(FILE_NAME)
-	$(LATEX) diff_$(FILE_TEX)
+#	bibtex $(FILE_NAME)
+#	$(LATEX) diff_$(FILE_TEX)
 	$(LATEX) diff_$(FILE_TEX)
 
 submit:
