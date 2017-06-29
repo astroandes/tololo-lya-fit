@@ -265,13 +265,13 @@ to clarify the kinematic nature of \tol.
 
 \begin{table}
 \begin{center}
-\begin{tabular}{lc}\hline
-$\alpha$(2000)$^{a}$ & 12h17min17.1s\\
-$\delta$(2000)$^{b}$ & -28d02m32s\\
+\begin{tabular}{lr}\hline
+$\alpha$(2000)& 12h17min17.1s\\
+$\delta$(2000)& -28d02m32s\\
 $l$, $b$ (deg) & 294, 34\\
 $m_V$ & 17.5\\
   M$_V$ & -17.6\\ 
-$z$ & $0.0259\pm0.0002$ \\\hline
+Redshift & $0.026\pm0.001$ \\\hline
 \end{tabular}
 \end{center}
 \caption{Basic observational characteristics of \tol\ 
@@ -281,7 +281,7 @@ $z$ & $0.0259\pm0.0002$ \\\hline
 
 \begin{table*}
   \centering
-\begin{tabular}{l|lrrr}
+\begin{tabular}{l|lrrl}
 \hline
   Parameter  & Description & Fiducial value & Allowed range & Units \\ \hline\hline
 $v_{\infty,\,{\rm cl}}$ & Radial cloud velocity & $100.0$ & [$0.0$, $800.0$] & $\,{\rm km\,s}^{-1}$ \\
@@ -295,9 +295,13 @@ $n_{\rm HI,\,{\rm ICM}}$${}^{\dagger}$ & \HI number density in ICM & $5.0\times 
 $\sigma_{\rm i}$ & Width of emission profile & $50.0$ & [$5.0$, $100.0$] & $\,{\rm km\,s}^{-1}$ \\
 $T_{\rm {\rm cl}}$${}^{\dagger}$ & Temperature in clouds & $10^{4}$ & [$5.0\times 10^{3}$, $5.0\times 10^{4}$] & $\,{\rm K}$ \\
 $\beta_{\rm cl}$ & Steepness of the radial velocity profile & $1.5$ & [$1.1$, $2.5$] &  \\
-$\tilde\sigma_{\rm d, cl}$${}^{\dagger}$ & Dust content in clumps & $3.2\times10^{-22}$ & [$4.7\times 10^{-24}$, $1.6\times 10^{-21}$] & $\,\cm^{2}$ \\
-$\zeta_d$${}^{\dagger}$ & Ratio of ICM to cloud dust abundance & $0.01$ & [$10^{-4}$, $0.1$] &  \\
-$n_{\rm HI,\,{\rm cl}}$${}^{\dagger}$ & \HI number density in clouds & $0.35$ & [$0.03$, $3.0$] & $\,{\rm cm}^{-3}$ \\
+$\tilde\sigma_{\rm d, cl}$${}^{\dagger}$ & Dust content in clumps &
+  $3.2\times10^{-22}$ & [$4.7\times 10^{-24}$, $1.6\times 10^{-21}$] &
+  $\,\cm^{2}$ \\
+$\zeta_d$${}^{\dagger}$ & Ratio of ICM to cloud dust abundance &
+  $0.01$ & [$10^{-4}$, $0.1$] & \\
+$n_{\rm HI,\,{\rm cl}}$${}^{\dagger}$ & \HI number density in
+  clouds & $0.35$ & [$0.03$, $3.0$] & $\,{\rm cm}^{-3}$ \\
 \hline
 \end{tabular}
   \caption{Overview of the parameters in the multiphase model and its fiducial
@@ -387,11 +391,12 @@ clumps of neutral hydrogen (and dust) embedded in a hot, ionized
 medium \citep{Gronke2016}. 
 The clumps also have a random and an outflowing velocity
 component which totals the number of parameters describing the model
-to be $14$, which also include information about the spatial
-distribution and thermal state of the clumps and the intraclump
-medium. 
+to be $14$.
 We do not explore inflowing clumps given the slight line asymmetry
 redwards to the line center (see the dots in Figure \ref{fig:results})
+and thus set $v_{\infty,\,{\rm cl}}>0$.
+The parameter description list is in Table \ref{tab:models}.
+
 
 In order to map out this large parameter space, we randomly drew
 $2500$ sets of parameters within a observationally realistic range,
@@ -406,7 +411,7 @@ We compare each resulting spectra to the observational results from
 \tol\ after normalizing the observed and simulated spectra to have a 
 flux integral of one.
 We build a $\chi^2$ on the normalized flux measurements for each one
-of the $2500$ models
+of the $2500$ models as
 
 \begin{equation}
 \chi^2 = \sum_{i} \frac{({f}_i - \hat{f}_i)^2}{\sigma_i^2}, 
@@ -416,7 +421,7 @@ of the $2500$ models
 where $i$ iterates over velocity bins, $f_{i}$ is the observed flux,
 $\sigma_i$ is the observed flux uncertainty and $\hat{f}_i$ is the
 model estimated flux.
-We do not have analytic expression for $\hat{f}$, instead we use the
+As we do not have an analytic expression for $\hat{f}$; we use the
 results of the MonteCarlo to build histograms that play the role of
 $\hat{f}$.   
 
@@ -425,18 +430,19 @@ lowest $\chi^2$ values.
 We note that the difference between the lowest and highest $\chi^2$ values in
 those $25$ models is close to $\Delta\chi^2 = 3000$, the lowest
 $\chi^2$ being close to $\chi^2_{min}=1200$. 
-The total number of degrees of freedom, $d.o.f$, is $104$. 
 
-We divide the results in two classes: low $\chi^2/d.o.f.<35$ and high
-$\chi^2/d.o.f.35>$.
+
+Using the total number of degrees of freedom, $d.o.f.=104$ we divide
+the results in two classes: low $\chi^2/d.o.f.<35$ and high
+$\chi^2/d.o.f.35>$. 
 We apply a random forest classification algorithm to find the
 more relevant parameters in splitting the results into these two
 classes. 
 The algorithm uses $500$ trees for the classification and a
 maximum of $3$ depth levels. 
-To check for tability we repeat the computation $10$ times by
-randomly subsampling the input data to use $80\%$ of the data as a
-training set.
+To check for stability we repeat the computation $10$ times by
+randomly subsampling the input data to use $80\%$ of the data as
+the training set.
 
 We also perform a Kolmogorov-Smirnov (K-S) test to compare each parameter
 distribution in the best $25$ models against the parent distribution
@@ -451,6 +457,21 @@ the values that produce the minimum $\chi^2$.
 We estimate the 1-$\sigma$ uncertainty from a parabolic fit to the
 $\chi^2$ as a function of the influential parameters around its
 corresponding minimum.   
+
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
+\caption{Broad, single peaked and highly symmetric \lya\ emission of \tol.
+  Dots correspond to the observational data \citep{mashesse03}. 
+The thick red and thin blue curves represent our best fit
+to the data using the full radiative transfer simulation with a
+rotation and multiphase model, respectively. 
+These two different models are able to reproduce the main morphological
+features of \tol's \lya\ line emission.\label{fig:results}}
+\end{center}
+\end{figure*}
 
 
 
@@ -495,7 +516,7 @@ combination with respect to the observational data.
 The walkers explore the parameter space sampling the Gaussian likelihood
 function built as $\propto \exp(-\chi^2/2)$, where the $\chi^2$ follows
 the definition in Equation \ref{eq:chi2}. 
-We do not have an analytic expresion for $\hat{f}$, we compute it
+We do not have a closed analytic expresion for $\hat{f}$, we compute it
 by numerical integration of the analytical approximations found in
 \citet{GaravitoCamargo2014}.  
 
@@ -510,21 +531,6 @@ percentiles.
 
 
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
-\caption{Broad, single peaked and highly symmetric \lya\ emission of \tol.
-  Dots correspond to the observational data \citep{mashesse03}. 
-The thick red and thin blue curves represent our best fit
-to the data using the full radiative transfer simulation with a
-rotation and multiphase model, respectively. 
-These two different models are able to reproduce the main morphological
-features of \tol's \lya\ line emission.\label{fig:results}}
-\end{center}
-\end{figure*}
-
-
-
 
 
 
@@ -535,13 +541,16 @@ features of \tol's \lya\ line emission.\label{fig:results}}
 The aim is to find the parameters that separate two
 classes: low $\chi^2/d.o.f. < 35$ and high $\chi^2/d.o.f>35$. 
 Each box describes the condition over the parameter of interest, the
-level of sample impurity, the number of samples and the value of the
-number of samples in each classes.  
-In this example we randomly sample $80\%$ of the full set of models to
+level of sample impurity, the total number of samples and the value of the
+number of samples in each class.  
+In this example we randomly sample $80\%$ of the full data set of models to
 start with $28$ models in the first class and
 $1962$ models in the second class; the best way to increase the
-probability to find a  a result with low $\chi^2/d.o.f.$ ($13$ models) is having $v_{\infty,{\rm cl}}<157.0$ \kms,
-$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$.
+probability to find a result with low $\chi^2/d.o.f.$ ($13$ models,
+fourth bottom box, from left to the right)
+is having the clump radial velocity, $v_{\infty,{\rm cl}}<157.0$ \kms;
+the clump velocity dipersion, $\sigma_{{\rm cl}}>55.6$ \kms, and the
+probability to have a \lya\ photon emitted in a clump, $P_{\rm cl}>0.683$.
 The final classification is not perfect, showing that all other
 parameters are also important but these three are the most relevant.  
 \label{fig:tree}}
@@ -556,17 +565,17 @@ parameters are also important but these three are the most relevant.
   \includegraphics[width=0.6\textwidth]{sigma_cl.pdf}
 \caption{Results from the multiphase  model.
   We only show results for the three parameters with a significant
-  statistical difference between the models with the lowest $\chi^2$
+  statistical difference between the models with the lowest $\chi^2/d.o.f.$
   values and its prior distribution. 
   These three parameters are the clump radial velocity at infinity 
   $v_{\infty, \rm{cl}}$; the probability that  the \lya\ photons were
   emitted in the clumps, $P_{\rm cl}$; the clump velocity dispersion,
   $\sigma_{\rm cl}$.
   The left column corresponds to the parameter's integrated distributions for
-  models with the lowest $\chi^2$ values (dotted line) compared against the
+  models with the lowest $\chi^2/d.o.f.$ values (dotted line) compared against the
   parameter's prior integrated distributions (continuous line).
-  The right column shows a scatter plot of $\chi^2$ (normalized by the
-  degrees of freedom) and its corresponding physical parameters.
+  The right column shows a scatter plot of $\chi^2/d.o.f.$
+  and its corresponding physical parameters.
   The clump kinematic state is the key ingredient to
   reproduce \tol's \lya\ line morphology.
   \label{multiphaseresults}
@@ -629,11 +638,11 @@ most influential parameters in finding a model with low
 $\chi^2/d.o.f.$.
 
 Figure \ref{fig:tree} shows as an illustration the results for a
-classification tree.  
+single classification tree.  
 The tree starts with $28$ and $1962$ models in the low and high
 $\chi^2/d.o.f.$ classes, respectively. 
 We find that the best classification
-yields $13$ and $44$ models in the low and high $\chi^2\d.o.f.$
+yields $13$ and $44$ models in the low and high $\chi^2/d.o.f.$
 classes, respectively, after selecting for $v_{\infty,{\rm cl}}<157.0$ \kms,
 $\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$. 
 The split in two classes is not perfect. 
@@ -651,8 +660,8 @@ influence the resulting spectra at all; it means that they cannot be
 constrained from \tol's observations. 
 
 
-The best models are summarized in Figure \ref{multiphaseresults}.
-Left column show the difference between the integrated distributions
+The best models are shown in Figure \ref{multiphaseresults}.
+Left column shows the difference between the integrated distributions
 of the full sample (2500 input models) and the models with the lowest
 $\chi^2/d.o.f.$. 
 The right column shows the actual $\chi^2/d.o.f.$ 
@@ -691,8 +700,8 @@ a few parameters \citep{Gronke2016}, there are the rest of parameters
 which affect the line profile at a level that cannot be neglected,
 i.e. we cannot randomly pick 11 random, reasonable values for these
 parameters, and expect to fit the line profile while only varying the
-other 3, as the results for the classification tree example show in
-Figure \ref{fig:tree}.
+other 3, as the results for the classification tree example in Figure
+\ref{fig:tree} shows.
 
 
 
@@ -704,7 +713,7 @@ observations  clarify the kinematic nature of \tol \footnote{In
   Section \S \ref{sec:conclusions} we describe  in more detail what
   kind of observations could be performed in the near future to
   improve our understanding of \tol's kinematics.} . 
-Considering the sparse sampling of parameter space and the results
+Furthermore, considering the sparse sampling of parameter space and the results
 from the random forest classifier, it is safer to consider that
 the best values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm
   cl}$ are actually lower/upper/lower bounds, respectively. 
@@ -747,7 +756,7 @@ found by the MCMC are robust given the observational constraints.
 
 \section{Discussion}
 
-\tol\ shows one of the most atypical \lya\ spectra observed so far.
+\tol\ presents one of the most atypical \lya\ spectra observed so far.
 Its flux at the line's center is high compared to other LAEs at low
 redshift and the broad, highly symmetrical peak is virtually absent from other
 LAEs at low and high redshift
@@ -781,9 +790,9 @@ a broad consistency with kinematic properties of dE galaxies.
 
  
 Following the results of \cite{2011ApJ...726..108T}, who made a
-detailed analysis for all kind of elliptical galaxies including, we
+detailed analysis for all kind of elliptical galaxies including dE galaxies, we
 estimate a value for the dynamical mass using the constraints for
-thevelocity dispersion $\sigma$  in a spherical system localized in a
+thevelocity dispersion, $\sigma$,  in a spherical system localized in a
 region of size $r$   
 
 
@@ -796,7 +805,7 @@ M_{\odot},
 Assuming that the \lya\ emission is entirely powered by star formation 
 we use the 3D half-light radius $r_s=2.25$ kpc as the typical size
 for the HI region, in the multiphase model the clump velocity dispersion
-$\sigma_{\rm{cl}}=$\sigmaclump corresponds to a dynamical mass of
+$\sigma_{\rm{cl}}=$\sigmaclump thus corresponds to a dynamical mass of
 $M_{\rm dyn}=2.31\pm0.04 \times 10^{9}$ $M_{\odot}$, which is ten
 times the estimated baryonic mass in \tol.
 Considering that the results for $\sigma_{\rm{cl}}$ are most probably
@@ -804,7 +813,7 @@ a lower bound, the results for the dynamical mass should also be
 considered as a lower bound. 
 
 \cite{2011ApJ...726..108T} showed that  that such dynamical
-mass can be explained if a dwarf galaxy is hosted by a dark matter halo of at
+mass can be explained if a dE is hosted by a dark matter halo of at
 least $10^{11}$ M$_{\odot}$ in mass. 
 This estimate is based on computing the integrated mass profile of a
 spherical dark matter halo with a Navarro-Frenk-White profile with its
@@ -818,15 +827,14 @@ However, there are two puzzles that are opened up by this hypothesis.
 First, dE galaxies are found either in clusters or groups of
 galaxies; while \tol\ does not belong either to a group or a cluster
 \citep{2001AJ....121..169F}. 
-The second problem is that, unlike a dE, \tol\ hosts a bright and compact
+The second issue is that, unlike a dE, \tol\ hosts a bright and compact
 startburst; imaging and spectroscopy studies suggest that the
 startburst started less than 4 Myr ago, while the low surface
 brightness regins are consistent with an age below one Gyr
 \citep{2001AJ....121..169F}.
 
 We suggest that new observational tests are needed to clarify the
-kinematic nature of \tol\ and be sure about \tol's kinematic
-structure. 
+kinematic nature of \tol\.
 Integral field unit measurements resolving its spatial extent are up
 to the task.  
 \tol\ spans a region of $4$ arcseconds,
@@ -838,10 +846,9 @@ map in the H$\alpha$ line, following the kind of work presented by
 \citet{Herenz16} done with the Potsdam Multi-Aperture Spectrometer
 (PMAS) \citep{PMAS} on nearby \lya\ emitting galaxies. 
 
-Another observational test to confirm the picture provided by the
-multiphase model includes the measurement of the \lya\ ionizing
-continuum escape fraction. 
-This model model predicts that averaging over all sightlines
+Another observational hint to clarify \tol's state could be
+the measurement of the \lya\ ionizing continuum escape fraction. 
+The multiphase model predicts that averaging over all sightlines
 it should be around $0.5^{+1.0}_{-0.4}$\%, with the possibility of strong
 variations depending on viewing angle, i.e. some sightlines can have
 an escape fraction close to $100\%$, \citep{Gronke2016}. 
@@ -861,9 +868,9 @@ reproduced by either of these two kinematic conditions.
 Our findings highlight the importance of including multiphase and/or
 rotation conditions as kinematic features to model the \lya\ line.
 
-We prefer the multiphase model becasue it has kinematic
+In this particular case, we prefer the multiphase model becasue it has kinematic
 conditions similar to those in dwarf ellipticals, while the
-rotational model produces rotational velocities to high for a dwarf
+rotational model produces rotational velocities too high for a dwarf
 galaxy.  
 
 However, \tol's environment and star forming activity are radically
@@ -875,11 +882,9 @@ All in all, the mere existence of a strong LAE galaxy with a broad,
 highly symmetric line is interesting. 
 \tol's line shape is different to others and seems to reveal an
 unexpected kinematic structure.
-A definitive confirmation of our findings has to be provided by new
-observational tests with integral field unit spectroscopy. 
-A confirmation of our results would support the multiphase model
-as a tool to study the evolutionary link between star-forming and
-quiescent stages of dwarf galaxy evolution.   
+A confirmation of our results by new observations would support the multiphase model
+as an element to be included in the study of primordial \lya\ emitting
+galaxies.
  
 \section*{Acknowledgments}
 We thank the referee for detailed comments and suggestions that
