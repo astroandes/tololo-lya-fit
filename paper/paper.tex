@@ -3,6 +3,7 @@
 \usepackage{amsmath} 
 \usepackage{amssymb} 
 \usepackage{graphicx}
+\usepackage{grffile}
 \usepackage[dvips]{epsfig}
 \usepackage{epsfig}  
 \usepackage{color}
@@ -31,7 +32,17 @@
 \newcommand{\after}[1]{\textcolor{darkgreen}{ #1}}
 \newcommand{\hs}{{\hspace{1mm}}}  
 \newcommand{\tol}{Tololo 1214-277}
-\newcommand{\lya}{Ly$\alpha$}
+\newcommand{\HI}{{\text{H\MakeUppercase{\romannumeral 1}}} }
+\newcommand{\HII}{{\text{H\MakeUppercase{\romannumeral 2}}} }
+\newcommand{\lya}{\ifmmode{{\rm Ly}\alpha}\else Ly$\alpha$\ \fi}
+\newcommand{\cm}{\ifmmode{{\rm cm}}\else cm\fi}
+\newcommand{\ccm}{\,\mathrm{cm}^{-3}}
+\newcommand{\ergps}{\,{\rm erg}\,{\rm s}\ifmmode{}^{-1}\else ${}^{-1}$\fi}
+\newcommand{\Mpch}{\,{\rm Mpc}\,\ifmmode h^{-1}\else $h^{-1}$\fi}
+%\newcommand{\kms}{\,\mathrm{km}\,\mathrm{s}^{-1}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\vek}[1]{\bm{#1}}
+%\newcommand{\lya}{Ly$\alpha$}
 \newcommand{\hb}{H$\beta$}
 \newcommand{\ha}{H$\alpha$}
 \newcommand{\oiii}{[OIII]}
@@ -268,19 +279,32 @@ $z$ & $0.0259\pm0.0002$ \\\hline
 \end{table}
 
 
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
-\caption{Broad, single peaked and symmetric \lya\ emission of \tol.
-  Dots correspond to the observational data \citep{mashesse03}. 
-The thick red and thin blue curves represent our best fit
-to the data using the full radiative transfer simulation with a
-rotation and multiphase model, respectively. 
-These two different models are able to reproduce the main morphological
-features of \tol's \lya\ line emission.\label{fig:results}}
-\end{center}
-\end{figure*}
+\begin{table*}
+  \centering
+\begin{tabular}{l|lrrr}
+\hline
+  Parameter  & Description & Fiducial value & Allowed range & Units \\ \hline\hline
+$v_{\infty,\,{\rm cl}}$ & Radial cloud velocity & $100.0$ & [$0.0$, $800.0$] & $\,{\rm km\,s}^{-1}$ \\
+$\sigma_{\rm {\rm cl}}$ & Random cloud motion &$40.0$ & [$5.0$, $100.0$] & $\,{\rm km\,s}^{-1}$ \\
+$P_{\rm {\rm cl}}$ & Probability to be emitted in cloud & $0.35$ & [$0.0$, $1.0$] &  \\
+$r_{\rm {\rm cl}}$ & Cloud radius & $100.0$ & [$30.0$, $200.0$] & $\,{\rm pc}$ \\
+$H_{\rm em}$ & Emission scale radius & $1000.0$ & [$500.0$, $3.0\times 10^{3}$] & $\,{\rm pc}$ \\
+$f_{\rm {\rm cl}}$ & Cloud covering factor & $3.5$ & [$0.8$, $8.0$] &  \\
+$T_{\rm {\rm ICM}}$${}^{\dagger}$ & Temperature of ICM & $10^{6}$ & [$3.0\times 10^{5}$, $5.0\times 10^{7}$] & $\,{\rm K}$ \\
+$n_{\rm HI,\,{\rm ICM}}$${}^{\dagger}$ & \HI number density in ICM & $5.0\times 10^{-8}$ & [$10^{-12}$, $10^{-6}$] & $\,{\rm cm}^{-3}$ \\
+$\sigma_{\rm i}$ & Width of emission profile & $50.0$ & [$5.0$, $100.0$] & $\,{\rm km\,s}^{-1}$ \\
+$T_{\rm {\rm cl}}$${}^{\dagger}$ & Temperature in clouds & $10^{4}$ & [$5.0\times 10^{3}$, $5.0\times 10^{4}$] & $\,{\rm K}$ \\
+$\beta_{\rm cl}$ & Steepness of the radial velocity profile & $1.5$ & [$1.1$, $2.5$] &  \\
+$\tilde\sigma_{\rm d, cl}$${}^{\dagger}$ & Dust content in clumps & $3.2\times10^{-22}$ & [$4.7\times 10^{-24}$, $1.6\times 10^{-21}$] & $\,\cm^{2}$ \\
+$\zeta_d$${}^{\dagger}$ & Ratio of ICM to cloud dust abundance & $0.01$ & [$10^{-4}$, $0.1$] &  \\
+$n_{\rm HI,\,{\rm cl}}$${}^{\dagger}$ & \HI number density in clouds & $0.35$ & [$0.03$, $3.0$] & $\,{\rm cm}^{-3}$ \\
+\hline
+\end{tabular}
+  \caption{Overview of the parameters in the multiphase model and its fiducial
+    values. Variables marked with ${}^{\dagger}$ were drawn in
+    log-space. Details of the implementation are in \citet{Gronke2016}.}
+  \label{tab:models}
+\end{table*}
 
 \tol's basic observational characteristics are summarized in Table \ref{obstable}.
 Its receding velocity is $7785\pm 50$km s$^{-1}$ translates
@@ -292,14 +316,16 @@ detection for \tol.
 This lack of detection motivates our assumption that \lya\ emission is
 powered by star formation only.
 
-
-
 The observed flux for the \lya\ line is $\sim
 8.1\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \citep{Thuan97}.
 The \lya\ Equivalent Width is $70$\AA\ and its H$\beta$ flux is 
 $1.62\times 10^{-14}$ erg cm$^{-2}$ s$^{-1}$ \AA${-1}$
 which gives a \lya/H$\beta$ flux ratio of
 4.9$\pm$0.1 \citep{Izotov04}.
+Comparing the \lya/H$\beta$ ratio with the theoretical
+expectation from case B recombination of $23.3$ \citep{Hummer1987} one
+can estimate an escape fraction of $20$\% for \lya\ radiation.
+
 The \lya\ flux values correspond to a luminosity of
 $L_{Ly\alpha}=2.2\times 10^{42}$ erg s$^{-1}$, which in turn
 translates  into a lower bound for the star formation rate of $2.0$
@@ -309,9 +335,7 @@ $L_{Ly\alpha}$ M$_{\odot}$ yr$^{-1}$
 without any
 correction by extinction
 \citep{Kennicutt98}.
-Comparing the \lya/H$\beta$ ratio with the theoretical
-expectation from case B recombination of $23.3$ \citep{Hummer1987} one
-can estimate an escape fraction of $20$\% for \lya\ radiation.
+
 
 The bolometric UV luminosity is $9.43\pm1.94 \times 10^{8}$
 L$_{\odot}$ as measured by GALEX. Without any correction by extinction
@@ -336,6 +360,10 @@ and  where fluxes are in Jy and $D$ is the luminosity
 distance to the source in Mpc, we find $M_{\star} = 1.45\pm0.45\times 10^{8}
 M_{\odot}$, with a $30\%$ uncertainty coming from the calibration
 process \citep{2012AJ....143..139E}.  
+There is an upper limit for the  $21$ cm line integrated flux of $<0.10$
+Jy km s$^{-1}$  which translates into a upper limit for the neutral
+Hydrogen mass of $M<2.65\times 10^{8}$ M$_{\odot}$
+\citep{pustilnikmartin07}. 
 
 We computed the projected half-light radius to be $R_s=1.5\pm0.1$ kpc 
 from the surface brightness profiles reported by \cite{2003A&A...410..481N}. 
@@ -344,76 +372,9 @@ half-light radius of $r_s=3R_s/2=2.25$ kpc.
 Imaging observations by \cite{2001AJ....121..169F} show that \tol\ is
 an isolated field galaxy not belonging to a group or cluster. 
 
-There is an upper limit for the  $21$ cm line integrated flux of $<0.10$
-Jy km s$^{-1}$  which translates into a upper limit for the HI mass of
-$M<2.65\times 10^{8}$ M$_{\odot}$ \citep{pustilnikmartin07}.
 
 
 
-
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.95\textwidth]{tree_result.pdf}
-\caption{Classification tree example. 
-The aim is to find the parameters that separate two
-classes: low $\chi^2/d.o.f. < 35$ and high $\chi^2/d.o.f>35$. 
-Each box describes the condition over the parameter of interest, the
-level of sample impurity, the number of samples and the value of the
-number of samples in each classes.  
-In this example we randomly sample $80\%$ of the full set of models to
-start with $28$ models in the first class and
-$1962$ models in the second class; the best way to increase the
-probability to find a  a result with low $\chi^2/d.o.f.$ ($13$ models) is having $v_{\infty,{\rm cl}}<157.0$ \kms,
-$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$.
-The final classification is not perfect, showing that all other
-parameters are also important but these three are the most relevant.  
-\label{fig:tree}}
-\end{center}
-\end{figure*}
-
-
-\begin{figure*}
-\begin{center}
-  \includegraphics[width=0.6\textwidth]{vinf_cl.pdf}
-  \includegraphics[width=0.6\textwidth]{P_cl.pdf}
-  \includegraphics[width=0.6\textwidth]{sigma_cl.pdf}
-\caption{Results from the multiphase  model.
-  We only show results for the three parameters with a significant
-  statistical difference between the models with the lowest $\chi^2$
-  values and its prior distribution. 
-  These three parameters are the clump radial velocity at infinity 
-  $v_{\infty, \rm{cl}}$; the probability that  the \lya\ photons were
-  emitted in the clumps, $P_{\rm cl}$; the clump velocity dispersion,
-  $\sigma_{\rm cl}$.
-  The left column corresponds to the parameter's integrated distributions for
-  models with the lowest $\chi^2$ values (dotted line) compared against the
-  parameter's prior integrated distributions (continuous line).
-  The right column shows a scatter plot of $\chi^2$ (normalized by the
-  degrees of freedom) and its corresponding physical parameters.
-  The clump kinematic state is the key ingredient to
-  reproduce \tol's \lya\ line morphology.
-  \label{multiphaseresults}
-}  
-\end{center}
-\end{figure*}
-
-
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{emcee_results.pdf}
-\caption{Results from the Markov Chain Monte Carlo computation for
-    the rotation model. 
-    The gray scale indicates the point density in parameter space. 
-    The dotted vertical lines in the histograms in the diagonal panels
-    represent the 16th, 50th and 84th percentiles. 
-    All parameters in the rotation model can be succesfuly constrained by \tol's
-    \lya\ line morphology to the values written in the top region of
-    the diagonal panels.
-    \label{emceeresults}} 
-\end{center}
-\end{figure*}
 
 
 \section{Theoretical Models and Parameter Estimation}
@@ -546,6 +507,88 @@ Previous exploratory work shows that it is impossible to fit the
 observed line outside these priors.
 Finally, we estimate the parameter values from the 16th, 50th and 84th
 percentiles. 
+
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.55\textwidth]{CLARA-TOL-main.pdf}
+\caption{Broad, single peaked and highly symmetric \lya\ emission of \tol.
+  Dots correspond to the observational data \citep{mashesse03}. 
+The thick red and thin blue curves represent our best fit
+to the data using the full radiative transfer simulation with a
+rotation and multiphase model, respectively. 
+These two different models are able to reproduce the main morphological
+features of \tol's \lya\ line emission.\label{fig:results}}
+\end{center}
+\end{figure*}
+
+
+
+
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{tree_result.pdf}
+\caption{Classification tree example. 
+The aim is to find the parameters that separate two
+classes: low $\chi^2/d.o.f. < 35$ and high $\chi^2/d.o.f>35$. 
+Each box describes the condition over the parameter of interest, the
+level of sample impurity, the number of samples and the value of the
+number of samples in each classes.  
+In this example we randomly sample $80\%$ of the full set of models to
+start with $28$ models in the first class and
+$1962$ models in the second class; the best way to increase the
+probability to find a  a result with low $\chi^2/d.o.f.$ ($13$ models) is having $v_{\infty,{\rm cl}}<157.0$ \kms,
+$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$.
+The final classification is not perfect, showing that all other
+parameters are also important but these three are the most relevant.  
+\label{fig:tree}}
+\end{center}
+\end{figure*}
+
+
+\begin{figure*}
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{vinf_cl.pdf}
+  \includegraphics[width=0.6\textwidth]{P_cl.pdf}
+  \includegraphics[width=0.6\textwidth]{sigma_cl.pdf}
+\caption{Results from the multiphase  model.
+  We only show results for the three parameters with a significant
+  statistical difference between the models with the lowest $\chi^2$
+  values and its prior distribution. 
+  These three parameters are the clump radial velocity at infinity 
+  $v_{\infty, \rm{cl}}$; the probability that  the \lya\ photons were
+  emitted in the clumps, $P_{\rm cl}$; the clump velocity dispersion,
+  $\sigma_{\rm cl}$.
+  The left column corresponds to the parameter's integrated distributions for
+  models with the lowest $\chi^2$ values (dotted line) compared against the
+  parameter's prior integrated distributions (continuous line).
+  The right column shows a scatter plot of $\chi^2$ (normalized by the
+  degrees of freedom) and its corresponding physical parameters.
+  The clump kinematic state is the key ingredient to
+  reproduce \tol's \lya\ line morphology.
+  \label{multiphaseresults}
+}  
+\end{center}
+\end{figure*}
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{emcee_results.pdf}
+\caption{Results from the Markov Chain Monte Carlo computation for
+    the rotation model. 
+    The gray scale indicates the point density in parameter space. 
+    The dotted vertical lines in the histograms in the diagonal panels
+    represent the 16th, 50th and 84th percentiles. 
+    All parameters in the rotation model can be succesfuly constrained by \tol's
+    \lya\ line morphology to the values written in the top region of
+    the diagonal panels.
+    \label{emceeresults}} 
+\end{center}
+\end{figure*}
 
 
 \section{Results}
