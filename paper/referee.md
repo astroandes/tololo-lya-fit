@@ -14,11 +14,11 @@ potential evolutionary link still depends on observational
 confirmation of the velocity dispersion in Tololo124-277.
 
 New tests using random forets classifiers and additional monte carlo
-simulations allows to improve our discussion about the limitations of
-our method.
+simulations allowed us to improve our discussion about the limitations of
+our method. We have also included an explicit plot on the integrated
+mass profile for dark matter halos consistent with Tololo's constraints.
 
-We have also included the smaller modifications suggested by the
-referee.
+We included the smaller modifications suggested by the referee.
 
 Below is the detailed reply to all the major comments by the referee.
 
