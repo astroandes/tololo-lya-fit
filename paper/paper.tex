@@ -319,7 +319,7 @@ Its receding velocity is $7785\pm 50$km s$^{-1}$ translates
 into a distance of $106.6$ Mpc, using a Hubble constant value of $H_{0}$=73
 km s$^{-1}$ Mpc$^{-1}$.
 
-Archival Chandra X-ray data \footnote{\url{http://cxc.harvard.edu/cda/}} does not show any
+Archival Chandra X-ray data\footnote{\url{http://cxc.harvard.edu/cda/}} does not show any
 detection for \tol. 
 This lack of detection motivates our assumption that \lya emission is
 powered by star formation only.
@@ -425,20 +425,19 @@ of the $2500$ models as
 where $i$ iterates over velocity bins, $f_{i}$ is the observed flux,
 $\sigma_i$ is the observed flux uncertainty and $\hat{f}_i$ is the
 model estimated flux.
-As we do not have an analytic expression for $\hat{f}$; we use the
-results of the Monte Carlo to build histograms that play the role of
-$\hat{f}$.   
+As we do not have an analytic expression for $\hat{f}$;
+we obtain $\hat{f}$ from the binned results of the Monte Carlo radiative transfer simulations.
 
 We select for further analysis the best $1\%$ models according to the
 lowest $\chi^2$ values.
 We note that the difference between the lowest and highest $\chi^2$ values in
 those $25$ models is close to $\Delta\chi^2 = 3000$, the lowest
-$\chi^2$ being close to $\chi^2_{min}=1200$. 
+$\chi^2$ being close to $\chi^2_{\mathrm{min}}=1200$. 
 
 
 Using the total number of degrees of freedom, $d.o.f.=104$ we divide
 the results in two classes: low $\chi^2/d.o.f.<35$ and high
-$\chi^2/d.o.f.>35$. 
+$\chi^2/d.o.f.>35$. \mg{Why was $35$ chosen as a boundary?}
 We apply a random forest classification algorithm to find the
 more relevant parameters in splitting the results into these two
 classes. 
