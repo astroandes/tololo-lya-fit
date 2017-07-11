@@ -694,24 +694,25 @@ Consistent with the results from the random forest algorithm,
 illustrated by the classification tree of Figure \ref{fig:tree}, we
 find that $30$ models show $\chi^2/d.o.f.<35$.
 
-
 Having constrained only 3 parameters, one might wonder why the other 11
 parameters do not seem to matter. 
-However, this view is misleading. 
-Even if for clumply models the line profile is most sensitive to only
-a few parameters \citep{Gronke2016}, there are the rest of parameters
-which affect the line profile at a level that cannot be neglected,
+However, this view is misleading because merely the best-fit values of (some of) those $3$ parameters, i.e., the corresponding constraint to a given sub-region in the parameter space, make the other parameters less important.
+For instance, in our case the large value of $P_{\rm cl}$ makes radiative transfer effects, and therefore other parameters such as the clump column density less relevant for the emergent line profile. However, for instance larger values of $f_{\rm cl}$ -- outside the here considered parameter range -- would re-introduce additional radiative transfer effects and thus increase the number of relevant parameters \citep[see ][for details]{2017arXiv170406278G}. 
+This means that even
+if for clumply models the line profile is most sensitive to only
+a few parameters \citep{Gronke2016}, the rest of parameters
+affect the line profile at a level that cannot be neglected,
+\mg{I am not sure I understand the rest of this sentence. What do you mean there?}
 i.e. we cannot randomly pick 11 random, reasonable values for these
 parameters, and expect to fit the line profile while only varying the
 other 3, as the results for the classification tree example in Figure
 \ref{fig:tree} shows.
 
 
-
 We cannot discard that another region of parameter space
-could also work.
-It might be interesting to explore in the
-future with a higher sampling of the parameter space once new 
+could also yield a good fit to the observed line-profile.
+This might be interesting to explore in the
+future with, e.g., a higher sampling of the parameter space once new 
 observations  clarify the kinematic nature of \tol \footnote{In
   Section \S \ref{sec:conclusions} we describe  in more detail what
   kind of observations could be performed in the near future to
@@ -719,7 +720,8 @@ observations  clarify the kinematic nature of \tol \footnote{In
 Furthermore, considering the sparse sampling of parameter space and the results
 from the random forest classifier, it is safer to consider that
 the best values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm
-  cl}$ are actually lower/upper/lower bounds, respectively. 
+  cl}$ are actually lower/upper/lower bounds, respectively.
+\mg{This is interesting. Why do you think that? Could we use that to increase the quoted errors? I am worried that the referee will complain about the small errors.}
 
 
 \subsection{Bulk Rotation}
@@ -776,7 +778,7 @@ Which model has more
 chances to be correct?  
 We discard the rotation model by considering that the rotational
 velocity of $\sim350$ \kms\ is too high for such a low
-mass system. 
+mass system.  \mg{I am confused -- are much lower rotational velocities not exclude by the priors used?}
 \tol's inferred rotational velocity is larger than the
 Milky Way's ($\sim200$\kms) while its baryonic mass is one order
 of magnitude smaller. 
@@ -856,7 +858,7 @@ the measurement of the \lya ionizing continuum escape fraction.
 The multiphase model predicts that averaging over all sightlines
 it should be around $0.5^{+1.0}_{-0.4}$\%, with the possibility of strong
 variations depending on viewing angle, i.e. some sightlines can have
-an escape fraction close to $100\%$, \citep{Gronke2016}. 
+an escape fraction close to $100\%$ \citep{Gronke2016}. 
 
 
 \begin{figure}
