@@ -674,30 +674,28 @@ Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump.
 \mg{These errors seem still pretty small to me. You obtained these via a Fisher matrix of a parabolic fit, right? How good was the fit? Are the off-diagonal elements included?}
 
-Qualitatively this result can be understood as follows. 
-The broad \lya line is the result of subsequent \lya photon
-scatterings due to (relatively) fast moving clumps while the
-multi-phase nature (i.e., the existence of low-density inter-clump
-regions where \lya photons can freely prograpagate)  ensures the high
-flux at line center as observed.   
-In turn, a lower velocity dispersion would produce a thiner line than
-it is observed.
+Qualitatively this result can be understood as follows.
+Due to the large fraction of \lya photons being emitted within the moving clumps ($P_{\rm cl}$), the `intrinsic' profile represents the kinematics of the clumps, that is, the width of the intrinsic line is set by $\sigma_{\mathrm{cl}}$ and its median offset mainly by $v_{\infty}$ \& $\beta_{\rm cl}$.
+Furthermore, the relatively low mean number of clumps per line of sight ($f_{\mathrm{cl}}$) combined with the high velocity dispersion of the clumps implies the 
+existence of low-density inter-clump
+regions where \lya photons can freely propagate which leads to an emergent spectrum close to the intrinsic one as well as to the high flux at line center as observed.
+Because the width of the observable spectrum is hence set primarily by $\sigma_{\rm cl}$, a lower velocity dispersion would produce a narrower line and thus a worse fit.
 From the lower right panel in Figure \ref{multiphaseresults} we find that it
 is unlikely that the clump velocity dispersion is lower than
 $50$\kms. 
 This is also supported by the classification tree example in Figure
 \ref{fig:tree}.  
 
-As a test, we also run a small set of 100 additional radiative
+As a test, we also run a small set of $100$ additional radiative
 transfer simulations with random values for all parameters, except for
-$\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm cl}$ which are within the derived
-constraints.
+$\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm cl}$ which are kept within the derived $1-\sigma$
+constraints. \mg{Is $1\sigma$ correct?}
 Consistent with the results from the random forest algorithm,
 illustrated by the classification tree of Figure \ref{fig:tree}, we
 find that $30$ models show $\chi^2/d.o.f.<35$.
 
 
-Having constrained only 3 parameters, one migh wonder why the other 11
+Having constrained only 3 parameters, one might wonder why the other 11
 parameters do not seem to matter. 
 However, this view is misleading. 
 Even if for clumply models the line profile is most sensitive to only
