@@ -1,4 +1,4 @@
-\documentclass[a4,useAMS,usenatbib,usegraphicx]{mn2e} 
+\documentclass[a4paper,fleqn,usenatbib]{mnras}
 %=========================================================================
 \usepackage{amsmath} 
 \usepackage{amssymb} 
@@ -8,7 +8,8 @@
 \usepackage{epsfig}  
 \usepackage{color}
 \usepackage{caption}
-\usepackage[draft]{hyperref}
+\usepackage{hyperref}
+\usepackage{bm}
 %Non reposionated tables
 
 
@@ -53,21 +54,6 @@
 \newcommand{\es}{erg s$^{-1}$}
 \newcommand{\esa}{erg s$^{-1}$}
 \newcommand{\kms}{\ifmmode\mathrm{km\ s}^{-1}\else km s$^{-1}$\fi}
-\newcommand{\apj}{ApJ}  
-\newcommand{\jcap}{JCAP}  
-\newcommand{\apjs}{ApJS}  
-\newcommand{\pasa}{PASA}  
-\newcommand{\apjl}{ApJL}  
-\newcommand{\aj}{AJ}  
-\newcommand{\mnras}{MNRAS}  
-\newcommand{\mnrassub}{MNRAS accepted}  
-\newcommand{\aap}{A\&A}  
-\newcommand{\aaps}{A\&AS}  
-\newcommand{\araa}{ARA\&A}  
-\newcommand{\nat}{Nature}  
-\newcommand{\physrep}{PhR}
-\newcommand{\pasp}{PASP}    
-\newcommand{\pasj}{PASJ}    
 \newcommand{\sigmaclump}{$54.3\pm 0.6$ km s$^{-1}$}
 \newcommand{\inftyclump}{$54.3\pm 5.1$ km s$^{-1}$}
 \newcommand{\probaclump}{$0.96\pm 0.01$}
@@ -121,16 +107,16 @@ rotation.
 It is the first time that an observed \lya spectrum can be explained
 assuming either of these kinematic conditions.
 The multiphase model requires a clump velocity dispersion of
-at least \sigmaclump\ with outflows of \inftyclump\, while the
+\sigmaclump\ with outflows of \inftyclump\, while the
 bulk rotation velocity is constrained to be $348^{+75}_{-48}$ \kms.
 We argue that the multiphase model has more chances to be correct.
-The clump velocity dispersion implies a dynamical mass of at least $2\times
+The clump velocity dispersion implies a dynamical mass of $2\times
 10^{9}$ M$_{\odot}$, ten times its baryonic mass, which can be
-explained if \tol\ is hosted by a dark matter halo of at least
-$6\times 10^{11}$ M$_{\odot}$.
-If future kinematic maps of \tol\ confirm the velocities suggested by the
-multiphase model, it would provide additional support to expect this
-condition to be present  in primordial \lya emitting galaxies.  
+explained if \tol\ is hosted by a dark matter halo $6\times 10^{11}$
+M$_{\odot}$. If future kinematic maps of \tol\ confirm the velocities
+suggested by the multiphase model, it would provide additional support
+to expect this condition to be present  in primordial \lya emitting
+galaxies.   
 \end{abstract}
 
 
@@ -184,9 +170,8 @@ and thermal conditions in the interstellar medium.
 There are few analytical tools available to interpret the
 emerging \lya line
 \citep{Harrington73,1991ApJ...370L..85N,LoebRybicki,2006ApJ...645..792T}. 
-They are applicable only in cases of highly symmetrical
-conditions of the gaseous hydrogen distribution in the galaxy model,
-which are hardly met in real astrophysical systems. 
+They are applicable only in highly idealized conditions that
+are hardly met in real astrophysical systems. 
 For these reasons the interpretation of \lya observations
 requires state-of-the-art Monte Carlo radiative transfer simulations.   
 
@@ -225,12 +210,12 @@ Observationally, outflows have been detected in few local dwarf galaxies
 Besides, clumpy multiphase outflows are capable to explain \lya features around
 star-forming galaxies
 \citep{2010ApJ...717..289S,2012MNRAS.424.1672D}.
-In addition, due to the cooling properties of gas multiphase media are expected
+In addition, due to the cooling properties of gas, multiphase media are expected
 in a range of astrophysical systems
 \citep[][]{1977ApJ...218..148M,2016arXiv161001164M}. 
 
-The motivation for the rotation without outflows (as presented in
-\cite{GaravitoCamargo2014}) is that dwarf galaxies show coherent
+The motivation for the rotation without outflows as presented in
+\citep[as presented in]{GaravitoCamargo2014} is that dwarf galaxies show coherent
 rotation features  \citep{2009A&A...493..871S} and it is expected that
 some of them have high neutral gas contents with long quiescent phases
 without high gas outflows triggered by supernova activity
@@ -381,7 +366,7 @@ an isolated field galaxy not belonging to a group or cluster.
 \subsection{Multiphase ISM} 
 
 The idealized multiphase model consists of spherical, cold, dense
-clumps of neutral hydrogen (and dust) embedded in a hot, ionized
+clumps of neutral hydrogen and dust embedded in a hot, ionized
 medium \citep{Gronke2016}. 
 The clumps also have a random and an outflowing velocity
 component which totals the number of parameters describing the model
@@ -427,19 +412,19 @@ $\chi^2$ being close to $\chi^2_{\mathrm{min}}=1200$.
 We run a Kolmogorov-Smirnov (K-S) test to compare each parameter
 distribution in the best $25$ models against the parent distribution
 of $2500$ models. 
-From a p-value $<0.05$ for a given model parameter, we conclude that
+If we obtain a p-value $<0.05$ we conclude that
 this parameter can be constrained from the observations, as the distribution for
 the best $\chi^2$ models is statistically different to the
 distribution from the global sample of $2500$ models.  
-As a complement (Appendix \ref{appendix}) we also use a random forest
-classifier to find the most important parameters in selecting a low
-$\chi^2$ mode.  
+In the Appendix \ref{appendix} we complement this analysis using a
+random forest classifier to find the most important parameters in
+selecting a low $\chi^2$ model.    
 
 
 We finally compute the best values for the constrained parameters as
 the values that produce the minimum $\chi^2$.  
 We estimate the 1-$\sigma$ uncertainty from a parabolic fit to the
-$\chi^2$ as a function of the constrained parameters around its
+$\chi^2$ as a function of the best constrained parameters around its
 corresponding minimum.   
 
 
@@ -462,8 +447,8 @@ features of \tol's \lya line emission.\label{fig:results}}
 
 \subsection{Bulk Rotation}
 
-The rotation model corresponds to the work presented in
-\citep{GaravitoCamargo2014} based on the Monte Carlo code
+The rotation model corresponds to the work presented by
+\cite{GaravitoCamargo2014} based on the Monte Carlo code
 \texttt{CLARA} \citep{CLARA}. 
 In that model the \lya photons are propagated 
 within a spherical and homogeneous cloud of HI gas undergoing solid
@@ -595,7 +580,7 @@ are confidently constrained by \tol's line shape;
 $v_{\infty,\rm{cl}}$ (p-value  $10^{-18}$), $\sigma_{\rm cl}$ (p-value
 $10^{-4}$) and $P_{\rm cl}$ (p-value $10^{-4}$). 
 
-This illustrated by the results shown in Figure \ref{multiphaseresults}.
+The low p-values are illustrated by the results shown in Figure \ref{multiphaseresults}.
 Left column shows the difference between the integrated distributions
 of the full sample (2500 input models) and the $1\%$ models with the lowest
 $\chi^2/d.o.f.$, where we use the total number of degrees of freedom,
@@ -619,20 +604,20 @@ Due to the large fraction of \lya photons being emitted within the
 moving clumps ($P_{\rm cl}\sim 1$) the `intrinsic' profile follows 
 the clump kinematics. In other words, the width of the intrinsic line
 is set by $\sigma_{\mathrm{cl}}$ and its median offset mainly by
-$v_{\infty,{\rm cl}}$ and $\beta_{\rm cl}$.. 
+$v_{\infty,{\rm cl}}$ and $\beta_{\rm cl}$.
 Furthermore, the relatively low mean number of clumps per line of
 sight, $f_{\mathrm{cl}}$, combined with the high velocity dispersion
 of the clumps implies existence of low-density inter-clump 
 regions where \lya photons can freely propagate.
 This gives result to an emergent spectrum close to the intrinsic one, explaining the high
-flux at line center as observed.  
+flux at the line's center.  
 
 Because the width of the observable spectrum is hence set primarily by
 $\sigma_{\rm cl}$, a lower velocity dispersion would produce a
 narrower line and thus a worse fit. 
-From the lower right panel in Figure \ref{multiphaseresults} we find that it
-is unlikely that the clump velocity dispersion is lower than
-$50$ \kms. 
+From the lower right panel in Figure \ref{multiphaseresults} we find
+that in fact it is unlikely that the clump velocity dispersion is
+lower than $50$ \kms. 
 
 Having constrained only 3 parameters one might wonder why the other 11
 parameters do not seem to matter.
@@ -672,10 +657,10 @@ However, we cannot discard that another region of parameter space
 could also yield a good fit to the observed line-profile.
 This might be interesting to explore in the
 future with, e.g., a higher sampling of the parameter space once new 
-observations  clarify the kinematic nature of \tol.In
-  Section \S \ref{sec:conclusions} we describe  in more detail what
-  kind of observations could be performed in the near future to
-  improve our understanding of \tol's kinematics.
+observations  clarify the kinematic nature of \tol. 
+In Section \S \ref{sec:conclusions} we describe  in more detail what
+kind of observations could be performed in the near future to improve
+our understanding of \tol's kinematics. 
 
 
 \subsection{Bulk Rotation}
@@ -730,19 +715,20 @@ body rotation.
 
 Which model has more
 chances to be correct?  
-We discard the rotation model by considering that the prefered rotational
-velocity of $V_{m}\sim350$ \kms\ is of the same order as the largest rotational velocity of giant
+We argue that that the rotation model should be discarded by
+considering that the prefered rotational velocity of $V_{m}\sim350$
+\kms\ is of the same order as the largest rotational velocity of giant
 disc galaxies that have two orders of magnitude more baryonic mass
-than \tol\ \citep{2015MNRAS.448.1767C}. 
+than \tol\ \citep{2015MNRAS.448.1767C}.  
 \mg{I am confused -- are much lower rotational
   velocities not exclude by the priors used?}\jefr{Yes, they are
   discarded, but here we are talking about the most likely value of
   350 km/s.}
 
 Furthermore, \tol's structural properties seem to be similar to known dwarf
-elliptical galaxies. 
-The sample of 7 dwarf ellipticals (dE) observed by
-\cite{2003AJ....126.1794G} show similar properties as \tol. 
+elliptical (dE) galaxies. 
+The sample of 7 dE galaxies observed by
+\cite{2003AJ....126.1794G} shows similar properties as \tol. 
 For instance, the dE galaxies IC 3344 and IC 794 have similar absolute $M_V$
 magnitudes (-17.10 and -17.19) and sizes (0.90 kpc and 0.82 kpc) as
 \tol. 
@@ -772,13 +758,10 @@ for the HI region, in the multiphase model the clump velocity dispersion
 $\sigma_{\rm{cl}}=$\sigmaclump thus corresponds to a dynamical mass of
 $M_{\rm dyn}=2.31\pm0.04 \times 10^{9}$ $M_{\odot}$, which is ten
 times the estimated baryonic mass in \tol.
-Considering that the results for $\sigma_{\rm{cl}}$ are most probably
-a lower bound, the results for the dynamical mass should also be
-considered as a lower bound. 
 
 Figure \ref{fig:mass} illustrates  how such dynamical
 mass can be explained if \tol\ is hosted by a dark matter halo of at
-least $6\times 10^{11}$ M$_{\odot}$ in virial mass. 
+$\sim 6\times 10^{11}$ M$_{\odot}$ in virial mass. 
 This estimate is based on computing the integrated mass profile of a
 spherical dark matter halo with a Navarro-Frenk-White profile with its
 concentration following the median mass-concentration
@@ -826,8 +809,8 @@ an escape fraction close to $100\%$ \citep{Gronke2016}.
   different viral masses as shown in the legend, the arrow corresponds
   to the dynamical mass lower bounds for \tol.  
   The dynamical mass estimates for \tol\ are consistent with the
-  galaxy being hosted by a dark matter halo of at least
-  $6\times10^{11}$ M$_{\odot}$ in mass.
+  galaxy being hosted by a dark matter halo of
+  $\sim 6\times10^{11}$ M$_{\odot}$ in mass.
     \label{fig:mass}} 
 \end{center}
 \end{figure}
@@ -872,276 +855,14 @@ We thank J. M. Mas-Hesse for providing us with \tol's observational
 used to prepare Figure 1.
 J. E. F-R. acknowledges the support of J. L. Guerra in the last
 writing stages of this paper.
+We are thankful to the community developing and maintining open source
+packages fundamental to our work: Jupyter notebook \citep{IPython,jupyter},
+matplotlib \citep{matplotlib}, astropy \citep{astropy} and
+scikit-learn \citep{scikit-learn}.
 
+\bibliographystyle{mnras}
+\bibliography{references}
 
-\bibliographystyle{mn2e}
-%\bibliography{references}
-\begin{thebibliography}{}
-
-\bibitem[\protect\citeauthoryear{{Bacon} et~al.,}{{Bacon}
-  et~al.}{2014}]{2014Msngr.157...13B}
-{Bacon} R.  et~al., 2014, The Messenger, 157, 13
-
-\bibitem[\protect\citeauthoryear{{Begum}, {Chengalur} \&
-  {Karachentsev}}{{Begum} et~al.}{2005}]{2005A&A...433L...1B}
-{Begum} A.,  {Chengalur} J.~N.,    {Karachentsev} I.~D.,  2005, \aap, 433, L1
-
-\bibitem[\protect\citeauthoryear{{Courtois}, {Zaritsky}, {Sorce} \&
-  {Pomar{\`e}de}}{{Courtois} et~al.}{2015}]{2015MNRAS.448.1767C}
-{Courtois} H.~M.,  {Zaritsky} D.,  {Sorce} J.~G.,    {Pomar{\`e}de} D.,  2015,
-  \mnras, 448, 1767
-
-\bibitem[\protect\citeauthoryear{{Dey}, {Spinrad}, {Stern}, {Graham} \&
-  {Chaffee}}{{Dey} et~al.}{1998}]{1998ApJ...498L..93D}
-{Dey} A.,  {Spinrad} H.,  {Stern} D.,  {Graham} J.~R.,    {Chaffee} F.~H.,
-  1998, \apjl, 498, L93
-
-\bibitem[\protect\citeauthoryear{{Dijkstra}}{{Dijkstra}}{2014}]{2014PASA...31...40D}
-{Dijkstra} M.,  2014, \pasa, 31, e040
-
-\bibitem[\protect\citeauthoryear{{Dijkstra} \& {Kramer}}{{Dijkstra} \&
-  {Kramer}}{2012}]{2012MNRAS.424.1672D}
-{Dijkstra} M.,  {Kramer} R.,  2012, \mnras, 424, 1672
-
-\bibitem[\protect\citeauthoryear{{Dijkstra}, {Lidz} \& {Wyithe}}{{Dijkstra}
-  et~al.}{2007}]{2007MNRAS.377.1175D}
-{Dijkstra} M.,  {Lidz} A.,    {Wyithe} J.~S.~B.,  2007, \mnras, 377, 1175
-
-\bibitem[\protect\citeauthoryear{{Engelbracht}, {Rieke}, {Gordon}, {Smith},
-  {Werner}, {Moustakas}, {Willmer} \& {Vanzi}}{{Engelbracht}
-  et~al.}{2008}]{2008ApJ...678..804E}
-{Engelbracht} C.~W.,  {Rieke} G.~H.,  {Gordon} K.~D.,  {Smith} J.-D.~T.,
-  {Werner} M.~W.,  {Moustakas} J.,  {Willmer} C.~N.~A.,    {Vanzi} L.,  2008,
-  \apj, 678, 804
-
-\bibitem[\protect\citeauthoryear{{Erb} et~al.,}{{Erb} et~al.}{2014}]{Erb14}
-{Erb} D.~K.  et~al., 2014, \apj, 795, 33
-
-\bibitem[\protect\citeauthoryear{{Eskew}, {Zaritsky} \& {Meidt}}{{Eskew}
-  et~al.}{2012}]{2012AJ....143..139E}
-{Eskew} M.,  {Zaritsky} D.,    {Meidt} S.,  2012, \aj, 143, 139
-
-\bibitem[\protect\citeauthoryear{{Foreman-Mackey}, {Hogg}, {Lang} \&
-  {Goodman}}{{Foreman-Mackey} et~al.}{2013}]{2013PASP..125..306F}
-{Foreman-Mackey} D.,  {Hogg} D.~W.,  {Lang} D.,    {Goodman} J.,  2013, \pasp,
-  125, 306
-
-\bibitem[\protect\citeauthoryear{{Forero-Romero}, {Yepes}, {Gottl{\"o}ber},
-  {Knollmann}, {Cuesta} \& {Prada}}{{Forero-Romero} et~al.}{2011}]{CLARA}
-{Forero-Romero} J.~E.,  {Yepes} G.,  {Gottl{\"o}ber} S.,  {Knollmann} S.~R.,
-  {Cuesta} A.~J.,    {Prada} F.,  2011, \mnras, 415, 3666
-
-\bibitem[\protect\citeauthoryear{{Fricke}, {Izotov}, {Papaderos}, {Guseva} \&
-  {Thuan}}{{Fricke} et~al.}{2001}]{2001AJ....121..169F}
-{Fricke} K.~J.,  {Izotov} Y.~I.,  {Papaderos} P.,  {Guseva} N.~G.,    {Thuan}
-  T.~X.,  2001, \aj, 121, 169
-
-\bibitem[\protect\citeauthoryear{{Garavito-Camargo}, {Forero-Romero} \&
-  {Dijkstra}}{{Garavito-Camargo} et~al.}{2014}]{GaravitoCamargo2014}
-{Garavito-Camargo} J.~N.,  {Forero-Romero} J.~E.,    {Dijkstra} M.,  2014,
-  \apj, 795, 120
-
-\bibitem[\protect\citeauthoryear{{Gavil{\'a}n}, {Ascasibar}, {Moll{\'a}} \&
-  {D{\'{\i}}az}}{{Gavil{\'a}n} et~al.}{2013}]{2013MNRAS.434.2491G}
-{Gavil{\'a}n} M.,  {Ascasibar} Y.,  {Moll{\'a}} M.,    {D{\'{\i}}az} {\'A}.~I.,
-   2013, \mnras, 434, 2491
-
-\bibitem[\protect\citeauthoryear{{Gawiser} et~al.,}{{Gawiser}
-  et~al.}{2007}]{2007ApJ...671..278G}
-{Gawiser} E.  et~al., 2007, \apj, 671, 278
-
-\bibitem[\protect\citeauthoryear{{Geha}, {Guhathakurta} \& {van der
-  Marel}}{{Geha} et~al.}{2003}]{2003AJ....126.1794G}
-{Geha} M.,  {Guhathakurta} P.,    {van der Marel} R.~P.,  2003, \aj, 126, 1794
-
-\bibitem[\protect\citeauthoryear{Goodman \& Weare}{Goodman \&
-  Weare}{2010}]{goodman2010ensemble}
-Goodman J.,  Weare J.,  2010, Communications in applied mathematics and
-  computational science, 5, 65
-
-\bibitem[\protect\citeauthoryear{{Greig}, {Komatsu} \& {Wyithe}}{{Greig}
-  et~al.}{2013}]{2013MNRAS.431.1777G}
-{Greig} B.,  {Komatsu} E.,    {Wyithe} J.~S.~B.,  2013, \mnras, 431, 1777
-
-\bibitem[\protect\citeauthoryear{{Gronke}, {Bull} \& {Dijkstra}}{{Gronke}
-  et~al.}{2015}]{2015ApJ...812..123G}
-{Gronke} M.,  {Bull} P.,    {Dijkstra} M.,  2015, \apj, 812, 123
-
-\bibitem[\protect\citeauthoryear{{Gronke} \& {Dijkstra}}{{Gronke} \&
-  {Dijkstra}}{2016}]{Gronke2016}
-{Gronke} M.,  {Dijkstra} M.,  2016, \apj, 826, 14
-
-\bibitem[\protect\citeauthoryear{{Gronke}, {Dijkstra}, {McCourt} \&
-  {Oh}}{{Gronke} et~al.}{2017}]{2017arXiv170406278G}
-{Gronke} M.,  {Dijkstra} M.,  {McCourt} M.,    {Oh} S.~P.,  2017, ArXiv
-  e-prints
-
-\bibitem[\protect\citeauthoryear{{Harrington}}{{Harrington}}{1973}]{Harrington73}
-{Harrington} J.~P.,  1973, \mnras, 162, 43
-
-\bibitem[\protect\citeauthoryear{{Hayashino} et~al.,}{{Hayashino}
-  et~al.}{2004}]{2004AJ....128.2073H}
-{Hayashino} T.  et~al., 2004, \aj, 128, 2073
-
-\bibitem[\protect\citeauthoryear{{Hayes}}{{Hayes}}{2015}]{Hayes15}
-{Hayes} M.,  2015, \pasa, 32, e027
-
-\bibitem[\protect\citeauthoryear{{Herenz} et~al.,}{{Herenz}
-  et~al.}{2016}]{Herenz16}
-{Herenz} E.~C.  et~al., 2016, \aap, 587, A78
-
-\bibitem[\protect\citeauthoryear{{Hummer} \& {Storey}}{{Hummer} \&
-  {Storey}}{1987}]{Hummer1987}
-{Hummer} D.~G.,  {Storey} P.~J.,  1987, \mnras, 224, 801
-
-\bibitem[\protect\citeauthoryear{{Izotov}, {Papaderos}, {Guseva}, {Fricke} \&
-  {Thuan}}{{Izotov} et~al.}{2004}]{Izotov04}
-{Izotov} Y.~I.,  {Papaderos} P.,  {Guseva} N.~G.,  {Fricke} K.~J.,    {Thuan}
-  T.~X.,  2004, \aap, 421, 539
-
-\bibitem[\protect\citeauthoryear{{Kennicutt}
-  Jr.}{{Kennicutt}}{1998}]{Kennicutt98}
-{Kennicutt} Jr. R.~C.,  1998, \araa, 36, 189
-
-\bibitem[\protect\citeauthoryear{{Kova{\v c}}, {Somerville}, {Rhoads},
-  {Malhotra} \& {Wang}}{{Kova{\v c}} et~al.}{2007}]{2007ApJ...668...15K}
-{Kova{\v c}} K.,  {Somerville} R.~S.,  {Rhoads} J.~E.,  {Malhotra} S.,
-  {Wang} J.,  2007, \apj, 668, 15
-
-\bibitem[\protect\citeauthoryear{{Laursen}, {Duval} \& {{\"O}stlin}}{{Laursen}
-  et~al.}{2013}]{Laursen2013ApJ...766..124L}
-{Laursen} P.,  {Duval} F.,    {{\"O}stlin} G.,  2013, \apj, 766, 124
-
-\bibitem[\protect\citeauthoryear{{Loeb} \& {Rybicki}}{{Loeb} \&
-  {Rybicki}}{1999}]{LoebRybicki}
-{Loeb} A.,  {Rybicki} G.~B.,  1999, \apj, 524, 527
-
-\bibitem[\protect\citeauthoryear{{Martin}}{{Martin}}{1998}]{1998ApJ...506..222M}
-{Martin} C.~L.,  1998, \apj, 506, 222
-
-\bibitem[\protect\citeauthoryear{{Mas-Hesse}, {Kunth}, {Tenorio-Tagle},
-  {Leitherer}, {Terlevich} \& {Terlevich}}{{Mas-Hesse}
-  et~al.}{2003}]{mashesse03}
-{Mas-Hesse} J.~M.,  {Kunth} D.,  {Tenorio-Tagle} G.,  {Leitherer} C.,
-  {Terlevich} R.~J.,    {Terlevich} E.,  2003, \apj, 598, 858
-
-\bibitem[\protect\citeauthoryear{{McCourt}, {Oh}, {O'Leary} \&
-  {Madigan}}{{McCourt} et~al.}{2016}]{2016arXiv161001164M}
-{McCourt} M.,  {Oh} S.~P.,  {O'Leary} R.~M.,    {Madigan} A.-M.,  2016, ArXiv
-  e-prints
-
-\bibitem[\protect\citeauthoryear{{McKee} \& {Ostriker}}{{McKee} \&
-  {Ostriker}}{1977}]{1977ApJ...218..148M}
-{McKee} C.~F.,  {Ostriker} J.~P.,  1977, \apj, 218, 148
-
-\bibitem[\protect\citeauthoryear{{Mej{\'{\i}}a-Restrepo} \&
-  {Forero-Romero}}{{Mej{\'{\i}}a-Restrepo} \&
-  {Forero-Romero}}{2016}]{2016ApJ...828....5M}
-{Mej{\'{\i}}a-Restrepo} J.~E.,  {Forero-Romero} J.~E.,  2016, \apj, 828, 5
-
-\bibitem[\protect\citeauthoryear{{Neufeld}}{{Neufeld}}{1991}]{1991ApJ...370L..85N}
-{Neufeld} D.~A.,  1991, \apjl, 370, L85
-
-\bibitem[\protect\citeauthoryear{{Noeske}, {Papaderos}, {Cair{\'o}s} \&
-  {Fricke}}{{Noeske} et~al.}{2003}]{2003A&A...410..481N}
-{Noeske} K.~G.,  {Papaderos} P.,  {Cair{\'o}s} L.~M.,    {Fricke} K.~J.,  2003,
-  \aap, 410, 481
-
-\bibitem[\protect\citeauthoryear{{Orsi}, {Lacey} \& {Baugh}}{{Orsi}
-  et~al.}{2012}]{Orsi12}
-{Orsi} A.,  {Lacey} C.~G.,    {Baugh} C.~M.,  2012, \mnras, 425, 87
-
-\bibitem[\protect\citeauthoryear{{Orsi}, {Lacey}, {Baugh} \& {Infante}}{{Orsi}
-  et~al.}{2008}]{2008MNRAS.391.1589O}
-{Orsi} A.,  {Lacey} C.~G.,  {Baugh} C.~M.,    {Infante} L.,  2008, \mnras, 391,
-  1589
-
-\bibitem[\protect\citeauthoryear{{{\"O}stlin} et~al.,}{{{\"O}stlin}
-  et~al.}{2014}]{LARS}
-{{\"O}stlin} G.  et~al., 2014, \apj, 797, 11
-
-\bibitem[\protect\citeauthoryear{{Ott}, {Walter} \& {Brinks}}{{Ott}
-  et~al.}{2005}]{2005MNRAS.358.1453O}
-{Ott} J.,  {Walter} F.,    {Brinks} E.,  2005, \mnras, 358, 1453
-
-\bibitem[\protect\citeauthoryear{{Padilla}, {Christlein}, {Gawiser},
-  {Gonz{\'a}lez}, {Guaita} \& {Infante}}{{Padilla}
-  et~al.}{2010}]{2010MNRAS.409..184P}
-{Padilla} N.~D.,  {Christlein} D.,  {Gawiser} E.,  {Gonz{\'a}lez} R.~E.,
-  {Guaita} L.,    {Infante} L.,  2010, \mnras, 409, 184
-
-\bibitem[\protect\citeauthoryear{{Partridge} \& {Peebles}}{{Partridge} \&
-  {Peebles}}{1967}]{PartridgePeebles}
-{Partridge} R.~B.,  {Peebles} P.~J.~E.,  1967, \apj, 147, 868
-
-\bibitem[\protect\citeauthoryear{{Poveda-Ruiz}, {Forero-Romero} \&
-  {Mu{\~n}oz-Cuartas}}{{Poveda-Ruiz} et~al.}{2016}]{2016ApJ...832..169P}
-{Poveda-Ruiz} C.~N.,  {Forero-Romero} J.~E.,    {Mu{\~n}oz-Cuartas} J.~C.,
-  2016, \apj, 832, 169
-
-\bibitem[\protect\citeauthoryear{{Prada}, {Klypin}, {Cuesta}, {Betancort-Rijo}
-  \& {Primack}}{{Prada} et~al.}{2012}]{2012MNRAS.423.3018P}
-{Prada} F.,  {Klypin} A.~A.,  {Cuesta} A.~J.,  {Betancort-Rijo} J.~E.,
-  {Primack} J.,  2012, \mnras, 423, 3018
-
-\bibitem[\protect\citeauthoryear{{Pustilnik} \& {Martin}}{{Pustilnik} \&
-  {Martin}}{2007}]{pustilnikmartin07}
-{Pustilnik} S.~A.,  {Martin} J.-M.,  2007, \aap, 464, 859
-
-\bibitem[\protect\citeauthoryear{{Rivera-Thorsen} et~al.,}{{Rivera-Thorsen}
-  et~al.}{2015}]{2015ApJ...805...14R}
-{Rivera-Thorsen} T.~E.  et~al., 2015, \apj, 805, 14
-
-\bibitem[\protect\citeauthoryear{{Roth} et~al.,}{{Roth} et~al.}{2005}]{PMAS}
-{Roth} M.~M.  et~al., 2005, \pasp, 117, 620
-
-\bibitem[\protect\citeauthoryear{{Steidel}, {Erb}, {Shapley}, {Pettini},
-  {Reddy}, {Bogosavljevi{\'c}}, {Rudie} \& {Rakic}}{{Steidel}
-  et~al.}{2010}]{2010ApJ...717..289S}
-{Steidel} C.~C.,  {Erb} D.~K.,  {Shapley} A.~E.,  {Pettini} M.,  {Reddy} N.,
-  {Bogosavljevi{\'c}} M.,  {Rudie} G.~C.,    {Rakic} O.,  2010, \apj, 717, 289
-
-\bibitem[\protect\citeauthoryear{{Swaters}, {Sancisi}, {van Albada} \& {van der
-  Hulst}}{{Swaters} et~al.}{2009}]{2009A&A...493..871S}
-{Swaters} R.~A.,  {Sancisi} R.,  {van Albada} T.~S.,    {van der Hulst} J.~M.,
-  2009, \aap, 493, 871
-
-\bibitem[\protect\citeauthoryear{{Tasitsiomi}}{{Tasitsiomi}}{2006}]{2006ApJ...645..792T}
-{Tasitsiomi} A.,  2006, \apj, 645, 792
-
-\bibitem[\protect\citeauthoryear{{Tassis}, {Kravtsov} \& {Gnedin}}{{Tassis}
-  et~al.}{2008}]{2008ApJ...672..888T}
-{Tassis} K.,  {Kravtsov} A.~V.,    {Gnedin} N.~Y.,  2008, \apj, 672, 888
-
-\bibitem[\protect\citeauthoryear{{Thuan} \& {Izotov}}{{Thuan} \&
-  {Izotov}}{1997}]{Thuan97}
-{Thuan} T.~X.,  {Izotov} Y.~I.,  1997, \apj, 489, 623
-
-\bibitem[\protect\citeauthoryear{{Tollerud}, {Bullock}, {Graves} \&
-  {Wolf}}{{Tollerud} et~al.}{2011}]{2011ApJ...726..108T}
-{Tollerud} E.~J.,  {Bullock} J.~S.,  {Graves} G.~J.,    {Wolf} J.,  2011, \apj,
-  726, 108
-
-\bibitem[\protect\citeauthoryear{{Trainor}, {Strom}, {Steidel} \&
-  {Rudie}}{{Trainor} et~al.}{2016}]{Trainor16}
-{Trainor} R.~F.,  {Strom} A.~L.,  {Steidel} C.~C.,    {Rudie} G.~C.,  2016,
-  \apj, 832, 171
-
-\bibitem[\protect\citeauthoryear{{Verhamme}, {Orlitov{\'a}}, {Schaerer} \&
-  {Hayes}}{{Verhamme} et~al.}{2015}]{2015A&A...578A...7V}
-{Verhamme} A.,  {Orlitov{\'a}} I.,  {Schaerer} D.,    {Hayes} M.,  2015, \aap,
-  578, A7
-
-\bibitem[\protect\citeauthoryear{{Verhamme}, {Schaerer} \&
-  {Maselli}}{{Verhamme} et~al.}{2006}]{2006A&A...460..397V}
-{Verhamme} A.,  {Schaerer} D.,    {Maselli} A.,  2006, \aap, 460, 397
-
-\bibitem[\protect\citeauthoryear{{Yamada}, {Matsuda}, {Kousai}, {Hayashino},
-  {Morimoto} \& {Umemura}}{{Yamada} et~al.}{2012}]{2012ApJ...751...29Y}
-{Yamada} T.,  {Matsuda} Y.,  {Kousai} K.,  {Hayashino} T.,  {Morimoto} N.,
-  {Umemura} M.,  2012, \apj, 751, 29
-
-\end{thebibliography}
 
 
 \appendix
@@ -1149,14 +870,16 @@ Goodman J.,  Weare J.,  2010, Communications in applied mathematics and
 \label{appendix}
 
 As a complement to the K-S tests on the multiphase data 
-we apply a random forest classification algorithm to find the
+we apply a random forest classification algorithm
+\citep{james2014introduction} to find the
 more relevant parameters in the model to produce a low $\chi^2$
 result. 
 
 
 We divide
 the results in two classes: low $\chi^2/d.o.f.<35$ and high
-$\chi^2/d.o.f.>35$. \mg{Why was $35$ chosen as a boundary?}\jefr{We
+$\chi^2/d.o.f.>35$, that is the limit that divides the best $1\%$ of
+the models from the rest. \mg{Why was $35$ chosen as a boundary?}\jefr{We
   chose $35$ to match the cut that we used to make the  integrated
   probability distributions. However the nuber itself is
   arbitrary to have the $1\%$ of the initial number of models. 
@@ -1186,14 +909,17 @@ that the \lya emission comes from the clumps $P_{\rm cl}$, are the
 most influential parameters in finding a model with low
 $\chi^2/d.o.f.$.
 
-Furthermore, considering the sparse sampling of parameter space and the results
+{\bf Furthermore, considering the sparse sampling of parameter space and the results
 from the random forest classifier, it is safer to consider that
 the best values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm
-  cl}$ are actually lower/upper/lower bounds, respectively.
+  cl}$ are actually lower/upper/lower bounds, respectively.}
 \mg{This is interesting. Why do you think that? Could we use that to
   increase the quoted errors? I am worried that the referee will
   complain about the small errors.} \jefr{The referee didn't complain
-  about the small errors.}
+  about the small errors. And now that I see this with a bit more of
+  perspective, the tree classification always work with 'larger
+  than/less than' dualities. It would be unfair/unjustified to use that to justify
+our results as a lower bound. I suggest we remove this paragraph.}
 
 
 
