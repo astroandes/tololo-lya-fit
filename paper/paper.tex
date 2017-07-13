@@ -73,6 +73,7 @@
 \newcommand{\probaclump}{$0.96\pm 0.01$}
 
 \newcommand{\mg}[1]{\textcolor{blue}{\bf MG: \textit{#1}}}
+\newcommand{\jefr}[1]{\textcolor{darkgreen}{\bf JEFR: \textit{#1}}}
 
 \begin{document}
 
@@ -227,7 +228,6 @@ star-forming galaxies
 In addition, due to the cooling properties of gas multiphase media are expected
 in a range of astrophysical systems \citep[][]{1977ApJ...218..148M,2016arXiv161001164M}.
 
-
 The motivation for the rotation without outflows (as presented in
 \cite{GaravitoCamargo2014}) is that dwarf galaxies show coherent
 rotation features  \citep{2009A&A...493..871S} and it is expected that
@@ -235,23 +235,12 @@ some of them have high neutral gas contents with long quiescent phases
 without high gas outflows triggered by supernova activity
 \citep{2005A&A...433L...1B,2008ApJ...672..888T,2013MNRAS.434.2491G}.   
 
-
-
 The models we use correspond to simplified geometrical configurations.
 This allows us to perform a deep exploration of parameter space and
 gain some physical insight into \tol's kinematic properties.
 In this paper we show, for the first time in the literature, that \tol's
 \lya profile can be explicitly modeled by either of these two
 models. 
-
-\mg{I would remove the next paragraph as this seems clear and not necessary to start with an ``apology''.}
-We do not claim that our findings discard the existence of different
-undiscovered models that could reproduce the observed features in \tol.
-More involved models with multiple kinematic components can
-in principle also be successful.
-We focus on presenting two simple and successful models that
-manage, for the first time, to account for \tol's \lya line main
-features. 
 
 In the next section we review the observational characteristics of
 \tol, then we summarize the main features in the multiphase and
@@ -434,31 +423,18 @@ We note that the difference between the lowest and highest $\chi^2$ values in
 those $25$ models is close to $\Delta\chi^2 = 3000$, the lowest
 $\chi^2$ being close to $\chi^2_{\mathrm{min}}=1200$. 
 
-
-Using the total number of degrees of freedom, $d.o.f.=104$ we divide
-the results in two classes: low $\chi^2/d.o.f.<35$ and high
-$\chi^2/d.o.f.>35$. \mg{Why was $35$ chosen as a boundary?}
-We apply a random forest classification algorithm to find the
-more relevant parameters in splitting the results into these two
-classes. 
-The algorithm uses $500$ trees for the classification and a
-maximum of $3$ depth levels. 
-To check for stability we repeat the computation $10$ times by
-randomly subsampling the input data to use $80\%$ of the data as
-the training set.
-
-We also perform a Kolmogorov-Smirnov (K-S) test to compare each parameter
+We also a Kolmogorov-Smirnov (K-S) test to compare each parameter
 distribution in the best $25$ models against the parent distribution
 of $2500$ models. 
-If we obtain a p-value $<0.05$ for a given model parameter, we conclude that
-this parameter does influence the $\chi^2$ result, as the distribution for
+From a p-value $<0.05$ for a given model parameter, we conclude that
+this parameter can be constrained from the observations, as the distribution for
 the best $\chi^2$ models is statistically different to the
 distribution from the global sample of $2500$ models.  
 
-We finally compute the best values for the influential parameters as
+We finally compute the best values for the constrained parameters as
 the values that produce the minimum $\chi^2$.  
 We estimate the 1-$\sigma$ uncertainty from a parabolic fit to the
-$\chi^2$ as a function of the influential parameters around its
+$\chi^2$ as a function of the constrained parameters around its
 corresponding minimum.   
 
 
@@ -537,29 +513,6 @@ percentiles.
 
 
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.95\textwidth]{tree_result.pdf}
-\caption{Classification tree example. 
-The aim is to find the parameters that separate two
-classes: low $\chi^2/d.o.f. < 35$ and high $\chi^2/d.o.f>35$. 
-Each box describes the condition over the parameter of interest, the
-level of sample impurity, the total number of samples and the value of the
-number of samples in each class.  
-In this example we randomly sample $80\%$ of the full data set of models to
-start with $28$ models in the first class and
-$1962$ models in the second class; the best way to increase the
-probability to find a result with low $\chi^2/d.o.f.$ ($13$ models,
-fourth bottom box, from left to the right)
-is having the clump radial velocity, $v_{\infty,{\rm cl}}<157.0$ \kms;
-the clump velocity dispersion, $\sigma_{{\rm cl}}>55.6$ \kms, and the
-probability to have a \lya photon emitted in a clump, $P_{\rm cl}>0.683$.
-The final classification is not perfect, showing that all other
-parameters are also important but these three are the most relevant.  
-\label{fig:tree}}
-\end{center}
-\end{figure*}
-
 
 \begin{figure*}
 \begin{center}
@@ -633,36 +586,15 @@ that managed to explain \tol's \lya profile.
 \subsection{Multiphase ISM}
 
 With $14$ free parameters our first concern is discovering which are
-the most relevant in reproducing \tol's line shape.
-The results of the random forest classifier yield that the clump outflow velocity
-$v_{\infty,\rm{cl}}$, the clump velocity dispersion $\sigma_{\rm cl}$ and the probability
-that the \lya emission comes from the clumps $P_{\rm cl}$, are the
-most influential parameters in finding a model with low
-$\chi^2/d.o.f.$.
+the parameters that can be safeley constrained by \tol's line shape.
 
-Figure \ref{fig:tree} shows as an illustration the results for a
-single classification tree.
-\mg{Sorry but it is not clear to me what this Figure shows \& how it was assembled. I suggest: leave the KS test in the main text as it is straightforward to understand, and move the random trees with more technical details / references about the implementations to the appendix -- and then point to it as a second probe from the main tetx. This way it would break the flow less.}
-The tree starts with $28$ and $1962$ models in the low and high
-$\chi^2/d.o.f.$ classes, respectively. 
-We find that the best classification
-yields $13$ and $44$ models in the low and high $\chi^2/d.o.f.$
-classes, respectively, after selecting for $v_{\infty,{\rm cl}}<157.0$ \kms,
-$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$. 
-The split in two classes is not perfect. 
-This means that the 3 parameters in the
-model are the most influential in finding models with low
-$\chi^2/d.o.f.$, but that some combinations of the other 11 parameters
-are also relevant to find a good fit.  
-
-From the K-S tests we confirm that the same 3 parameters are the
-only ones that can be constrained by observations;
+From the K-S tests we confirm that only 3 parameters 
+can be constrained by observations;
 $v_{\infty,\rm{cl}}$ (p-value  $10^{-18}$), $\sigma_{\rm cl}$ (p-value
 $10^{-4}$) $P_{\rm cl}$ (p-value $10^{-4}$).
-Once again, this test does not mean the other parameters do not
-influence the resulting spectra at all; it means that they cannot be
-constrained from \tol's observations. 
-
+This does not mean the other parameters do not influence the resulting
+spectra at all; it means that they cannot be constrained from \tol's
+observations.   
 
 The best models are shown in Figure \ref{multiphaseresults}.
 Left column shows the difference between the integrated distributions
@@ -673,26 +605,43 @@ and its corresponding parameter value.
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump.
 \mg{These errors seem still pretty small to me. You obtained these via a Fisher matrix of a parabolic fit, right? How good was the fit? Are the off-diagonal elements included?}
+\jefr{The small uncertainty only says that the increase in
+  $\chi^2/dof$ is very steep. I don't think you can get larger errors
+  with the available date. By simple inspection of Figure 2 we can
+  see that the errors will be small with the data we have. The
+  paremeter uncertainty roughly corresponds to the width of the parabola
+  when there is a difference of $\chi^2/dof\sim 1$ from the minimum. In the data we
+  have there is a huge jump of $\chi^2/dof$ of $\sim 5$ between the minimum
+  and the nearest data point. }
 
 Qualitatively this result can be understood as follows.
-Due to the large fraction of \lya photons being emitted within the moving clumps ($P_{\rm cl}$), the `intrinsic' profile represents the kinematics of the clumps, that is, the width of the intrinsic line is set by $\sigma_{\mathrm{cl}}$ and its median offset mainly by $v_{\infty}$ \& $\beta_{\rm cl}$.
-Furthermore, the relatively low mean number of clumps per line of sight ($f_{\mathrm{cl}}$) combined with the high velocity dispersion of the clumps implies the 
-existence of low-density inter-clump
-regions where \lya photons can freely propagate which leads to an emergent spectrum close to the intrinsic one as well as to the high flux at line center as observed.
-Because the width of the observable spectrum is hence set primarily by $\sigma_{\rm cl}$, a lower velocity dispersion would produce a narrower line and thus a worse fit.
+Due to the large fraction of \lya photons being emitted within the
+moving clumps ($P_{\rm cl}\sim 1$) the `intrinsic' profile represents
+the kinematics of the clumps, that is, the width of the intrinsic line
+is set by $\sigma_{\mathrm{cl}}$ and its median offset mainly by
+$v_{\infty}$ \& $\beta_{\rm cl}$. 
+Furthermore, the relatively low mean number of clumps per line of
+sight ($f_{\mathrm{cl}}$) combined with the high velocity dispersion
+of the clumps implies the  existence of low-density inter-clump 
+regions where \lya photons can freely propagate which leads to an
+emergent spectrum close to the intrinsic one as well as to the high
+flux at line center as observed. 
+Because the width of the observable spectrum is hence set primarily by
+$\sigma_{\rm cl}$, a lower velocity dispersion would produce a
+narrower line and thus a worse fit. 
 From the lower right panel in Figure \ref{multiphaseresults} we find that it
 is unlikely that the clump velocity dispersion is lower than
 $50$\kms. 
-This is also supported by the classification tree example in Figure
-\ref{fig:tree}.  
 
 As a test, we also run a small set of $100$ additional radiative
 transfer simulations with random values for all parameters, except for
-$\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm cl}$ which are kept within the derived $1-\sigma$
-constraints. \mg{Is $1\sigma$ correct?}
+$\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm cl}$ which are kept within the derived $1\sigma$
+constraints. We find that $30$ models show $\chi^2/d.o.f.<35$.
+\mg{Is $1\sigma$ correct?}\jefr{What do you mean with
+  that question?}
 Consistent with the results from the random forest algorithm,
-illustrated by the classification tree of Figure \ref{fig:tree}, we
-find that $30$ models show $\chi^2/d.o.f.<35$.
+illustrated by the classification tree of Figure \ref{fig:tree},
+
 
 Having constrained only 3 parameters, one might wonder why the other 11
 parameters do not seem to matter. 
@@ -703,10 +652,9 @@ if for clumply models the line profile is most sensitive to only
 a few parameters \citep{Gronke2016}, the rest of parameters
 affect the line profile at a level that cannot be neglected,
 \mg{I am not sure I understand the rest of this sentence. What do you mean there?}
-i.e. we cannot randomly pick 11 random, reasonable values for these
-parameters, and expect to fit the line profile while only varying the
-other 3, as the results for the classification tree example in Figure
-\ref{fig:tree} shows.
+i.e. we cannot randomly pick 11 random values for these
+parameters and expect to fit the line profile while only varying the
+other 3
 
 
 We cannot discard that another region of parameter space
@@ -717,12 +665,6 @@ observations  clarify the kinematic nature of \tol \footnote{In
   Section \S \ref{sec:conclusions} we describe  in more detail what
   kind of observations could be performed in the near future to
   improve our understanding of \tol's kinematics.}.
-Furthermore, considering the sparse sampling of parameter space and the results
-from the random forest classifier, it is safer to consider that
-the best values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm
-  cl}$ are actually lower/upper/lower bounds, respectively.
-\mg{This is interesting. Why do you think that? Could we use that to increase the quoted errors? I am worried that the referee will complain about the small errors.}
-
 
 \subsection{Bulk Rotation}
 
@@ -917,9 +859,9 @@ J. E. F-R. acknowledges the support of J. L. Guerra in the last
 writing stages of this paper.
 
 
-
 \bibliographystyle{mn2e}
 %\bibliography{references}
+
 \begin{thebibliography}{}
 
 \bibitem[\protect\citeauthoryear{{Bacon} et~al.,}{{Bacon}
@@ -1010,6 +952,11 @@ Goodman J.,  Weare J.,  2010, Communications in applied mathematics and
   {Dijkstra}}{2016}]{Gronke2016}
 {Gronke} M.,  {Dijkstra} M.,  2016, \apj, 826, 14
 
+\bibitem[\protect\citeauthoryear{{Gronke}, {Dijkstra}, {McCourt} \&
+  {Oh}}{{Gronke} et~al.}{2017}]{2017arXiv170406278G}
+{Gronke} M.,  {Dijkstra} M.,  {McCourt} M.,    {Oh} S.~P.,  2017, ArXiv
+  e-prints
+
 \bibitem[\protect\citeauthoryear{{Harrington}}{{Harrington}}{1973}]{Harrington73}
 {Harrington} J.~P.,  1973, \mnras, 162, 43
 
@@ -1058,6 +1005,15 @@ Goodman J.,  Weare J.,  2010, Communications in applied mathematics and
   et~al.}{2003}]{mashesse03}
 {Mas-Hesse} J.~M.,  {Kunth} D.,  {Tenorio-Tagle} G.,  {Leitherer} C.,
   {Terlevich} R.~J.,    {Terlevich} E.,  2003, \apj, 598, 858
+
+\bibitem[\protect\citeauthoryear{{McCourt}, {Oh}, {O'Leary} \&
+  {Madigan}}{{McCourt} et~al.}{2016}]{2016arXiv161001164M}
+{McCourt} M.,  {Oh} S.~P.,  {O'Leary} R.~M.,    {Madigan} A.-M.,  2016, ArXiv
+  e-prints
+
+\bibitem[\protect\citeauthoryear{{McKee} \& {Ostriker}}{{McKee} \&
+  {Ostriker}}{1977}]{1977ApJ...218..148M}
+{McKee} C.~F.,  {Ostriker} J.~P.,  1977, \apj, 218, 148
 
 \bibitem[\protect\citeauthoryear{{Mej{\'{\i}}a-Restrepo} \&
   {Forero-Romero}}{{Mej{\'{\i}}a-Restrepo} \&
@@ -1168,6 +1124,86 @@ Goodman J.,  Weare J.,  2010, Communications in applied mathematics and
 
 \end{thebibliography}
 
+\appendix
+\section{Random Forest Classification}
+\label{appendix}
+
+As a complement to the K-S tests on the multiphase data 
+we apply a random forest classification algorithm to find the
+more relevant parameters in the model to produce a low $\chi^2$
+result. 
+
+Using the total number of degrees of freedom, $d.o.f.=104$ we divide
+the results in two classes: low $\chi^2/d.o.f.<35$ and high
+$\chi^2/d.o.f.>35$. \mg{Why was $35$ chosen as a boundary?}\jefr{We
+  chose $35$ to match the cut that we used to make the  integrated
+  probability distributions. However the nuber itself is
+  arbitrary. Ideally we should only chose models with $\chi^/dof$
+  higher by $2$ than the lowest $\chi^2/dof$, but we don't have any
+  models in that range.}
+The algorithm uses $500$ trees for the classification and a
+maximum of $3$ depth levels. 
+To check for stability we repeat the computation $10$ times by
+randomly subsampling the input data to use $80\%$ of the data as
+the training set.
+
+
+
+Figure \ref{fig:tree} shows as an illustration the results for a
+single classification tree.
+The tree starts with $28$ and $1962$ models in the low and high
+$\chi^2/d.o.f.$ classes, respectively. 
+We find that the best classification
+yields $13$ and $44$ models in the low and high $\chi^2/d.o.f.$
+classes, respectively, after selecting for $v_{\infty,{\rm cl}}<157.0$ \kms,
+$\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$. 
+The split in two classes is not perfect. 
+This means that these 3 parameters are the most useful parameters
+in finding models with low $\chi^2/d.o.f.$.
+Not having a perfect classification using these three parameter only,
+shows that some combinations of the other 11 parameters are also
+relevant to find a good fit.
+
+
+The results of the random forest classifier yield that the clump outflow velocity
+$v_{\infty,\rm{cl}}$, the clump velocity dispersion $\sigma_{\rm cl}$ and the probability
+that the \lya emission comes from the clumps $P_{\rm cl}$, are the
+most influential parameters in finding a model with low
+$\chi^2/d.o.f.$.
+
+Furthermore, considering the sparse sampling of parameter space and the results
+from the random forest classifier, it is safer to consider that
+the best values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm
+  cl}$ are actually lower/upper/lower bounds, respectively.
+\mg{This is interesting. Why do you think that? Could we use that to
+  increase the quoted errors? I am worried that the referee will
+  complain about the small errors.} \jefr{The referee didn't complain
+  about the small errors.}
+
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{tree_result.pdf}
+\caption{Classification tree example. 
+The aim is to find the parameters that can be used to separate the
+results in two classes: low $\chi^2/d.o.f. < 35$ and high $\chi^2/d.o.f>35$. 
+Each box describes the condition over the parameter of interest, the
+level of sample impurity, the total number of samples and the value of the
+number of samples in each class.  
+In this example we randomly sample $80\%$ of the full data set of models to
+start with $28$ models in the first class and
+$1962$ models in the second class; the best way to increase the
+probability to find a result with low $\chi^2/d.o.f.$ ($13$ models,
+fourth bottom box, from left to the right)
+is having the clump radial velocity, $v_{\infty,{\rm cl}}<157.0$ \kms;
+the clump velocity dispersion, $\sigma_{{\rm cl}}>55.6$ \kms, and the
+probability to have a \lya photon emitted in a clump, $P_{\rm cl}>0.683$.
+The final classification is not perfect, showing that all other
+parameters are also important but these three are the most relevant.  
+\label{fig:tree}}
+\end{center}
+\end{figure*}
 
 
 \end{document}
