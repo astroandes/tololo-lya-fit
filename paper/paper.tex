@@ -226,7 +226,8 @@ Besides, clumpy multiphase outflows are capable to explain \lya features around
 star-forming galaxies
 \citep{2010ApJ...717..289S,2012MNRAS.424.1672D}.
 In addition, due to the cooling properties of gas multiphase media are expected
-in a range of astrophysical systems \citep[][]{1977ApJ...218..148M,2016arXiv161001164M}.
+in a range of astrophysical systems
+\citep[][]{1977ApJ...218..148M,2016arXiv161001164M}. 
 
 The motivation for the rotation without outflows (as presented in
 \cite{GaravitoCamargo2014}) is that dwarf galaxies show coherent
@@ -633,21 +634,29 @@ From the lower right panel in Figure \ref{multiphaseresults} we find that it
 is unlikely that the clump velocity dispersion is lower than
 $50$\kms. 
 
-As a test, we also run a small set of $100$ additional radiative
+As a test we run a small set of $100$ additional radiative
 transfer simulations with random values for all parameters, except for
-$\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm cl}$ which are kept within the derived $1\sigma$
+$\sigma_{\rm cl}$, $P_{\rm cl}$ which are kept within the derived $1\sigma$
 constraints. We find that $30$ models show $\chi^2/d.o.f.<35$.
-\mg{Is $1\sigma$ correct?}\jefr{What do you mean with
-  that question?}
-Consistent with the results from the random forest algorithm,
-illustrated by the classification tree of Figure \ref{fig:tree},
+That is we have a $30\%$ chance to find good models compared with the
+lower $1\%$ success rate if the parameters were unconstrained. 
+\mg{Is $1\sigma$ correct?}\jefr{I checked and only $\sigma_{cl}$ and
+  $P_{cl}$ were run within $1\sigma$. All the other parameters were unconstrained.}
 
-
-Having constrained only 3 parameters, one might wonder why the other 11
+Having constrained only 3 parameters one might wonder why the other 11
 parameters do not seem to matter. 
-However, this view is misleading because merely the best-fit values of (some of) those $3$ parameters, i.e., the corresponding constraint to a given sub-region in the parameter space, make the other parameters less important.
-For instance, in our case the large value of $P_{\rm cl}$ makes radiative transfer effects, and therefore other parameters such as the clump column density less relevant for the emergent line profile. However, for instance larger values of $f_{\rm cl}$ -- outside the here considered parameter range -- would re-introduce additional radiative transfer effects and thus increase the number of relevant parameters \citep[see ][for details]{2017arXiv170406278G}. 
-This means that even
+However, this view is misleading because merely the best-fit values of
+(some of) those $3$ parameters, i.e., the corresponding constraint to
+a given sub-region in the parameter space, make the other parameters
+less important. 
+For instance, in our case the large value of $P_{\rm cl}$ makes
+radiative transfer effects, and therefore other parameters such as the
+clump column density less relevant for the emergent line
+profile. However, for instance larger values of $f_{\rm cl}$ --
+outside the here considered parameter range -- would re-introduce
+additional radiative transfer effects and thus increase the number of
+relevant parameters \citep[see ][for details]{2017arXiv170406278G}.   
+This means that even  
 if for clumply models the line profile is most sensitive to only
 a few parameters \citep{Gronke2016}, the rest of parameters
 affect the line profile at a level that cannot be neglected,
