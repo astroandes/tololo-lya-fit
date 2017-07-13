@@ -565,7 +565,6 @@ Dots represent the observational data for \tol\ with the
 overplot from our best fits from the analytical solution for the
 multiphase model (thick line)  and the rotating homogeneous gas sphere
 (thin line). 
-
 The fit to the observations is not perfect. 
 However, in spite of the
 simplicity of our models, this is the first time that the main
@@ -578,7 +577,6 @@ at least they show that they are a sufficient condition.
 This is a significant step forward to understand the influence that
 different kinematics have in producing the atypical line profile shown
 by \tol.
-
 
 In what follows we summarize the values of the kinematic parameters
 that managed to explain \tol's \lya profile.
@@ -593,8 +591,7 @@ From the K-S tests we confirm that only 3 parameters
 can be constrained by observations;
 $v_{\infty,\rm{cl}}$ (p-value  $10^{-18}$), $\sigma_{\rm cl}$ (p-value
 $10^{-4}$) $P_{\rm cl}$ (p-value $10^{-4}$).
-This does not mean the other parameters do not influence the resulting
-spectra at all; it means that they cannot be constrained from \tol's
+All the other parameters cannot be constrained from \tol's
 observations.   
 
 The best models are shown in Figure \ref{multiphaseresults}.
@@ -620,7 +617,7 @@ Due to the large fraction of \lya photons being emitted within the
 moving clumps ($P_{\rm cl}\sim 1$) the `intrinsic' profile represents
 the kinematics of the clumps, that is, the width of the intrinsic line
 is set by $\sigma_{\mathrm{cl}}$ and its median offset mainly by
-$v_{\infty}$ \& $\beta_{\rm cl}$. 
+$v_{\infty,{\rm cl}}$ \& $\beta_{\rm cl}$. 
 Furthermore, the relatively low mean number of clumps per line of
 sight ($f_{\mathrm{cl}}$) combined with the high velocity dispersion
 of the clumps implies the  existence of low-density inter-clump 
@@ -636,44 +633,44 @@ $50$\kms.
 
 As a test we run a small set of $100$ additional radiative
 transfer simulations with random values for all parameters, except for
-$\sigma_{\rm cl}$, $P_{\rm cl}$ which are kept within the derived $1\sigma$
+$\sigma_{\rm cl}$, $P_{\rm cl}$ which are kept within the derived $3\sigma$
 constraints. We find that $30$ models show $\chi^2/d.o.f.<35$.
-That is we have a $30\%$ chance to find good models compared with the
-lower $1\%$ success rate if the parameters were unconstrained. 
+That is, we have a $30\%$ chance to find good models, which is
+significanty higher than the lower $1\%$ success rate if the
+parameters were unconstrained.  
 \mg{Is $1\sigma$ correct?}\jefr{I checked and only $\sigma_{cl}$ and
-  $P_{cl}$ were run within $1\sigma$. All the other parameters were unconstrained.}
+  $P_{cl}$ were run within $3\sigma$. All the other parameters,
+  including $v_{\infty}$were
+  unconstrained.} 
 
 Having constrained only 3 parameters one might wonder why the other 11
-parameters do not seem to matter. 
-However, this view is misleading because merely the best-fit values of
-(some of) those $3$ parameters, i.e., the corresponding constraint to
-a given sub-region in the parameter space, make the other parameters
-less important. 
-For instance, in our case the large value of $P_{\rm cl}$ makes
-radiative transfer effects, and therefore other parameters such as the
-clump column density less relevant for the emergent line
-profile. However, for instance larger values of $f_{\rm cl}$ --
-outside the here considered parameter range -- would re-introduce
+parameters do not seem to matter.
+In our case this can be explained by the large value of $P_{\rm cl}$
+favored by \tol's observations. 
+A large proability of having \lya\ photons emitted in the clumps
+makes radiative transfer effects, and therefore other parameters such
+as the clump column density, less relevant for the emergent line
+profile. 
+
+\jefr{I find this paragraph confusing. Discussing an hypotetical case where
+all parameters matter undermines the explanation of our concrete case
+where only some parameters matter more. Probably we can remove it}.
+{\bf However, larger values of $f_{\rm cl}$ -- outside the here considered parameter range -- would re-introduce
 additional radiative transfer effects and thus increase the number of
 relevant parameters \citep[see ][for details]{2017arXiv170406278G}.   
 This means that even  
 if for clumply models the line profile is most sensitive to only
 a few parameters \citep{Gronke2016}, the rest of parameters
-affect the line profile at a level that cannot be neglected,
-\mg{I am not sure I understand the rest of this sentence. What do you mean there?}
-i.e. we cannot randomly pick 11 random values for these
-parameters and expect to fit the line profile while only varying the
-other 3
+affect the line profile at a level that cannot be neglected.}
 
-
-We cannot discard that another region of parameter space
+However, we cannot discard that another region of parameter space
 could also yield a good fit to the observed line-profile.
 This might be interesting to explore in the
 future with, e.g., a higher sampling of the parameter space once new 
-observations  clarify the kinematic nature of \tol \footnote{In
+observations  clarify the kinematic nature of \tol.In
   Section \S \ref{sec:conclusions} we describe  in more detail what
   kind of observations could be performed in the near future to
-  improve our understanding of \tol's kinematics.}.
+  improve our understanding of \tol's kinematics.
 
 \subsection{Bulk Rotation}
 
@@ -729,7 +726,10 @@ Which model has more
 chances to be correct?  
 We discard the rotation model by considering that the rotational
 velocity of $\sim350$ \kms\ is too high for such a low
-mass system.  \mg{I am confused -- are much lower rotational velocities not exclude by the priors used?}
+mass system.  \mg{I am confused -- are much lower rotational
+  velocities not exclude by the priors used?}\jefr{Yes, they are
+  discarded, but here we are talking about the most likely value of
+  350 km/s.}
 \tol's inferred rotational velocity is larger than the
 Milky Way's ($\sim200$\kms) while its baryonic mass is one order
 of magnitude smaller. 
