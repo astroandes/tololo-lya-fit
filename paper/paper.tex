@@ -584,52 +584,71 @@ that managed to explain \tol's \lya profile.
 
 \subsection{Multiphase ISM}
 
-With $14$ free parameters our first concern is discovering which are
-the parameters that can be safeley constrained by \tol's line shape.
-
-From the K-S tests we confirm that only 3 parameters 
-can be constrained by observations;
+With $14$ free parameters our first concern is discovering which 
+parameters matter the most.
+From the K-S tests we find that only 3 parameters 
+are confidently constrained by \tol's line shape;
 $v_{\infty,\rm{cl}}$ (p-value  $10^{-18}$), $\sigma_{\rm cl}$ (p-value
-$10^{-4}$) $P_{\rm cl}$ (p-value $10^{-4}$).
-All the other parameters cannot be constrained from \tol's
-observations.   
+$10^{-4}$) $P_{\rm cl}$ (p-value $10^{-4}$). 
 
-The best models are shown in Figure \ref{multiphaseresults}.
+This illustrated by the results shown in Figure \ref{multiphaseresults}.
 Left column shows the difference between the integrated distributions
-of the full sample (2500 input models) and the models with the lowest
-$\chi^2/d.o.f.$. 
+of the full sample (2500 input models) and the $1\%$ models with the lowest
+$\chi^2/d.o.f.$.  
 The right column shows the actual $\chi^2/d.o.f.$ 
 and its corresponding parameter value. 
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump.
 \mg{These errors seem still pretty small to me. You obtained these via a Fisher matrix of a parabolic fit, right? How good was the fit? Are the off-diagonal elements included?}
 \jefr{The small uncertainty only says that the increase in
-  $\chi^2/dof$ is very steep. I don't think you can get larger errors
-  with the available date. By simple inspection of Figure 2 we can
-  see that the errors will be small with the data we have. The
+  $\chi^2/dof$ is very steep as you vary a parameter. I don't think you can get larger errors
+  with the available data. Simple inspection of Figure 2 shows
+  that the errors will be small with the data we have. The
   paremeter uncertainty roughly corresponds to the width of the parabola
   when there is a difference of $\chi^2/dof\sim 1$ from the minimum. In the data we
-  have there is a huge jump of $\chi^2/dof$ of $\sim 5$ between the minimum
+  have a huge jump of $\chi^2/dof$ of $\sim 5$ between the minimum
   and the nearest data point. }
 
 Qualitatively this result can be understood as follows.
 Due to the large fraction of \lya photons being emitted within the
-moving clumps ($P_{\rm cl}\sim 1$) the `intrinsic' profile represents
-the kinematics of the clumps, that is, the width of the intrinsic line
+moving clumps ($P_{\rm cl}\sim 1$) the `intrinsic' profile follows 
+the clump kinematics. In other words, the width of the intrinsic line
 is set by $\sigma_{\mathrm{cl}}$ and its median offset mainly by
-$v_{\infty,{\rm cl}}$ \& $\beta_{\rm cl}$. 
+$v_{\infty,{\rm cl}}$ and $\beta_{\rm cl}$.. 
 Furthermore, the relatively low mean number of clumps per line of
-sight ($f_{\mathrm{cl}}$) combined with the high velocity dispersion
-of the clumps implies the  existence of low-density inter-clump 
-regions where \lya photons can freely propagate which leads to an
-emergent spectrum close to the intrinsic one as well as to the high
-flux at line center as observed. 
+sight, $f_{\mathrm{cl}}$, combined with the high velocity dispersion
+of the clumps implies existence of low-density inter-clump 
+regions where \lya photons can freely propagate.
+This gives result to an emergent spectrum close to the intrinsic one, explaining the high
+flux at line center as observed.  
+
 Because the width of the observable spectrum is hence set primarily by
 $\sigma_{\rm cl}$, a lower velocity dispersion would produce a
 narrower line and thus a worse fit. 
 From the lower right panel in Figure \ref{multiphaseresults} we find that it
 is unlikely that the clump velocity dispersion is lower than
 $50$\kms. 
+
+Having constrained only 3 parameters one might wonder why the other 11
+parameters do not seem to matter.
+In our case this can be explained by the large value of $P_{\rm cl}$
+favored by \tol's observations. 
+A large proability of having \lya\ photons emitted in the clumps
+makes radiative transfer effects, and therefore other parameters such
+as the clump column density, less relevant for the emergent line
+profile. 
+
+
+\jefr{I find this paragraph confusing. Discussing an hypotetical case where
+all parameters matter undermines the explanation of our concrete case
+where only some parameters matter more. Probably we can remove it}.
+{\bf However, larger values of $f_{\rm cl}$ -- outside the here considered parameter range -- would re-introduce
+additional radiative transfer effects and thus increase the number of
+relevant parameters \citep[see ][for details]{2017arXiv170406278G}.   
+This means that even  
+if for clumply models the line profile is most sensitive to only
+a few parameters \citep{Gronke2016}, the rest of parameters
+affect the line profile at a level that cannot be neglected.}
 
 As a test we run a small set of $100$ additional radiative
 transfer simulations with random values for all parameters, except for
@@ -643,26 +662,6 @@ parameters were unconstrained.
   including $v_{\infty}$were
   unconstrained.} 
 
-Having constrained only 3 parameters one might wonder why the other 11
-parameters do not seem to matter.
-In our case this can be explained by the large value of $P_{\rm cl}$
-favored by \tol's observations. 
-A large proability of having \lya\ photons emitted in the clumps
-makes radiative transfer effects, and therefore other parameters such
-as the clump column density, less relevant for the emergent line
-profile. 
-
-\jefr{I find this paragraph confusing. Discussing an hypotetical case where
-all parameters matter undermines the explanation of our concrete case
-where only some parameters matter more. Probably we can remove it}.
-{\bf However, larger values of $f_{\rm cl}$ -- outside the here considered parameter range -- would re-introduce
-additional radiative transfer effects and thus increase the number of
-relevant parameters \citep[see ][for details]{2017arXiv170406278G}.   
-This means that even  
-if for clumply models the line profile is most sensitive to only
-a few parameters \citep{Gronke2016}, the rest of parameters
-affect the line profile at a level that cannot be neglected.}
-
 However, we cannot discard that another region of parameter space
 could also yield a good fit to the observed line-profile.
 This might be interesting to explore in the
@@ -671,6 +670,7 @@ observations  clarify the kinematic nature of \tol.In
   Section \S \ref{sec:conclusions} we describe  in more detail what
   kind of observations could be performed in the near future to
   improve our understanding of \tol's kinematics.
+
 
 \subsection{Bulk Rotation}
 
