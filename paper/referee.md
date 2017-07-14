@@ -1,7 +1,7 @@
 We thank the referee for a detailed set of comments that allowed us to
 greatly improve the quality of the paper. 
 
-In this new version the most important change is in the Discussion of
+In this new version the most important change is in the discussion of
 our results (which remain unchanged). We now discard the possible
 influence of a supermassive black hole and favor instead a picture
 where Tololo1244-277 has similar structural characteristics as
@@ -13,14 +13,14 @@ quiescent red dwarf galaxy found only in galaxy clusters. This
 potential evolutionary link still depends on observational
 confirmation of the velocity dispersion in Tololo124-277.
 
-New tests using random forets classifiers and additional monte carlo
-simulations allowed us to improve our discussion about the limitations of
-our method. We have also included an explicit plot on the integrated
-mass profile for dark matter halos consistent with Tololo's constraints.
+A new test using random forets classifiers (as a new Appendix) allowed
+us to improve our discussion about the limitations of our method. 
+We have also included an explicit plot on the integrated  mass profile
+for dark matter halos consistent with Tololo's constraints. 
 
-We included the smaller modifications suggested by the referee.
+We have also included the smaller modifications suggested by the referee.
 
-Below is the detailed reply to all the major comments by the referee.
+Below is the detailed reply to all the major comments.
 
 With best regards, 
 
@@ -78,17 +78,7 @@ compare with the dynamical mass estimate in this manuscript? How much
 larger, typically, are compact dwarf galaxies with respect to
 ultra-compact dwarfs?
 
-Reply. 
 
-My main concern with the final result (and the corresponding
-interpretation) of this paper is that the dynamical masses may have
-been overestimated somehow. Recently, Oyarzun et al. (2016) have
-pointed out to the existence of a correlation between Ly-alpha
-equivalent widths and stellar masses in the sense that lower stellar
-mass galaxies have higher Ly-alpha equivalent widths. Is it possible
-that this effect, if not corrected for, may be causing to measure
-higher velocity values from the Ly-alpha profile that also result into
-higher dynamical masses?
 
 Reply. We have looked carefully into published observational data for
 compact dwarf galaxies (UCD's) and dwarf ellipticals (DE's). 
@@ -106,6 +96,16 @@ tololo hosts a starburst.
 For this reason we have completely restructure the discussion section
 to present this comparison. We have removed the consideration of the
 black hole hypothesis.
+
+My main concern with the final result (and the corresponding
+interpretation) of this paper is that the dynamical masses may have
+been overestimated somehow. Recently, Oyarzun et al. (2016) have
+pointed out to the existence of a correlation between Ly-alpha
+equivalent widths and stellar masses in the sense that lower stellar
+mass galaxies have higher Ly-alpha equivalent widths. Is it possible
+that this effect, if not corrected for, may be causing to measure
+higher velocity values from the Ly-alpha profile that also result into
+higher dynamical masses?
 
 Reply. The high velocity come from the high line-width. Not from its
 Equivalent Width (i.e. intensity to continuum ratio). The effects of
@@ -190,9 +190,8 @@ Reply. In section 4.1 we have expanded our discussion on the
 multiphase model. We have performed additional tests using random
 forest classifiers to confirm that there are three parameters that are
 the most influential. We have also expanded the discussion on why this
-does not mean that thee other parameters are irrelevant. We have also
-performed a test with new 100 Monte Carlo runs to backup our
-comments. We hope that the new tests help to clarify the situation.
+can be expected in our case. We hope that the new test help to clarify
+the situation. 
 
 
 3) In equation (1), what is the specific form of the model being
@@ -223,8 +222,8 @@ feature.  This needs to be better justified/explained.
 
 Reply. We have included a comment on the physical intution that explains
 the results for the rotation model (Based on our previous published
-results in Garavito-Camargo et al 2014). We also emphasize in the
-introduction that our approach does not intend us to reject the
-existence of different models that reproduce the observed features in
-Tololo-1214, but insted focuses on the existence of two physically
-motivated models that are suceessful in providing a solution.  
+results in Garavito-Camargo et al 2014). We also explain that our approach is not designed
+to reject the existence of different models that reproduce the
+observed features in Tololo-1214, but insted focuses on the existence
+of two physically motivated models that are suceessful in providing a
+solution for the first time in the literature.   
