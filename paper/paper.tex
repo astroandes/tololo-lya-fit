@@ -589,15 +589,6 @@ The right column shows the actual $\chi^2/d.o.f.$
 and its corresponding parameter value. 
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
 $v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump.
-\mg{These errors seem still pretty small to me. You obtained these via a Fisher matrix of a parabolic fit, right? How good was the fit? Are the off-diagonal elements included?}
-\jefr{The small uncertainty only says that the increase in
-  $\chi^2/dof$ is very steep as you vary a parameter. I don't think you can get larger errors
-  with the available data. Simple inspection of Figure 2 shows
-  that the errors will be small with the data we have. The
-  paremeter uncertainty roughly corresponds to the width of the parabola
-  when there is a difference of $\chi^2/dof\sim 1$ from the minimum. In the data we
-  have a huge jump of $\chi^2/dof$ of $\sim 5$ between the minimum
-  and the nearest data point. }
 
 Qualitatively this result can be understood as follows.
 Due to the large fraction of \lya photons being emitted within the
@@ -628,30 +619,6 @@ makes radiative transfer effects, and therefore other parameters such
 as the clump column density, less relevant for the emergent line
 profile. 
 
-
-\jefr{I find this paragraph confusing. Discussing an hypotetical case where
-all parameters are important undermines the explanation of our concrete case
-where only some parameters matter more. Probably we can remove it}.
-{\bf However, larger values of $f_{\rm cl}$ -- outside the here considered parameter range -- would re-introduce
-additional radiative transfer effects and thus increase the number of
-relevant parameters \citep[see ][for details]{2017arXiv170406278G}.   
-This means that even  
-if for clumply models the line profile is most sensitive to only
-a few parameters \citep{Gronke2016}, the rest of parameters
-affect the line profile at a level that cannot be neglected.}
-
-{\bf As a test we run a small set of $100$ additional radiative
-transfer simulations with random values for all parameters, except for
-$\sigma_{\rm cl}$, $P_{\rm cl}$ which are kept within the derived $3\sigma$
-constraints. We find that $30$ models show $\chi^2/d.o.f.<35$.
-That is, we have a $30\%$ chance to find good models, which is
-significanty higher than the lower $1\%$ success rate if the
-parameters were unconstrained.  }
-\mg{Is $1\sigma$ correct?}\jefr{I checked and only $\sigma_{cl}$ and
-  $P_{cl}$ were run within $3\sigma$. All the other parameters,
-  including $v_{\infty}$, were
-  unconstrained. Should we mention this test given that we didn't run
-  with a constrain on $v_{\infty}$?} 
 
 However, we cannot discard that another region of parameter space
 could also yield a good fit to the observed line-profile.
@@ -720,10 +687,6 @@ considering that the prefered rotational velocity of $V_{m}\sim350$
 \kms\ is of the same order as the largest rotational velocity of giant
 disc galaxies that have two orders of magnitude more baryonic mass
 than \tol\ \citep{2015MNRAS.448.1767C}.  
-\mg{I am confused -- are much lower rotational
-  velocities not exclude by the priors used?}\jefr{Yes, they are
-  discarded, but here we are talking about the most likely value of
-  350 km/s.}
 
 Furthermore, \tol's structural properties seem to be similar to known dwarf
 elliptical (dE) galaxies. 
@@ -1270,13 +1233,7 @@ result.
 We divide
 the results in two classes: low $\chi^2/d.o.f.<35$ and high
 $\chi^2/d.o.f.>35$, that is the limit that divides the best $1\%$ of
-the models from the rest. \mg{Why was $35$ chosen as a boundary?}\jefr{We
-  chose $35$ to match the cut that we used to make the  integrated
-  probability distributions. However the nuber itself is
-  arbitrary to have the $1\%$ of the initial number of models. 
-Ideally we should only chose models with $\chi^/dof$
-  higher by $2$ than the lowest $\chi^2/dof$, but we don't have any
-  models in that range.}
+the models from the rest. 
 The algorithm uses $500$ trees for the classification and a
 maximum of $3$ depth levels. 
 To check for stability we repeat the computation $10$ times by
@@ -1299,18 +1256,6 @@ $v_{\infty,\rm{cl}}$, the clump velocity dispersion $\sigma_{\rm cl}$ and the pr
 that the \lya emission comes from the clumps $P_{\rm cl}$, are the
 most influential parameters in finding a model with low
 $\chi^2/d.o.f.$.
-
-{\bf Furthermore, considering the sparse sampling of parameter space and the results
-from the random forest classifier, it is safer to consider that
-the best values for $\sigma_{\rm cl}$, $v_{\infty {\rm cl}}$, $P_{\rm
-  cl}$ are actually lower/upper/lower bounds, respectively.}
-\mg{This is interesting. Why do you think that? Could we use that to
-  increase the quoted errors? I am worried that the referee will
-  complain about the small errors.} \jefr{The referee didn't complain
-  about the small errors. And now that I see this with a bit more of
-  perspective, the tree classification always work with 'larger
-  than/less than' dualities. It would be unfair/unjustified to use that to justify
-our results as a lower bound. I suggest we remove this paragraph.}
 
 
 
