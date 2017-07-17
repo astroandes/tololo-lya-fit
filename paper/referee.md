@@ -2,18 +2,17 @@ We thank the referee for a detailed set of comments that allowed us to
 greatly improve the quality of the paper. 
 
 In this new version the most important change is in the discussion of
-our results (which remain unchanged). We now discard the possible
-influence of a supermassive black hole and favor instead a picture
-where Tololo1244-277 has similar structural characteristics as
-observed dwarf ellipticals. 
+our results. We now discard the possible influence of a supermassive 
+black hole and favor instead a picture where Tololo1244-277 has similar 
+structural characteristics as observed dwarf ellipticals. 
 
 This opens up instead the puzzle as to why an isolated star-forming
-compact dwarf galaxy could have similar structura characteristics as a
+compact dwarf galaxy could have similar structural characteristics as a
 quiescent red dwarf galaxy found only in galaxy clusters. This
 potential evolutionary link still depends on observational
 confirmation of the velocity dispersion in Tololo124-277.
 
-A new test using random forets classifiers (as a new Appendix) allowed
+A new test using random forest classifiers (as a new Appendix) allowed
 us to improve our discussion about the limitations of our method. 
 We have also included an explicit plot on the integrated  mass profile
 for dark matter halos consistent with Tololo's constraints. 
@@ -86,7 +85,7 @@ This helped us to realize that Tololo is closer to the sizes and
 luminosities of dwarf ellipticals than UCDs'. 
 The velocity dispersions observed in DE match the results of our
 multiphase model.  
-Furthermore, the dynamical modelling that has been already performed
+Furthermore, the dynamical modeling that has been already performed
 on DE's allows us to put improve our constrains on the dark matter
 halo mass required to match the kinematics, discarding the need for a
 supermassive black hole.
@@ -158,8 +157,8 @@ readers who like to have all the more relevant information "handy".
 
 Reply. We have inlcuded a reference to the paper that presented the
 detailed imaging results for Tololo. We have also included more
-details on the intrumentation characteristics behind all the
-observations we report.
+details on the instrumentation characteristics behind the
+lya spectral observations.
 
 2) The introduction of the idealized multiphase model (first sentence
 of Sec. 3.1) needs a reference. This model uses clumps with random
@@ -220,10 +219,11 @@ line is produced. For example, there could be more than one
 kinematical component in the interstellar medium producing such a
 feature.  This needs to be better justified/explained.
 
-Reply. We have included a comment on the physical intution that explains
+Reply. We have included a comment on the physical intuition that explains
 the results for the rotation model (Based on our previous published
 results in Garavito-Camargo et al 2014). We also explain that our approach is not designed
 to reject the existence of different models that reproduce the
-observed features in Tololo-1214, but insted focuses on the existence
-of two physically motivated models that are suceessful in providing a
+observed features in Tololo-1214, but instead focuses on the existence
+of two physically motivated models that are successful in providing a
 solution for the first time in the literature.   
+
