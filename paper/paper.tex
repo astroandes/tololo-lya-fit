@@ -1251,23 +1251,20 @@ To check for stability we repeat the computation $10$ times by
 randomly subsampling the input data to use $80\%$ of the data as
 the training set.
 
-Figure \ref{fig:tree} shows as an illustration the results for a
+Figure \ref{fig:tree} shows as an example the results for a
 single classification tree.
 The tree starts with $28$ and $1962$ models in the low and high
 $\chi^2/d.o.f.$ classes, respectively. 
-We find that the best classification
+In this example the best classification
 yields $13$ and $44$ models in the low and high $\chi^2/d.o.f.$
 classes, respectively, after selecting for $v_{\infty,{\rm cl}}<157.0$ \kms,
 $\sigma_{{\rm cl}}>55.6$ \kms and $P_{\rm cl}>0.683$. 
-This means that these 3 parameters are the most useful parameters
-in finding models with low $\chi^2/d.o.f.$.
 
-The results of the random forest classifier yield that the clump outflow velocity
-$v_{\infty,\rm{cl}}$, the clump velocity dispersion $\sigma_{\rm cl}$ and the probability
-that the \lya emission comes from the clumps $P_{\rm cl}$, are the
-most influential parameters in finding a model with low
-$\chi^2/d.o.f.$.
-
+The results of the random forest classifier over $500$ trees yield
+that the clump outflow velocity $v_{\infty,\rm{cl}}$, the clump
+velocity dispersion $\sigma_{\rm cl}$ and the probability that the
+\lya emission comes from the clumps $P_{\rm cl}$, are the most
+influential parameters in finding a model with low $\chi^2/d.o.f.$.  
 
 
 \begin{figure*}
