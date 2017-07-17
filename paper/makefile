@@ -25,7 +25,7 @@ diff:
 	$(LATEX) diff_$(FILE_TEX)
 
 submit:
-	tar -czvf submit.tgz paper.tex  CLARA-TOL-main.pdf P_cl.pdf emcee_results.pdf sigma_cl.pdf vinf_cl.pdf
+	tar -czvf submit.tgz paper.tex  CLARA-TOL-main.pdf P_cl.pdf emcee_results.pdf sigma_cl.pdf vinf_cl.pdf enclosed_mass.pdf classification_tree.pdf
 
 clean:
 		rm -f $(FILE_NAME).aux
