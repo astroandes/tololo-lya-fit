@@ -1,229 +1,191 @@
-We thank the referee for a detailed set of comments that allowed us to
-greatly improve the quality of the paper. 
+I would like to thank the authors for the improvements to the
+manuscript following my previous comments and suggestions. I think
+that the presentation of the models utilized is now clearer and better
+motivated.
 
-In this new version the most important change is in the discussion of
-our results. We now discard the possible influence of a supermassive 
-black hole and favor instead a picture where Tololo1244-277 has similar 
-structural characteristics as observed dwarf ellipticals. 
+Nevertheless, it is my opinion that the scientific interpretation of
+the results is not yet compelling enough. The authors have discarded
+the influence of a supermassive black hole to explain the
+measurements. Instead, now they suggest that Tololo 1244-277 has
+structural characteristics similar to those of observed dwarf
+elliptical galaxies. It is not obvious to me to reach this same conclusion based on the data and results presented. I will explain why.
 
-This opens up instead the puzzle as to why an isolated star-forming
-compact dwarf galaxy could have similar structural characteristics as a
-quiescent red dwarf galaxy found only in galaxy clusters. This
-potential evolutionary link still depends on observational
-confirmation of the velocity dispersion in Tololo124-277.
+First of all, it is not clear what the authors understand by
+structural characteristics. This has to be defined more precisely. For
+example, the distribution of matter, baryonic and dark matter, and the
+internal kinematics (velocity maps and velocity dispersion maps) of it
+give a precise account of structure. Morphology can also give
+significant information on structure. The concept of structure has to
+do with the arrangement and the relations between parts or elements of
+something. For instance, two object may have the same size, same
+magnitude, but one has a disk with a bar and two arms, and the other
+three arms with a bulge and no bar. Those two objects
+have different structures, in my mind.
 
-A new test using random forest classifiers (as a new Appendix) allowed
-us to improve our discussion about the limitations of our method. 
-We have also included an explicit plot on the integrated  mass profile
-for dark matter halos consistent with Tololo's constraints. 
+The morphology of Tololo 1244-277 (see Fig.1 in Fricke et al. 2001) is
+not consistent with that of a dwarf elliptical (dE) galaxy (e.g. Geha
+et al. 2003). dEs are quiescent objects, with a regular
+morphology. Instead, the target of this work seems to have opposite
+properties. The authors seems to make the "connection" with dEs only
+because the multiphase model provides a broad consistency with global
+(not structural) properties (such as overall velocity dispersion, size, magnitude) of dEs. Moreover, it looks odd to prefer one model over another just because of a consistency with some properties of a
+different class of objects. The selection of a particular model should
+be based on robust results or the comparison with observations of
+other objects of the same class. It seems that the connection with dE
+galaxies is being "forced" here.
 
-We have also included the smaller modifications suggested by the referee.
+I am a bit surprised to see that there is no discussion on why Tololo
+1244-277 may not be a dwarf spiral (dS) galaxy, for example. Why has
+this possibility been discarded? At least, it is not discussed at all. The visual/morphological properties of dSs are at least more consistent with those displayed by the subject of this work. See for example the discovery paper by Schombert et al. (1995). What are the typical masses/sizes of dSs and/or dwarf irregular galaxies?
 
-Below is the detailed reply to all the major comments.
+Furthermore, the authors highlight the fact that dEs are only found in
+galaxy clusters and not in the field. I would downplay this a little
+by saying that dEs are *preferentially* (not "only") found in clusters
+as they also exist in the field, although in a much lower number
+(fraction; e.g. Binggeli et al. 1988).
 
-With best regards, 
+The dynamical mass of ~2x10^9 M_sun, obtained from sigma_cl~54 km/s,
+seems to be about one order of magnitude above that of other dEs, as
+reported in, e.g., Forbes et al. (2011), but consistent with dynamical
+mass estimates for dEs in Geha et al. (2003) as indicated in Forbes et
+al. (2011). In general, I would say that the dynamical mass reported
+in this work is roughly consistent with measurements of other
+dEs. Nevertheless, the authors find a virial mass of the order of
+6x10^11 M_sun for Tololo 1244-277, which is one order of magnitude
+larger than the stellar mass estimated for the Milky Way galaxy in a
+much larger volume (see comment [2] below). This virial mass is
+estimated by using a NFW mass density profile. The authors provide no
+explanation as to why this is the most suitable mass
+distribution. This profile is usually utilized for dark matter halos,
+but dwarf galaxies may not necessarily be dark matter-dominated
+objects (e.g. Swaters et al. 2011). What happens if another profile is
+used, one with a core, for example? How much the virial mass would
+change by in that case? This should be certainly discussed by the
+authors as the virial mass estimate obtained is used as an argument to
+make the link with dEs. What are typical virial masses of dEs? What is
+the virial (or r_200) radius of Tololo 1244-277? This information should be given.
 
-The Authors.
+The authors also say that the correlation found in Oyarzun et al. (2016) should not change their conclusions because the equivalent width (i.e. intensity-to-continuum ratio) seems not to be related to the line width, which is what they actually measure. In fact, the line
+width (LW) does determine the equivalent width (EW), together with the
+intensity-to-continuum ratio (ICR). One can change the LW and ICR
+while keeping the EW constant. However, if the ICR remains constant,
+by changing only the LW, one does change the EW. While the ICR is more
+sensitive to abundance, the LW is more sensitive to velocity. Have the
+authors actually checked whether the Oyarzun et al. (2016) does make,
+in fact, no difference to their conclusions?
 
-==========
- 
-1) The introduction lacks a stronger physical motivation for using the
-Ly-alpha line as a probe of the physical conditions inside galaxies
-and, in particular, the existence of a supermassive black hole. There
-are other (Balmer, forbidden) lines accessible for nearby galaxies
-that can provide the same or more information on the interstellar
-medium and its kinematics from optical, ground-based observations, for
-example. What does it make of the Ly-alpha emission a more adequate
-probe - if that is the case - for this nearby galaxy? For
-high-redshift (e.g. z>2.5) galaxies this is the only line available in
-the optical, but for z~0 there are several other features. This
-subject should be expanded and discussed more. The introduction starts
-with a good motivation for the study of dwarf star-forming galaxies
-but quickly moves on to the properties of the Ly-alpha emission
-without developing the connection between this particular feature and
-the physics of dwarf galaxies, particularly at z~0 as the target of
-the this work is.
-Or is it just the atypical line profile that matters? Why is this
-Ly-alpha profile considered atypical? Why a symmetrical line profile
-should not be expected? It would be good to have some explanation
-about this too.
+In general, I encourage the authors to do a more extensive research on
+the properties of dSs and provide more compelling evidence that would
+tie a BCDG, such as Tololo 1214-277, with the class of dEs rather than
+dSs, for example, in a more natural way. Another possibility is that
+there is nothing unusual about the nature of Tololo 1214-277 as a
+BCDG in itself. That is, no need to make the argument of a BCDG living in the field but with properties of galaxies that live in higher density environments.
 
-Reply. In this paper is the atypical Lya line what matters to
-us. The highlight of this paper is the existence of models that are
-able to reproduce the main feature of this line. A feat achieved for
-the first time since the first Tololo1214-277 Lya observations in 1997.
-We have modified parts of the Abstract, Introduction and Conclusions
-to highlight this perspective.
+I would very much like, then, to see a new draft of the manuscript
+taking into account the comments above (and those below too). I would
+very much appreciate if the authors could highlight any change to the
+current text with boldface fonts.
 
-2) It is not clear what the physical motivation for using the models
-selected for the work and described in the text is. Why these models
-in particular and not others? The authors refer to shell models
-failing to reproduce the Ly-alpha line profile, but are there any
-others apart from them and the ones used in this work that may be
-useful?  The paper would benefit from a physically-driven
-justification for the use of the bulk rotation and multiphase models
-in particular.  For example, the Ly-alpha line profile that is the
-central piece of the study has an unusual shape, not commonly seen in
-Ly-alpha emitters. It would be good to provide an explanation on how
-this fact drives the selection of the models in question. I encourage
-the authors to expand more on this matter.
+Here there are some additional comments (in order of appearance):
 
-Reply. We have included a paragraph in the Introduction highlighting the
-physical motivation for these two models. 
+ABSTRACT:
 
-3) Have the authors checked dynamical masses for compact dwarf
-galaxies in general reported in the literature? How do those values
-compare with the dynamical mass estimate in this manuscript? How much
-larger, typically, are compact dwarf galaxies with respect to
-ultra-compact dwarfs?
+(1) "We argue that the multiphase model has more chances to be
+correct". I would not use the sentence "has more chances". The correct
+interpretation should not be based on chance but on objective, solid
+evidence. I would suggest to rephrase as: "We argue that the
+multiphase model provides a correct interpretation of the data", or
+something like this.
 
+(2) "Tololo 1214-277 is hosted by a dark matter halo of ~6x10^11
+M_sun". Why would the physical size of that halo be? Note that the
+estimated stellar mass of the Milky Way galaxy, including its disk, is
+~6x10^10 M_sun (Licquia & Newman 2015). Is it possible that the dark
+matter halo of a BCDG with an effective radius < 3 kpc be more than the stellar mass of the Galaxy? This information should be provided and discussed.
 
+(3) "it would provide additional support to expect this condition to
+be present in primordial Lyα emitting galaxies.". What is the
+significance of expecting this condition in the context of the
+formation of such primordial Ly-alpha emitting galaxies? I think that
+the abstract should end with a conclusion along this line.
 
-Reply. We have looked carefully into published observational data for
-compact dwarf galaxies (UCD's) and dwarf ellipticals (DE's). 
-This helped us to realize that Tololo is closer to the sizes and
-luminosities of dwarf ellipticals than UCDs'. 
-The velocity dispersions observed in DE match the results of our
-multiphase model.  
-Furthermore, the dynamical modeling that has been already performed
-on DE's allows us to put improve our constrains on the dark matter
-halo mass required to match the kinematics, discarding the need for a
-supermassive black hole.
-It is still puzzling that: A) DE's are found in groups and clusters,
-while tololo is isolated and B) DE's are not star forming, while
-tololo hosts a starburst.
-For this reason we have completely restructure the discussion section
-to present this comparison. We have removed the consideration of the
-black hole hypothesis.
+INTRODUCTION:
 
-My main concern with the final result (and the corresponding
-interpretation) of this paper is that the dynamical masses may have
-been overestimated somehow. Recently, Oyarzun et al. (2016) have
-pointed out to the existence of a correlation between Ly-alpha
-equivalent widths and stellar masses in the sense that lower stellar
-mass galaxies have higher Ly-alpha equivalent widths. Is it possible
-that this effect, if not corrected for, may be causing to measure
-higher velocity values from the Ly-alpha profile that also result into
-higher dynamical masses?
+(4) "The motivation for the rotation without outflows as presented in
+(Garavito-Camargo et al. 2014, as presented in) is" ---> "The
+motivation for the rotation without outflows as presented in
+Garavito-Camargo et al. (2014) is"
 
-Reply. The high velocity come from the high line-width. Not from its
-Equivalent Width (i.e. intensity to continuum ratio). The effects of
-Oyarzun et al. 2016 should not change our conclusions.
+(5) Table 1 should contain the size of the galaxy.
 
-In Fig. 1, none of the models seems to fit accurately enough the data
-within the errors and within the full wavelength extent of the
-Ly-alpha feature. For example, the multiphase model does not fit well
-the positive high-velocity wing of the line profile, whereas the other
-model does not fit the negative velocity side of the profile and part
-of the positive velocity side. How much does this impact the kinematic
-estimates? Is it possible that other models may do a better job? Can
-these fits be improved, for example by considering a dust correction
-to the data?  Authors should comment more on the limitations of the
-fits shown in the figure.
+(6) It would be good to add at the end of the introduction the
+cosmological parameters utilized throughout the text. No need to
+mention them after in the text. This is standard nowadays.
 
+OBSERVATIONS:
 
-Reply. The fit to the observations is not perfect.  However, in spite of the
-simplicity of our models, this is the first time that the main
-features can be reproduced: a broad, highly symmetric, single-peaked Lya line. 
-We now highlight that our results do not demonstrate that the
-kinematic features we include in our models are necessary to reproduce
-Tololo's features, but at least they show that they are a sufficient condition.
-This is a significant step forward to understand the influence that
-different kinematics have in producing the atypical line profile shown
-by Tololo.
+(7) "as mede" ---> "was made"
 
+(8) "the Hubble Space Telescope, these observations have a spectral
+resolution" ---> "the Hubble Space Telescope, with a spectral
+resolution"
 
-B- SPECIFIC COMMENTS:
+MULTIPHASE ISM:
 
-1) It would be good to have more information on the target such as its
-redshift (in addition to the quoted velocity) and size (how does the
-size compare with that of the Milky Way?); is it a field galaxy or is
-associated with a known overdensity (group, cluster)? Is the galaxy
-undergoing some kind of interaction? In this respect, showing a figure
-with the image of the galaxy would be useful to understand its
-morphology. This can be an optical image, for example (or other bands
-if available). All this information will help to better understand the
-properties of the galaxy that give context to the Ly-alpha emission.
+(9) "We do not explore inflowing clumps given the slight line
+asymmetry redwards to the line center". Why?? It could be material
+that is closer to the observer that is flowing into the galaxy. The
+movement would be seen with a redshift but the material would be in an inflow.
 
-Somewhat related to this, the velocity value quoted at the beginning
-of section 2 is a bit different from that given in Table 1.
+(10) "parameters within a observationally" ---> "parameters within an
+observationally"
 
-Moreover, it would be useful to have more technical information on the
-UV observations themselves. Where do the Ly-alpha data come from?
-What is the spectral resolution of the data? In addition to citing
-Thuan & Izotov, explicitly providing this information in the paper
-will make this one more self-contained. This may be helpful for
-readers who like to have all the more relevant information "handy".
+BULK ROTATION:
 
-Reply. We have inlcuded a reference to the paper that presented the
-detailed imaging results for Tololo. We have also included more
-details on the instrumentation characteristics behind the
-lya spectral observations.
+(11) "To fully explore the parameter space using a Markov Chain Monte
+Carlo (MCMC) calculation with the emcee Python library (Foreman-Mackey
+et al. 2013).". This sentence seems to be truncated. It needs to be
+reworded.
 
-2) The introduction of the idealized multiphase model (first sentence
-of Sec. 3.1) needs a reference. This model uses clumps with random
-velocities and also an outflowing velocity component. It is not clear
-why an inflowing component is not considered. What is the physical
-motivation for this? For example, naively speaking, mass inflows could
-also affect the Ly-alpha line profile. There could be some information
-that I missed. Therefore, it would be good to explain this more
-clearly.
+MULTIPHASE ISM:
 
-Regarding this model, it would be good to explicitly identify the
-parameters being used and what they represent. Fourteen parameters
-seems a large number. This may result in a fit without a clear or
-realistic physical meaning as mathematically there is much freedom to
-adjust the parameters. A fit with a smaller number of parameters may
-give a more physically meaningful result. The authors should comment
-on this, as this could affect the kinematic estimates and the derived
-dynamical mass.
+(12) In Figure 2, I would move the legend in the top-left corner of
+the top-left panel to the bottom-right corner of it. This would make
+all the curves in the plot clearly visible.
 
-In fact, the authors show that only three of those 14 parameters seem
-to be significant. What does it happen if the fit is now performed
-with only those 3 parameters while keeping the rest fixed? What is the
-impact on the kinematics and the dynamical mass in this case? Is there
-any change/improvement with a fewer number of parameters? The authors
-should test and comment on this.
+(13) When giving the best-fit values for sigma_cl, v_infty,cl and
+P_cl, it would be good to also include the corresponding reduced-chi^2
+values.
 
-Reply. In section 4.1 we have expanded our discussion on the
-multiphase model. We have performed additional tests using random
-forest classifiers to confirm that there are three parameters that are
-the most influential. We have also expanded the discussion on why this
-can be expected in our case. We hope that the new test help to clarify
-the situation. 
+(14) Please define beta_cl.
 
+(15) "Furthermore, the relatively low mean number of clumps per line
+of sight, f_cl, ...". How low is it? How is this number calculated?
+This should be indicated.
 
-3) In equation (1), what is the specific form of the model being
-utilized? How are the different parameters in the multiphase and bulk
-rotation models related to each other? It is desirable to have some
-more explicit, mathematical description of the models and provide
-analytical expressions if they exist.
+DISCUSSION:
 
-Reply.  We don't have analytic approximations that can be directly
-written down in a closed form. For the rotation we have an analytic
-equations that must be numerically integrated. For the multi-phase
-model the full MC simulation has to be performed. We now explain this in
-the text.
+(16) "Tololo 1214-277 presents one of the most atypical Ly-alpha
+spectra observed so far.". How statistically significant is this
+claim? What is the estimated probability of finding a galaxy with the
+properties of Tololo 1214? It would be good to back this claim up with
+an estimate.
 
-4) On page 6, at the end of Sec. 4.2, it is said that "Lower
-rotational velocities are disfavored by the fact that the line is
-single peaked". What is the physical meaning of a single-peaked
-Ly-alpha line? Wouldn't it be possible to explain such single-peak
-line by a combination of processes different from just a high
-rotational velocity? I believe that this conclusion needs some
-stronger justification, and it would be good if the authors could
-expand on it. Later, the text says "A lower rotational velocity would
-produce a double peaked line". What is the physical explanation for
-this? This may actually be not the only process by which a double-peak
-line is produced. For example, there could be more than one
-kinematical component in the interstellar medium producing such a
-feature.  This needs to be better justified/explained.
+(17) "Which model has more chances to be correct?" Do not use the word
+"chances". Please reword the sentence. Otherwise, if "chances" refers
+to a probability, this one should be quantified.
 
-Reply. We have included a comment on the physical intuition that explains
-the results for the rotation model (Based on our previous published
-results in Garavito-Camargo et al 2014). We also explain that our approach is not designed
-to reject the existence of different models that reproduce the
-observed features in Tololo-1214, but instead focuses on the existence
-of two physically motivated models that are successful in providing a
-solution for the first time in the literature.   
+(18) "Tololo 1214-277 is hosted by a dark matter halo of at ~6x10^11
+M_sun in virial mass." ---> "Tololo 1214-277 is hosted by a dark
+matter halo with a viral mass of ~6x10^11 M_sun."
 
+(19) "an instrument such as the Multi Unit Spectroscopic Explorer
+(MUSE)". Is MUSE really well suited for such observations? This may be
+an overkill due to the excessively large FoV of MUSE compared to the
+angular size of the galaxy (see Fricke et al. 2001). Perhaps other IFU
+instruments such as GMOS, IMACS, GIRAFFE may be better suited to the
+task (unless there are several interesting targets within a 1-arcmin FoV centered in Tololo 1214). The authors may comment on this possibility.
+
+CONCLUSIONS:
+
+(20) Make the necessary changes according to all the comments above.
