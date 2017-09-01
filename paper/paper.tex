@@ -110,14 +110,14 @@ The multiphase model requires a clump velocity dispersion of
 \sigmaclump\ with outflows of \inftyclump\, while the
 bulk rotation velocity is constrained to be $348^{+75}_{-48}$ \kms.
 {\bf We argue that the results from the multiphase model 
-provides a correct interpretation of the data.
+provide a correct interpretation of the data.
 In that case the clump velocity dispersion implies a dynamical mass of
 $2\times 10^{9}$ M$_{\odot}$,  ten times its baryonic mass.}
 If future kinematic maps of \tol\ confirm the velocities suggested by
 the multiphase model, it would provide additional support to expect
-such kinematic state in primordial \lya emitting galaxies {\bf which in
-turn can help to constrain star formation and feedback in the first
-generation of galaxies.}
+such kinematic state in primordial \lya emitting galaxies, opening
+{\bf the opportunity to constrain models of star formation and
+  feedback in the first generation of galaxies.}
 \end{abstract}
 
 
@@ -225,7 +225,7 @@ without high gas outflows triggered by supernova activity
 
 {\bf Furthermore, observations of other Compact Dwarf Galaxies (CDGs) also show 
 that the kinematics range from pure rotation and low velocity
-dispersion to high velocity dispersion without rotaion
+dispersion to high velocity dispersion without rotation
 \citep{2015A&A...577A..21C,2017A&A...600A.125C}. }
 
 
@@ -327,9 +327,8 @@ expectation from case B recombination of $23.3$ \citep{Hummer1987} one
 can estimate an escape fraction of $20$\% for \lya radiation.
 Figure \ref{fig:results} shows \tol's \lya\ profile reported by
 \cite{mashesse03}. This measurement was made with the Space Telescope
-Imaging Spectrograph on board the Hubble Space Telescope, these
-observations have a spectral resolution of $\sim 37$\kms\ at the
-\lya\ wavelength.  
+Imaging Spectrograph on board the Hubble Space Telescope, with a
+spectral resolution of $\sim 37$\kms\ at the  \lya\ wavelength.  
 
 The \lya flux values correspond to a luminosity of
 $L_{Ly\alpha}=2.2\times 10^{42}$ erg s$^{-1}$, which in turn
@@ -400,7 +399,7 @@ The parameter description list is in Table \ref{tab:models}.
 
 
 In order to map out this large parameter space, we randomly drew
-$2500$ sets of parameters within a observationally realistic range,
+$2500$ sets of parameters within an observationally realistic range,
 based on the considerations of \citet{Laursen2013ApJ...766..124L}, 
 yielding a large variety of single-, double- and triple-peaked
 spectra. 
@@ -494,11 +493,11 @@ We use an analytical approximation that captures the most important
 effects of rotation onto the \lya line. 
 We defer the reader to \citet{GaravitoCamargo2014} for complete
 details on the explicit form of this approximation.
-To fully explore the
-parameter space using a Markov Chain Monte Carlo (MCMC) calculation with the
-\texttt{emcee} Python library \citep{2013PASP..125..306F}. \texttt{emcee} 
-is an open source optimized implementation of the affine-invariant 
-MCMC sampler \citep{goodman2010ensemble}. 
+To fully explore the parameter space we perform Markov Chain Monte
+Carlo (MCMC) calculations with the \texttt{emcee} Python library
+\citep{2013PASP..125..306F}. \texttt{emcee}  is an open source
+optimized implementation of the affine-invariant  MCMC sampler
+\citep{goodman2010ensemble}.  
 The algorithm creates a number of walkers that,
 during a sufficient number of steps, generate parameters' combinations
 for a specific model.
@@ -610,16 +609,18 @@ $d.o.f.=104$.
 The right column shows the actual $\chi^2/d.o.f.$ 
 and its corresponding parameter value. 
 Under these conditions we find $\sigma_{\rm cl}=$\sigmaclump,
-$v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump.
+$v_{\infty {\rm, cl}}=$\inftyclump\ and $P_{\rm cl}=$\probaclump, {\bf
+  with the minimum $\chi^2/d.o.f.=11.7$.}
 
 Qualitatively this result can be understood as follows.
 Due to the large fraction of \lya photons being emitted within the
 moving clumps ($P_{\rm cl}\sim 1$) the `intrinsic' profile follows 
 the clump kinematics. In other words, the width of the intrinsic line
 is set by $\sigma_{\mathrm{cl}}$ and its median offset mainly by
-$v_{\infty,{\rm cl}}$ and $\beta_{\rm cl}$.
+$v_{\infty,{\rm cl}}$ and $\beta_{\rm cl}$, {\bf where $\beta_{\rm cl}$ is
+the exponent defining the steepness of the radial velocity profile. }
 Furthermore, the relatively low mean number of clumps per line of
-sight, $f_{\mathrm{cl}}$, combined with the high velocity dispersion
+sight, $0.8<f_{\mathrm{cl}}<8$, combined with the high velocity dispersion
 of the clumps implies existence of low-density inter-clump 
 regions where \lya photons can freely propagate.
 This gives result to an emergent spectrum close to the intrinsic one, explaining the high
@@ -743,8 +744,8 @@ times the estimated baryonic mass in \tol.
 This would mean that \tol\ is dark matter dominated.
 
 Following the methodology of \citet{2011ApJ...726..108T} we estimate
-that a dark matter halo of $\sim 6\times 10^{11}$ M$_{\odot}$ in
-virial mass {\bf and virial radius $220$ kpc } could explain this dynamical mass.
+that a dark matter halo with a virial mass $\sim 6\times 10^{11}$
+M$_{\odot}$ {\bf and a virial radius $220$ kpc } could explain this dynamical mass.
 This estimate is based on computing the integrated mass profile of a
 spherical dark matter halo with a Navarro-Frenk-White profile with its
 concentration following the median mass-concentration
@@ -766,7 +767,7 @@ This could be done with the Multi Unit Spectroscopic Explorer (MUSE)
 Spectrograph (FLAMES) \citep{2002Msngr.110....1P} as they have the spatial
 resolution and field of view required to perform the kind of study
 presented by \citet{2015A&A...577A..21C} on CDGs or \citet{Herenz16}
-onnearby \lya\ emitting galaxies.}
+on nearby \lya\ emitting galaxies.}
 
 
 
@@ -776,13 +777,11 @@ onnearby \lya\ emitting galaxies.}
 \caption{Enclosed mass in a spherical system as a function of radius.
   Lines correspond to the expectation for dark matter halos following
   an NFW profile with
-  different viral masses as shown in the legend, the arrow corresponds
-  to the dynamical mass lower bounds for \tol.  
-  The dynamical mass estimates for \tol\ are consistent with the
+  different virial masses as shown in the legend. The circle corresponds
+  to the dynamical mass estimates for \tol.  
+  Under this conditions the dynamical mass estimates for \tol\ are consistent with the
   galaxy being hosted by a dark matter halo of
   $\sim 6\times10^{11}$ M$_{\odot}$ in mass.
-  {\bf Lower mass estimates could be possible if one considers instead a
-  cored profile. }
     \label{fig:mass}} 
 \end{center}
 \end{figure}

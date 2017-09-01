@@ -28,7 +28,8 @@ magnitude, but one has a disk with a bar and two arms, and the other
 three arms with a bulge and no bar. Those two objects
 have different structures, in my mind.
 
-Reply. We now make the comparison against other compact dwarf galaxies. 
+Reply. We now make the comparison against other objects considered as
+belonging to the same class of compact dwarf galaxies. 
 
 The morphology of Tololo 1244-277 (see Fig.1 in Fricke et al. 2001) is
 not consistent with that of a dwarf elliptical (dE) galaxy (e.g. Geha
@@ -93,7 +94,7 @@ require the full rotation curve of the galaxy. We mention that in the text. We h
 estimate from the abstract given the large associated with this
 estimate. 
 
-The authors also say that the correlation found in Oyarzun et al. (2016) should not change their conclusions because the equivalent width (i.e. intensity-to-continuum ratio) seems not to be related to the line width, which is what they actually measure. In fact, the line
+6) The authors also say that the correlation found in Oyarzun et al. (2016) should not change their conclusions because the equivalent width (i.e. intensity-to-continuum ratio) seems not to be related to the line width, which is what they actually measure. In fact, the line
 width (LW) does determine the equivalent width (EW), together with the
 intensity-to-continuum ratio (ICR). One can change the LW and ICR
 while keeping the EW constant. However, if the ICR remains constant,
@@ -102,13 +103,22 @@ sensitive to abundance, the LW is more sensitive to velocity. Have the
 authors actually checked whether the Oyarzun et al. (2016) does make,
 in fact, no difference to their conclusions?
 
-In general, I encourage the authors to do a more extensive research on
+Reply. We perform our fit to the measured line after the continuum
+is substracted (i.e Eq (1)). Furthermore, the normalization of the line is
+arbitrary (i.e. we do not to care about the integrated intensity in
+physical units). Global quantities such as the EW, LW or ICR do not enter our
+computations at any time.
+
+
+7) In general, I encourage the authors to do a more extensive research on
 the properties of dSs and provide more compelling evidence that would
 tie a BCDG, such as Tololo 1214-277, with the class of dEs rather than
 dSs, for example, in a more natural way. Another possibility is that
 there is nothing unusual about the nature of Tololo 1214-277 as a
 BCDG in itself. That is, no need to make the argument of a BCDG living in the field but with properties of galaxies that live in higher density environments.
 
+Reply. We use instead as a base of comparison other compact dwarf
+galaxies with measured kinematics.
 
 ABSTRACT:
 
@@ -147,7 +157,11 @@ INTRODUCTION:
 motivation for the rotation without outflows as presented in
 Garavito-Camargo et al. (2014) is"
 
+Reply. Fixed.
+
 (5) Table 1 should contain the size of the galaxy.
+
+Reply. Included.
 
 (6) It would be good to add at the end of the introduction the
 cosmological parameters utilized throughout the text. No need to
@@ -157,9 +171,13 @@ OBSERVATIONS:
 
 (7) "as mede" ---> "was made"
 
+Reply. Fixed.
+
 (8) "the Hubble Space Telescope, these observations have a spectral
 resolution" ---> "the Hubble Space Telescope, with a spectral
 resolution"
+
+Reply. Fixed.
 
 MULTIPHASE ISM:
 
@@ -168,8 +186,27 @@ asymmetry redwards to the line center". Why?? It could be material
 that is closer to the observer that is flowing into the galaxy. The
 movement would be seen with a redshift but the material would be in an inflow.
 
+Reply. The resonance nature of the Lyman-alpha radiation implies that when a
+Lyman-alpha photon is emitted it is not necesarily spontaneously
+produced at that moment. The emission could be a re-emission after a
+red/blue-shifted lyman alpha photon produced somewhere else. 
+In other words the resulting frequency for a
+lyman-alpha photon is not only determined by the velocity of the
+last emitting atom before reaching the observer, but it is also
+determined by all its diffusion history through the neutral gas. This
+is what invalidates the example given by the referee.
+Under the situation of spherical symetry the only possibility to
+produce an asymetry in the lyman alpha line is the existence of radial
+inflow/outflows. This is a known and well studied result in the
+literature of theoretical lyman-alpha emission.  
+
+
+The radiative transfer of the Lyman-alpha line 
+
 (10) "parameters within a observationally" ---> "parameters within an
 observationally"
+
+Reply. Fixed
 
 BULK ROTATION:
 
@@ -178,21 +215,32 @@ Carlo (MCMC) calculation with the emcee Python library (Foreman-Mackey
 et al. 2013).". This sentence seems to be truncated. It needs to be
 reworded.
 
+Reply. Fixed. 
+
 MULTIPHASE ISM:
 
 (12) In Figure 2, I would move the legend in the top-left corner of
 the top-left panel to the bottom-right corner of it. This would make
 all the curves in the plot clearly visible.
 
+Reply. Changed.
+
 (13) When giving the best-fit values for sigma_cl, v_infty,cl and
 P_cl, it would be good to also include the corresponding reduced-chi^2
 values.
 
+Reply. Done.
+
 (14) Please define beta_cl.
+
+Reply. Done.
 
 (15) "Furthermore, the relatively low mean number of clumps per line
 of sight, f_cl, ...". How low is it? How is this number calculated?
 This should be indicated.
+
+Reply. Done.
+
 
 DISCUSSION:
 
@@ -202,13 +250,26 @@ claim? What is the estimated probability of finding a galaxy with the
 properties of Tololo 1214? It would be good to back this claim up with
 an estimate.
 
+Reply. It is atypical in the sense that none of the reported lyman
+alpha lines so far for dwarf galaxies shows the symmetry and single
+peaked nature. 
+Putting a number on this would imply 1) defining a sample of similar galaxies by
+other characteristics (which would be completely arbitrary and open to
+dispute) and almost impossible to quantify given the absence of
+complete surveys for dwarf galaxies. This is why we prefer the
+phrasing "of the spectra observed so far".
+
 (17) "Which model has more chances to be correct?" Do not use the word
 "chances". Please reword the sentence. Otherwise, if "chances" refers
 to a probability, this one should be quantified.
 
+Reply. We removed the word "chance".
+
 (18) "Tololo 1214-277 is hosted by a dark matter halo of at ~6x10^11
 M_sun in virial mass." ---> "Tololo 1214-277 is hosted by a dark
 matter halo with a viral mass of ~6x10^11 M_sun."
+
+Reply. Fixed
 
 (19) "an instrument such as the Multi Unit Spectroscopic Explorer
 (MUSE)". Is MUSE really well suited for such observations? This may be
@@ -217,6 +278,11 @@ angular size of the galaxy (see Fricke et al. 2001). Perhaps other IFU
 instruments such as GMOS, IMACS, GIRAFFE may be better suited to the
 task (unless there are several interesting targets within a 1-arcmin FoV centered in Tololo 1214). The authors may comment on this possibility.
 
+Reply. We complemented this with other possible instruments without
+commenting on whether someone could consider it an overkill.
+
 CONCLUSIONS:
 
 (20) Make the necessary changes according to all the comments above.
+
+Reply. Done.
