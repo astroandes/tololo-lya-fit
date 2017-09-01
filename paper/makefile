@@ -18,7 +18,7 @@ $(FILE_PDF) : $(FILE_TEX) references.bib
 	$(LATEX) $(FILE_TEX)
 
 diff: 
-	latexdiff old_$(FILE_TEX) $(FILE_TEX) > diff_$(FILE_TEX)
+#	latexdiff old_$(FILE_TEX) $(FILE_TEX) > diff_$(FILE_TEX)
 	$(LATEX) diff_$(FILE_TEX)
 #	bibtex $(FILE_NAME)
 #	$(LATEX) diff_$(FILE_TEX)

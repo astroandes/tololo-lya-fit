@@ -1,14 +1,20 @@
-I would like to thank the authors for the improvements to the
-manuscript following my previous comments and suggestions. I think
-that the presentation of the models utilized is now clearer and better
-motivated.
+We thank the referee for a new set of detailed revisions.
 
-Nevertheless, it is my opinion that the scientific interpretation of
-the results is not yet compelling enough. The authors have discarded
-the influence of a supermassive black hole to explain the
-measurements. Instead, now they suggest that Tololo 1244-277 has
-structural characteristics similar to those of observed dwarf
-elliptical galaxies. It is not obvious to me to reach this same conclusion based on the data and results presented. I will explain why.
+In this new version the most important change is that we use Integral Field Unit observations of 
+Compact Dwarf Galaxies to argue for the multiphase model as being
+closer to the expectation from Tololo 1214-277. 
+This makes unnecessary the comparison against dwarf ellipticals.
+
+We have also included the smaller modifications suggested by the
+referee.
+All the relevant changes are highlighted in boldface.
+
+Below is the detailed reply to all the major comments.
+
+With best regards,
+
+The Authors.
+
 
 First of all, it is not clear what the authors understand by
 structural characteristics. This has to be defined more precisely. For
@@ -22,6 +28,8 @@ magnitude, but one has a disk with a bar and two arms, and the other
 three arms with a bulge and no bar. Those two objects
 have different structures, in my mind.
 
+Reply. We now make the comparison against other compact dwarf galaxies. 
+
 The morphology of Tololo 1244-277 (see Fig.1 in Fricke et al. 2001) is
 not consistent with that of a dwarf elliptical (dE) galaxy (e.g. Geha
 et al. 2003). dEs are quiescent objects, with a regular
@@ -34,17 +42,27 @@ be based on robust results or the comparison with observations of
 other objects of the same class. It seems that the connection with dE
 galaxies is being "forced" here.
 
-I am a bit surprised to see that there is no discussion on why Tololo
+Reply. For the reason mentioned above we dropped the comparison
+against dwarf ellipticals.
+
+
+3) I am a bit surprised to see that there is no discussion on why Tololo
 1244-277 may not be a dwarf spiral (dS) galaxy, for example. Why has
 this possibility been discarded? At least, it is not discussed at all. The visual/morphological properties of dSs are at least more consistent with those displayed by the subject of this work. See for example the discovery paper by Schombert et al. (1995). What are the typical masses/sizes of dSs and/or dwarf irregular galaxies?
 
-Furthermore, the authors highlight the fact that dEs are only found in
+
+Reply. We now make the comparison against other compact dwarf galaxies. 
+
+4) Furthermore, the authors highlight the fact that dEs are only found in
 galaxy clusters and not in the field. I would downplay this a little
 by saying that dEs are *preferentially* (not "only") found in clusters
 as they also exist in the field, although in a much lower number
 (fraction; e.g. Binggeli et al. 1988).
 
-The dynamical mass of ~2x10^9 M_sun, obtained from sigma_cl~54 km/s,
+Reply. We now make the comparison against other compact dwarf
+galaxies, which have similar environmental characteristics.
+
+5) The dynamical mass of ~2x10^9 M_sun, obtained from sigma_cl~54 km/s,
 seems to be about one order of magnitude above that of other dEs, as
 reported in, e.g., Forbes et al. (2011), but consistent with dynamical
 mass estimates for dEs in Geha et al. (2003) as indicated in Forbes et
@@ -65,6 +83,16 @@ authors as the virial mass estimate obtained is used as an argument to
 make the link with dEs. What are typical virial masses of dEs? What is
 the virial (or r_200) radius of Tololo 1244-277? This information should be given.
 
+Reply. We motivate the computation of the dark matter mass estimate by
+the fact that the dynamical mass is one order of magnitude higher than
+the baryonic mass. As we don't use this anymore to argue for the
+multiphase model over the rotation model, we keep this estimate as an
+upper limit of what can be expected. Detailed mass models to test other 
+profiles or deciding whether the Tololo is dark matter dominated would
+require the full rotation curve of the galaxy. We mention that in the text. We have also removed this
+estimate from the abstract given the large associated with this
+estimate. 
+
 The authors also say that the correlation found in Oyarzun et al. (2016) should not change their conclusions because the equivalent width (i.e. intensity-to-continuum ratio) seems not to be related to the line width, which is what they actually measure. In fact, the line
 width (LW) does determine the equivalent width (EW), together with the
 intensity-to-continuum ratio (ICR). One can change the LW and ICR
@@ -81,12 +109,6 @@ dSs, for example, in a more natural way. Another possibility is that
 there is nothing unusual about the nature of Tololo 1214-277 as a
 BCDG in itself. That is, no need to make the argument of a BCDG living in the field but with properties of galaxies that live in higher density environments.
 
-I would very much like, then, to see a new draft of the manuscript
-taking into account the comments above (and those below too). I would
-very much appreciate if the authors could highlight any change to the
-current text with boldface fonts.
-
-Here there are some additional comments (in order of appearance):
 
 ABSTRACT:
 
@@ -97,17 +119,26 @@ evidence. I would suggest to rephrase as: "We argue that the
 multiphase model provides a correct interpretation of the data", or
 something like this.
 
+Reply. This has been updated.
+
 (2) "Tololo 1214-277 is hosted by a dark matter halo of ~6x10^11
 M_sun". Why would the physical size of that halo be? Note that the
 estimated stellar mass of the Milky Way galaxy, including its disk, is
 ~6x10^10 M_sun (Licquia & Newman 2015). Is it possible that the dark
 matter halo of a BCDG with an effective radius < 3 kpc be more than the stellar mass of the Galaxy? This information should be provided and discussed.
 
+Reply. We quote the radius in the body of the paper, but given the
+uncertainties in the assumptions of this calculation we have removed
+it from the abstract.
+
 (3) "it would provide additional support to expect this condition to
 be present in primordial Lyα emitting galaxies.". What is the
 significance of expecting this condition in the context of the
 formation of such primordial Ly-alpha emitting galaxies? I think that
 the abstract should end with a conclusion along this line.
+
+Reply. The main consquence is the constraining power on models of star
+formation and feedback. This is now mentioned in the abstract.
 
 INTRODUCTION:
 
