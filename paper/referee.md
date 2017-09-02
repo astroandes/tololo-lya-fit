@@ -1,12 +1,13 @@
 We thank the referee for a new set of detailed revisions.
 
-In this new version the most important change is that we use Integral Field Unit observations of 
-Compact Dwarf Galaxies to argue for the multiphase model as being
-closer to the expectation from Tololo 1214-277. 
+In this new version the most important change is that we use Integral
+Field Unit observations of  Compact Dwarf Galaxies to argue for the
+multiphase model as being the correct interpretation of the results.
 This makes unnecessary the comparison against dwarf ellipticals.
 
 We have also included the smaller modifications suggested by the
 referee.
+
 All the relevant changes are highlighted in boldface.
 
 Below is the detailed reply to all the major comments.
@@ -43,8 +44,7 @@ be based on robust results or the comparison with observations of
 other objects of the same class. It seems that the connection with dE
 galaxies is being "forced" here.
 
-Reply. For the reason mentioned above we dropped the comparison
-against dwarf ellipticals.
+Reply. We have dropped the against dwarf ellipticals.
 
 
 3) I am a bit surprised to see that there is no discussion on why Tololo
@@ -91,8 +91,7 @@ multiphase model over the rotation model, we keep this estimate as an
 upper limit of what can be expected. Detailed mass models to test other 
 profiles or deciding whether the Tololo is dark matter dominated would
 require the full rotation curve of the galaxy. We mention that in the text. We have also removed this
-estimate from the abstract given the large associated with this
-estimate. 
+estimate from the abstract.
 
 6) The authors also say that the correlation found in Oyarzun et al. (2016) should not change their conclusions because the equivalent width (i.e. intensity-to-continuum ratio) seems not to be related to the line width, which is what they actually measure. In fact, the line
 width (LW) does determine the equivalent width (EW), together with the
@@ -103,12 +102,11 @@ sensitive to abundance, the LW is more sensitive to velocity. Have the
 authors actually checked whether the Oyarzun et al. (2016) does make,
 in fact, no difference to their conclusions?
 
-Reply. We perform our fit to the measured line after the continuum
-is substracted (i.e Eq (1)). Furthermore, the normalization of the line is
-arbitrary (i.e. we do not to care about the integrated intensity in
-physical units). Global quantities such as the EW, LW or ICR do not enter our
-computations at any time.
-
+Reply. Global quantities such as the EW, LW or ICR do not enter our
+computations at any time. We perform our fit to the measured line
+after the continuum is substracted (i.e Eq (1)). Furthermore, the
+normalization of the line is arbitrary (i.e. we do not to care about
+the integrated intensity in physical units). 
 
 7) In general, I encourage the authors to do a more extensive research on
 the properties of dSs and provide more compelling evidence that would
@@ -118,7 +116,7 @@ there is nothing unusual about the nature of Tololo 1214-277 as a
 BCDG in itself. That is, no need to make the argument of a BCDG living in the field but with properties of galaxies that live in higher density environments.
 
 Reply. We use instead as a base of comparison other compact dwarf
-galaxies with measured kinematics.
+galaxies with measured kinematics. 
 
 ABSTRACT:
 
@@ -186,22 +184,17 @@ asymmetry redwards to the line center". Why?? It could be material
 that is closer to the observer that is flowing into the galaxy. The
 movement would be seen with a redshift but the material would be in an inflow.
 
-Reply. The resonance nature of the Lyman-alpha radiation implies that when a
-Lyman-alpha photon is emitted it is not necesarily spontaneously
-produced at that moment. The emission could be a re-emission after a
-red/blue-shifted lyman alpha photon produced somewhere else. 
-In other words the resulting frequency for a
-lyman-alpha photon is not only determined by the velocity of the
-last emitting atom before reaching the observer, but it is also
-determined by all its diffusion history through the neutral gas. This
-is what invalidates the example given by the referee.
+Reply. 
+The resulting frequency for a lyman-alpha photon is not only
+determined by the velocity of the last emitting atom before reaching
+the observer, but it is also determined by all its diffusion history
+through the neutral gas. 
 Under the situation of spherical symetry the only possibility to
 produce an asymetry in the lyman alpha line is the existence of radial
-inflow/outflows. This is a known and well studied result in the
-literature of theoretical lyman-alpha emission.  
+inflow/outflows. 
+This is a known and well studied result in the literature of
+theoretical lyman-alpha emission.   
 
-
-The radiative transfer of the Lyman-alpha line 
 
 (10) "parameters within a observationally" ---> "parameters within an
 observationally"
@@ -250,7 +243,9 @@ claim? What is the estimated probability of finding a galaxy with the
 properties of Tololo 1214? It would be good to back this claim up with
 an estimate.
 
-Reply. It is atypical in the sense that none of the reported lyman
+Reply. We have rephrased this as "Tololo 1214-277 presents a Lyα
+emission line with puzzling features". 
+It is atypical in the sense that none of the reported lyman
 alpha lines so far for dwarf galaxies shows the symmetry and single
 peaked nature. 
 Putting a number on this would imply 1) defining a sample of similar galaxies by
