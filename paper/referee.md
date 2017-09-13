@@ -44,7 +44,7 @@ be based on robust results or the comparison with observations of
 other objects of the same class. It seems that the connection with dE
 galaxies is being "forced" here.
 
-Reply. We have dropped the against dwarf ellipticals.
+Reply. We have dropped the argument against dwarf ellipticals.
 
 
 3) I am a bit surprised to see that there is no discussion on why Tololo
@@ -102,11 +102,11 @@ sensitive to abundance, the LW is more sensitive to velocity. Have the
 authors actually checked whether the Oyarzun et al. (2016) does make,
 in fact, no difference to their conclusions?
 
-Reply. Global quantities such as the EW, LW or ICR do not enter our
-computations at any time. We perform our fit to the measured line
-after the continuum is substracted (i.e Eq (1)). Furthermore, the
-normalization of the line is arbitrary (i.e. we do not to care about
-the integrated intensity in physical units). 
+Reply. Global quantities such as the EW, LW or ICR do not enter our computations
+at any time. We perform our fit to the measured line shape after the continuum
+is substracted (i.e Eq (1)). Furthermore, the normalization of the line is
+arbitrary (i.e. we do not to care about the integrated intensity in physical
+units).
 
 7) In general, I encourage the authors to do a more extensive research on
 the properties of dSs and provide more compelling evidence that would
@@ -189,12 +189,9 @@ The resulting frequency for a lyman-alpha photon is not only
 determined by the velocity of the last emitting atom before reaching
 the observer, but it is also determined by all its diffusion history
 through the neutral gas. 
-Under the situation of spherical symetry the only possibility to
+Under the situation of spherical symmetry the only possibility to
 produce an asymetry in the lyman alpha line is the existence of radial
-inflow/outflows. 
-This is a known and well studied result in the literature of
-theoretical lyman-alpha emission.   
-
+inflow/outflows (see, for instance, Neufeld 1990; Dijkstra 2017). 
 
 (10) "parameters within a observationally" ---> "parameters within an
 observationally"
