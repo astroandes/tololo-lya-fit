@@ -33,17 +33,17 @@ conclusions.
 Reply. The quoted values for the chi^2 are correct. The low
 statistical value means that the two distributions (observed and
 simulated) are indeed not the same. But we don't expect them to be the
-same because we don't expect reality to have the same simplified
+same because we don't expect this galaxy to have the same simplified
 description that we have in our models.
 
 The value of these fits does not lie on the basis of its statistical
 significance, but in it's ability to reproduce for the first time the
 broad features of the observed galaxy. Their value is in the
 physical insight they provide into the physical processes shaping the
-Lyalpha line.
+Lyalpha line. 
 
 This was succintly put by George Box when he wrote that "All models
-are wrong but some are useful", or in a more extended quote from him
+are wrong but some are useful", or in a more extended quote from him:
 "Now it would be very remarkable if any system existing in the real
 world could be exactly represented by any simple model. However,
 cunningly chosen parsimonious models often do provide remarkably
@@ -58,6 +58,9 @@ true?". If "truth" is to be the "whole truth" the answer must be
 useful?"."  
 
 (full source can be found in wikipedia https://en.wikipedia.org/wiki/All_models_are_wrong)
+
+In this context the chi^2 quantification is useful to decide between
+parameters within the same model or between different models.
 
 We have included a comment along these lines in the corresponding
 section. The conclusions and discussion remain unchanged.
